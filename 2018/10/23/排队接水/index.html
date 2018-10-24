@@ -580,7 +580,7 @@ eyJoaXN0b3J5IjpbLTU3NjI5NTQ0Nl19
     var guest_info = 'nick,mail,link'.split(',').filter(function(item){
         return GUEST_INFO.indexOf(item) > -1
     });
-    var notify = 'false' == true;
+    var notify = 'true' == true;
     var verify = 'false' == true;
     new Valine({
         el: '.vcomment',
