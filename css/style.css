@@ -1722,7 +1722,7 @@ a {
 .st-default-search-input {
     border: 0 !important;
     padding-top: 0 !important;
-    background-color: #ff4081;
+    background: 0 !important;
 }
 /***************/
 /* Sidebar_CSS */
