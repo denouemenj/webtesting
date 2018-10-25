@@ -3,11 +3,22 @@
   
     
     <entry>
-      <title>「一本通 5.1 例 2」能量项链</title>
-      <link href="/2018/10/23/%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.1%20%E4%BE%8B%202%E3%80%8D%E8%83%BD%E9%87%8F%E9%A1%B9%E9%93%BE/"/>
-      <url>/2018/10/23/%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.1%20%E4%BE%8B%202%E3%80%8D%E8%83%BD%E9%87%8F%E9%A1%B9%E9%93%BE/</url>
+      <title>test</title>
+      <link href="/2018/10/25/test/"/>
+      <url>/2018/10/25/test/</url>
       
-        <content type="html"><![CDATA[<ul><li>同石子合并<pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=210;int n,f[maxn][maxn];int ll[maxn];int main(){  scanf(&quot;%d&quot;,&amp;n);  for(int i=1;i&lt;=n;i++)  {      scanf(&quot;%d&quot;,&amp;ll[i]);      ll[i+n]=ll[i];  }  for(int l=1;l&lt;n*2;l++)  for(int i=1;i+l&lt;=n*2;i++)  {      int j=i+l;      for(int k=i;k&lt;j;k++)      f[i][j]=max(f[i][j],f[i][k]+f[k+1][j]+ll[i]*ll[k+1]*ll[j+1]);  }  int ans=0;  for(int i=1;i&lt;=n;i++)ans=max(ans,f[i][i+n-1]);  printf(&quot;%d\n&quot;,ans);  return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTg0NjIxOTA1Ml19--></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="Welcome-to-StackEdit"><a href="#Welcome-to-StackEdit" class="headerlink" title="Welcome to StackEdit!"></a>Welcome to StackEdit!</h1><p>Hi! I’m your first Markdown file in <strong>StackEdit</strong>. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the <strong>file explorer</strong> on the left corner of the navigation bar.</p><h1 id="Files"><a href="#Files" class="headerlink" title="Files"></a>Files</h1><p>StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible <strong>offline!</strong></p><h2 id="Create-files-and-folders"><a href="#Create-files-and-folders" class="headerlink" title="Create files and folders"></a>Create files and folders</h2><p>The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the <strong>New file</strong> button in the file explorer. You can also create folders by clicking the <strong>New folder</strong> button.</p><h2 id="Switch-to-another-file"><a href="#Switch-to-another-file" class="headerlink" title="Switch to another file"></a>Switch to another file</h2><p>All your files are listed in the file explorer. You can switch from one to another by clicking a file in the list.</p><h2 id="Rename-a-file"><a href="#Rename-a-file" class="headerlink" title="Rename a file"></a>Rename a file</h2><p>You can rename the current file by clicking the file name in the navigation bar or by clicking the <strong>Rename</strong> button in the file explorer.</p><h2 id="Delete-a-file"><a href="#Delete-a-file" class="headerlink" title="Delete a file"></a>Delete a file</h2><p>You can delete the current file by clicking the <strong>Remove</strong> button in the file explorer. The file will be moved into the <strong>Trash</strong> folder and automatically deleted after 7 days of inactivity.</p><h2 id="Export-a-file"><a href="#Export-a-file" class="headerlink" title="Export a file"></a>Export a file</h2><p>You can export the current file by clicking <strong>Export to disk</strong> in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.</p><h1 id="Synchronization"><a href="#Synchronization" class="headerlink" title="Synchronization"></a>Synchronization</h1><p>Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your <strong>Google Drive</strong>, your <strong>Dropbox</strong> and your <strong>GitHub</strong> accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow… The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.</p><p>There are two types of synchronization and they can complement each other:</p><ul><li><p>The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.</p><blockquote><p>To start syncing your workspace, just sign in with Google in the menu.</p></blockquote></li><li><p>The file synchronization will keep one file of the workspace synced with one or multiple files in <strong>Google Drive</strong>, <strong>Dropbox</strong> or <strong>GitHub</strong>.</p><blockquote><p>Before starting to sync files, you must link an account in the <strong>Synchronize</strong> sub-menu.</p></blockquote></li></ul><h2 id="Open-a-file"><a href="#Open-a-file" class="headerlink" title="Open a file"></a>Open a file</h2><p>You can open a file from <strong>Google Drive</strong>, <strong>Dropbox</strong> or <strong>GitHub</strong> by opening the <strong>Synchronize</strong> sub-menu and clicking <strong>Open from</strong>. Once opened in the workspace, any modification in the file will be automatically synced.</p><h2 id="Save-a-file"><a href="#Save-a-file" class="headerlink" title="Save a file"></a>Save a file</h2><p>You can save any file of the workspace to <strong>Google Drive</strong>, <strong>Dropbox</strong> or <strong>GitHub</strong> by opening the <strong>Synchronize</strong> sub-menu and clicking <strong>Save on</strong>. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.</p><h2 id="Synchronize-a-file"><a href="#Synchronize-a-file" class="headerlink" title="Synchronize a file"></a>Synchronize a file</h2><p>Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.</p><p>If you just have modified your file and you want to force syncing, click the <strong>Synchronize now</strong> button in the navigation bar.</p><blockquote><p><strong>Note:</strong> The <strong>Synchronize now</strong> button is disabled if you have no file to synchronize.</p></blockquote><h2 id="Manage-file-synchronization"><a href="#Manage-file-synchronization" class="headerlink" title="Manage file synchronization"></a>Manage file synchronization</h2><p>Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking <strong>File synchronization</strong> in the <strong>Synchronize</strong> sub-menu. This allows you to list and remove synchronized locations that are linked to your file.</p><h1 id="Publication"><a href="#Publication" class="headerlink" title="Publication"></a>Publication</h1><p>Publishing in StackEdit makes it simple for you to publish online your files. Once you’re happy with a file, you can publish it to different hosting platforms like <strong>Blogger</strong>, <strong>Dropbox</strong>, <strong>Gist</strong>, <strong>GitHub</strong>, <strong>Google Drive</strong>, <strong>WordPress</strong> and <strong>Zendesk</strong>. With <a href="http://handlebarsjs.com/" target="_blank" rel="noopener">Handlebars templates</a>, you have full control over what you export.</p><blockquote><p>Before starting to publish, you must link an account in the <strong>Publish</strong> sub-menu.</p></blockquote><h2 id="Publish-a-File"><a href="#Publish-a-File" class="headerlink" title="Publish a File"></a>Publish a File</h2><p>You can publish your file by opening the <strong>Publish</strong> sub-menu and by clicking <strong>Publish to</strong>. For some locations, you can choose between the following formats:</p><ul><li>Markdown: publish the Markdown text on a website that can interpret it (<strong>GitHub</strong> for instance),</li><li>HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).</li></ul><h2 id="Update-a-publication"><a href="#Update-a-publication" class="headerlink" title="Update a publication"></a>Update a publication</h2><p>After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the <strong>Publish now</strong> button in the navigation bar.</p><blockquote><p><strong>Note:</strong> The <strong>Publish now</strong> button is disabled if your file has not been published yet.</p></blockquote><h2 id="Manage-file-publication"><a href="#Manage-file-publication" class="headerlink" title="Manage file publication"></a>Manage file publication</h2><p>Since one file can be published to multiple locations, you can list and manage publish locations by clicking <strong>File publication</strong> in the <strong>Publish</strong> sub-menu. This allows you to list and remove publication locations that are linked to your file.</p><h1 id="Markdown-extensions"><a href="#Markdown-extensions" class="headerlink" title="Markdown extensions"></a>Markdown extensions</h1><p>StackEdit extends the standard Markdown syntax by adding extra <strong>Markdown extensions</strong>, providing you with some nice features.</p><blockquote><p><strong>ProTip:</strong> You can disable any <strong>Markdown extension</strong> in the <strong>File properties</strong> dialog.</p></blockquote><h2 id="SmartyPants"><a href="#SmartyPants" class="headerlink" title="SmartyPants"></a>SmartyPants</h2><p>SmartyPants converts ASCII punctuation characters into “smart” typographic punctuation HTML entities. For example:</p><div class="table-container"><table><thead><tr><th></th><th>ASCII</th><th>HTML</th></tr></thead><tbody><tr><td>Single backticks</td><td><code>&#39;Isn&#39;t this fun?&#39;</code></td><td>‘Isn’t this fun?’</td></tr><tr><td>Quotes</td><td><code>&quot;Isn&#39;t this fun?&quot;</code></td><td>“Isn’t this fun?”</td></tr><tr><td>Dashes</td><td><code>-- is en-dash, --- is em-dash</code></td><td>— is en-dash, —- is em-dash</td></tr></tbody></table></div><h2 id="KaTeX"><a href="#KaTeX" class="headerlink" title="KaTeX"></a>KaTeX</h2><p>You can render LaTeX mathematical expressions using <a href="https://khan.github.io/KaTeX/" target="_blank" rel="noopener">KaTeX</a>:</p><p>The <em>Gamma function</em> satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral</p><script type="math/tex; mode=display">\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.</script><blockquote><p>You can find more information about <strong>LaTeX</strong> mathematical expressions <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="noopener">here</a>.</p></blockquote><h2 id="UML-diagrams"><a href="#UML-diagrams" class="headerlink" title="UML diagrams"></a>UML diagrams</h2><p>You can render UML diagrams using <a href="https://mermaidjs.github.io/" target="_blank" rel="noopener">Mermaid</a>. For example, this will produce a sequence diagram:</p><pre><code class="lang-mermaid">sequenceDiagramAlice -&gt;&gt; Bob: Hello Bob, how are you?Bob--&gt;&gt;John: How about you John?Bob--x Alice: I am good thanks!Bob-x John: I am good thanks!Note right of John: Bob thinks a long&lt;br/&gt;long time, so long&lt;br/&gt;that the text does&lt;br/&gt;not fit on a row.Bob--&gt;Alice: Checking with John...Alice-&gt;John: Yes... John, how are you?</code></pre><p>And this will produce a flow chart:</p><pre><code class="lang-mermaid">graph LRA[Square Rect] -- Link text --&gt; B((Circle))A --&gt; C(Round Rect)B --&gt; D{Rhombus}C --&gt; D</code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
+      <title>「一本通 5.1 例 1」石子合并</title>
+      <link href="/2018/10/23/%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.1%20%E4%BE%8B%201%E3%80%8D%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/"/>
+      <url>/2018/10/23/%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.1%20%E4%BE%8B%201%E3%80%8D%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/</url>
+      
+        <content type="html"><![CDATA[<ul><li>经典的不要不要的</li><li>直接套用区间DP模板<pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=410;int n,f[maxn][maxn],s[maxn],f1[maxn][maxn];int main(){  scanf(&quot;%d&quot;,&amp;n);memset(f1,0x3f,sizeof f1);  for(int i=1;i&lt;=n;i++)  {      scanf(&quot;%d&quot;,&amp;s[i]);      s[i+n]=s[i];      s[i]+=s[i-1];      f1[i][i]=0;      f1[i+n][i+n]=0;  }  for(int i=1;i&lt;=n;i++)s[i+n]+=s[i+n-1];  for(int l=1;l&lt;n*2;l++)  for(int i=1;i+l&lt;=n*2;i++)  {      int j=i+l;      for(int k=i;k&lt;j;k++)      {          f[i][j]=max(f[i][j],f[i][k]+f[k+1][j]+s[j]-s[i-1]);          f1[i][j]=min(f1[i][j],f1[i][k]+f1[k+1][j]+s[j]-s[i-1]);      }  }  int ans=0,bns=f1[0][0];  for(int i=1;i&lt;=n;i++)  {      ans=max(ans,f[i][i+n-1]);      bns=min(bns,f1[i][i+n-1]);  }  printf(&quot;%d\n%d\n&quot;,bns,ans);  return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTk5MDM3MTU1Nl19--></li></ul>]]></content>
       
       
       <categories>
@@ -22,35 +33,6 @@
         <tags>
             
             <tag> 区间DP </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>HDU warm up</title>
-      <link href="/2018/10/23/HDU%20warm%20up/"/>
-      <url>/2018/10/23/HDU%20warm%20up/</url>
-      
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有一张联通的无向图,再加一条无向边后最少的桥的数量</p></blockquote><ul><li>求桥时将边双缩点,记录桥数 <strong>ans</strong></li><li>建树,求最长路长度 <strong>bns</strong></li><li>答案为 <strong>ans-bns</strong> </li><li>多组数据,注意初始化</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=2e5+10,maxm=1e6+10;int n,m,head[maxn],num,cnt,bi,ans;int dfn[maxn],low[maxn],input,fa[maxn],pa[maxn];int xx[maxn],w,headd[maxn],numm,mdep,ww;struct fy{int from,to,next,h;}q[maxm&lt;&lt;1];struct ffy{int to,next;}qq[maxm&lt;&lt;1];void add(int a,int b){    q[++num]=(fy){a,b,head[a],++bi};head[a]=num;    q[++num]=(fy){b,a,head[b],bi};head[b]=num;}void addd(int a,int b){qq[++numm]=(ffy){b,headd[a]};headd[a]=numm;}void tar(int a){    dfn[a]=low[a]=++input;xx[++w]=a;    for(int i=head[a];i;i=q[i].next)    {        int b=q[i].to;if(q[i].h==pa[a])continue;        if(!dfn[b])        {            pa[b]=q[i].h;tar(b);            low[a]=min(low[a],low[b]);            if(dfn[a]&lt;low[b])ans++;        }        else low[a]=min(low[a],dfn[b]);    }    if(low[a]==dfn[a])    {        ++cnt;        while(xx[w+1]!=a)        {            fa[xx[w]]=cnt;            w--;        }    }}void dfs(int a,int fat,int dep){    if(dep&gt;mdep)    {        mdep=dep;        ww=a;    }    for(int i=headd[a];i;i=qq[i].next)    {        int b=qq[i].to;if(b==fat)continue;        dfs(b,a,dep+1);    }}int main(){    int a,b;    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)    {        if(n==0&amp;&amp;m==0)break;        memset(head,0,sizeof head);memset(dfn,0,sizeof dfn);        memset(low,0,sizeof low);memset(pa,0,sizeof pa);        memset(headd,0,sizeof headd);        num=0;cnt=0;bi=0;w=0;input=0;numm=0;ans=0;ww=0;        for(int i=1;i&lt;=m;i++)        {scanf(&quot;%d%d&quot;,&amp;a,&amp;b);add(a,b);}        tar(1);        for(int i=1;i&lt;=num;i++)        {            a=fa[q[i].from];b=fa[q[i].to];            if(a!=b)addd(a,b);        }        mdep=0;dfs(1,0,0);        mdep=0;dfs(ww,0,0);        printf(&quot;%d\n&quot;,ans-mdep);    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTE1OTc1ODc0MDddfQ==-->]]></content>
-      
-      
-      <categories>
-          
-          <category> C++ </category>
-          
-          <category> 算法学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 桥 </tag>
-            
-            <tag> 边双联通分量 </tag>
-            
-            <tag> 树的直径 </tag>
             
         </tags>
       
@@ -101,6 +83,35 @@
         <tags>
             
             <tag> DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>HDU warm up</title>
+      <link href="/2018/10/23/HDU%20warm%20up/"/>
+      <url>/2018/10/23/HDU%20warm%20up/</url>
+      
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有一张联通的无向图,再加一条无向边后最少的桥的数量</p></blockquote><ul><li>求桥时将边双缩点,记录桥数 <strong>ans</strong></li><li>建树,求最长路长度 <strong>bns</strong></li><li>答案为 <strong>ans-bns</strong> </li><li>多组数据,注意初始化</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=2e5+10,maxm=1e6+10;int n,m,head[maxn],num,cnt,bi,ans;int dfn[maxn],low[maxn],input,fa[maxn],pa[maxn];int xx[maxn],w,headd[maxn],numm,mdep,ww;struct fy{int from,to,next,h;}q[maxm&lt;&lt;1];struct ffy{int to,next;}qq[maxm&lt;&lt;1];void add(int a,int b){    q[++num]=(fy){a,b,head[a],++bi};head[a]=num;    q[++num]=(fy){b,a,head[b],bi};head[b]=num;}void addd(int a,int b){qq[++numm]=(ffy){b,headd[a]};headd[a]=numm;}void tar(int a){    dfn[a]=low[a]=++input;xx[++w]=a;    for(int i=head[a];i;i=q[i].next)    {        int b=q[i].to;if(q[i].h==pa[a])continue;        if(!dfn[b])        {            pa[b]=q[i].h;tar(b);            low[a]=min(low[a],low[b]);            if(dfn[a]&lt;low[b])ans++;        }        else low[a]=min(low[a],dfn[b]);    }    if(low[a]==dfn[a])    {        ++cnt;        while(xx[w+1]!=a)        {            fa[xx[w]]=cnt;            w--;        }    }}void dfs(int a,int fat,int dep){    if(dep&gt;mdep)    {        mdep=dep;        ww=a;    }    for(int i=headd[a];i;i=qq[i].next)    {        int b=qq[i].to;if(b==fat)continue;        dfs(b,a,dep+1);    }}int main(){    int a,b;    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)    {        if(n==0&amp;&amp;m==0)break;        memset(head,0,sizeof head);memset(dfn,0,sizeof dfn);        memset(low,0,sizeof low);memset(pa,0,sizeof pa);        memset(headd,0,sizeof headd);        num=0;cnt=0;bi=0;w=0;input=0;numm=0;ans=0;ww=0;        for(int i=1;i&lt;=m;i++)        {scanf(&quot;%d%d&quot;,&amp;a,&amp;b);add(a,b);}        tar(1);        for(int i=1;i&lt;=num;i++)        {            a=fa[q[i].from];b=fa[q[i].to];            if(a!=b)addd(a,b);        }        mdep=0;dfs(1,0,0);        mdep=0;dfs(ww,0,0);        printf(&quot;%d\n&quot;,ans-mdep);    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTE1OTc1ODc0MDddfQ==-->]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+          <category> 算法学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 桥 </tag>
+            
+            <tag> 边双联通分量 </tag>
+            
+            <tag> 树的直径 </tag>
             
         </tags>
       
@@ -810,31 +821,6 @@
     </entry>
     
     <entry>
-      <title>「一本通 5.1 例 1」石子合并</title>
-      <link href="/2018/10/23/%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.1%20%E4%BE%8B%201%E3%80%8D%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/"/>
-      <url>/2018/10/23/%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.1%20%E4%BE%8B%201%E3%80%8D%E7%9F%B3%E5%AD%90%E5%90%88%E5%B9%B6/</url>
-      
-        <content type="html"><![CDATA[<ul><li>经典的不要不要的</li><li>直接套用区间DP模板<pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=410;int n,f[maxn][maxn],s[maxn],f1[maxn][maxn];int main(){  scanf(&quot;%d&quot;,&amp;n);memset(f1,0x3f,sizeof f1);  for(int i=1;i&lt;=n;i++)  {      scanf(&quot;%d&quot;,&amp;s[i]);      s[i+n]=s[i];      s[i]+=s[i-1];      f1[i][i]=0;      f1[i+n][i+n]=0;  }  for(int i=1;i&lt;=n;i++)s[i+n]+=s[i+n-1];  for(int l=1;l&lt;n*2;l++)  for(int i=1;i+l&lt;=n*2;i++)  {      int j=i+l;      for(int k=i;k&lt;j;k++)      {          f[i][j]=max(f[i][j],f[i][k]+f[k+1][j]+s[j]-s[i-1]);          f1[i][j]=min(f1[i][j],f1[i][k]+f1[k+1][j]+s[j]-s[i-1]);      }  }  int ans=0,bns=f1[0][0];  for(int i=1;i&lt;=n;i++)  {      ans=max(ans,f[i][i+n-1]);      bns=min(bns,f1[i][i+n-1]);  }  printf(&quot;%d\n%d\n&quot;,bns,ans);  return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTk5MDM3MTU1Nl19--></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> C++ </category>
-          
-          <category> 一本通 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 区间DP </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Picnic Planning</title>
       <link href="/2018/10/23/Picnic%20Planning/"/>
       <url>/2018/10/23/Picnic%20Planning/</url>
@@ -858,6 +844,31 @@
             <tag> 状压 </tag>
             
             <tag> K限制生成树 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>「一本通 5.1 例 2」能量项链</title>
+      <link href="/2018/10/23/%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.1%20%E4%BE%8B%202%E3%80%8D%E8%83%BD%E9%87%8F%E9%A1%B9%E9%93%BE/"/>
+      <url>/2018/10/23/%E3%80%8C%E4%B8%80%E6%9C%AC%E9%80%9A%205.1%20%E4%BE%8B%202%E3%80%8D%E8%83%BD%E9%87%8F%E9%A1%B9%E9%93%BE/</url>
+      
+        <content type="html"><![CDATA[<ul><li>同石子合并<pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=210;int n,f[maxn][maxn];int ll[maxn];int main(){  scanf(&quot;%d&quot;,&amp;n);  for(int i=1;i&lt;=n;i++)  {      scanf(&quot;%d&quot;,&amp;ll[i]);      ll[i+n]=ll[i];  }  for(int l=1;l&lt;n*2;l++)  for(int i=1;i+l&lt;=n*2;i++)  {      int j=i+l;      for(int k=i;k&lt;j;k++)      f[i][j]=max(f[i][j],f[i][k]+f[k+1][j]+ll[i]*ll[k+1]*ll[j+1]);  }  int ans=0;  for(int i=1;i&lt;=n;i++)ans=max(ans,f[i][i+n-1]);  printf(&quot;%d\n&quot;,ans);  return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTg0NjIxOTA1Ml19--></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+          <category> 一本通 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 区间DP </tag>
             
         </tags>
       
@@ -1686,7 +1697,7 @@
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<h1 id="居然有人点开了这个页面-ΩДΩ"><a href="#居然有人点开了这个页面-ΩДΩ" class="headerlink" title="居然有人点开了这个页面 (ΩДΩ)"></a>居然有人点开了这个页面 (ΩДΩ)</h1><p>可能是你点错了,毕竟我这么菜,<br>谁会来看我呢<del>(滑稽)</del></p><p><img src="https://s1.ax1x.com/2018/10/24/ir5US0.png" alt=""></p><p>本人一名<strong>小蒟蒻</strong>,在各位大佬间苦苦挣扎,苟且偷生<del>(宝宝心里苦,难受,香菇)</del></p><p>不喜欢打游戏(偶尔玩玩),喜欢搞一些计算机上奇奇怪怪的东西(对,就是老师和爸妈口中的”不务正业”,”没名堂的东西”,”浪费时间”)</p><p>喜欢二次元,喜欢宅在家里的穷学生</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5ITH.gif" alt="ir5ITH.gif"></p><p>学过一点点C++和Java,算法也有一点涉猎(请记住,是一点点,就像你对于地球那样的一点点),当然没有办法和各位大佬比</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5Dw4.gif" alt="ir5Dw4.gif"></p><p>还是一位OIer,虽然马上退役了,好吧,像我这种弱鸡,根本不能说退役,是根本没入役</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5yk9.jpg" alt="ir5yk9.jpg"></p><p>好吧,了解了我的菜之深后,你肯定也不想继续看下去了,但我还是厚颜无耻的写下我的联系方式</p><p>QQ: </p><blockquote><p>1836017424</p></blockquote><p>Email: </p><blockquote><p>1836017424@qq.com </p><p>scaryffy@gmail.com</p></blockquote><p>你如果有问题,可以通过上面的方式联系我(可能这辈子都不会有了)</p><p>在下学生,不能保证及时回复,但我看到了一定会回复</p><p><img src="https://s1.ax1x.com/2018/10/24/ir550e.jpg" alt="ir550e.jpg"></p><h3 id="愿幸运与你同在"><a href="#愿幸运与你同在" class="headerlink" title="愿幸运与你同在"></a>愿幸运与你同在</h3><p>但如果你有上条当麻的右手,我还真没办法</p><p>至此</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="居然有人点开了这个页面-ΩДΩ"><a href="#居然有人点开了这个页面-ΩДΩ" class="headerlink" title="居然有人点开了这个页面 (ΩДΩ)"></a>居然有人点开了这个页面 (ΩДΩ)</h1><p>可能是你点错了,毕竟我这么菜,<br>谁会来看我呢<del>(滑稽)</del></p><p><img src="https://s1.ax1x.com/2018/10/24/ir5US0.png" alt=""></p><p>本人一名<strong>小蒟蒻</strong>,在各位大佬间苦苦挣扎,苟且偷生<del>(宝宝心里苦,难受,香菇)</del></p><p>不喜欢打游戏(偶尔玩玩),喜欢搞一些计算机上奇奇怪怪的东西(对,就是老师和爸妈口中的”不务正业”,”没名堂的东西”,”浪费时间”)</p><p>喜欢二次元,喜欢宅在家里的穷学生</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5ITH.gif" alt="ir5ITH.gif"></p><p>学过一点点C++和Java,算法也有一点涉猎(请记住,是一点点,就像你对于地球那样的一点点),当然没有办法和各位大佬比</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5Dw4.gif" alt="ir5Dw4.gif"></p><p>还是一位OIer,虽然马上退役了,好吧,像我这种弱鸡,根本不能说退役,是根本没入役</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5yk9.jpg" alt="ir5yk9.jpg"></p><p>好吧,了解了我的菜之深后,你肯定也不想继续看下去了,但我还是厚颜无耻的写下我的联系方式</p><p>QQ: </p><blockquote><p>1836017424</p></blockquote><p>Email: </p><blockquote><p>1836017424@qq.com </p><p>scaryffy@gmail.com</p></blockquote><p>你如果有问题,可以通过上面的方式联系我(可能这辈子都不会有了)</p><p>在下学生,不能保证及时回复,但我看到了一定会回复</p><p><img src="https://s1.ax1x.com/2018/10/24/ir550e.jpg" alt="ir550e.jpg"></p><h3 id="愿幸运与你同在"><a href="#愿幸运与你同在" class="headerlink" title="愿幸运与你同在"></a>愿幸运与你同在</h3><p>但如果你有上条当麻的右手,我还真没办法</p><p>至此</p><pre><code class="lang-mermaid">graph TD     1--&gt;2    2--&gt;3    3--&gt;4    4--&gt;5    1--&gt;6    6--&gt;7    6--&gt;8    6--&gt;9</code></pre>]]></content>
       
     </entry>
     
