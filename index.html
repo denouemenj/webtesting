@@ -210,7 +210,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="FFY&#39;s Blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/">
+    <meta name="msapplication-starturl" content="http://ffdy.github.io/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="FFY&#39;s Blog">
@@ -225,7 +225,7 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/">
+    <meta property="og:url" content="http://ffdy.github.io/">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="FFY&#39;s Blog">
     <meta property="og:image" content="/img/F.png">
@@ -239,7 +239,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com">
+        <link rel="canonical" href="http://ffdy.github.io">
     
 
     <!-- Structured-data for SEO -->
@@ -254,14 +254,14 @@
         "name": "FFY&#39;s Blog",
         "logo": "/img/F.png"
     },
-    "url": "http://yoursite.com",
+    "url": "http://ffdy.github.io",
     "image": {
         "@type": "ImageObject",
         "url": "/img/F.png"
     },
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http://yoursite.com"
+        "@id": "http://ffdy.github.io"
     },
     "description": ""
 }
@@ -408,7 +408,7 @@
             
 
             
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=FFY&#39;s Blog&url=http://yoursite.com&pic=http://yoursite.com/img/F.png&searchPic=false&style=simple" target="_blank">
+                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=FFY&#39;s Blog&url=http://ffdy.github.io&pic=http://ffdy.github.io/img/F.png&searchPic=false&style=simple" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         分享到微博
                     </li>
@@ -416,7 +416,7 @@
             
 
             
-                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=FFY&#39;s Blog&url=http://yoursite.com&via=FFY" target="_blank">
+                <a class="index_share-link" href="https://twitter.com/intent/tweet?text=FFY&#39;s Blog&url=http://ffdy.github.io&via=FFY" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         分享到 Twitter
                     </li>
@@ -424,7 +424,7 @@
             
 
             
-                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com" target="_blank">
+                <a class="index_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://ffdy.github.io" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         分享到 Facebook
                     </li>
@@ -432,7 +432,7 @@
             
 
             
-                <a class="index_share-link" href="https://plus.google.com/share?url=http://yoursite.com" target="_blank">
+                <a class="index_share-link" href="https://plus.google.com/share?url=http://ffdy.github.io" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         分享到 Google+
                     </li>
@@ -440,7 +440,7 @@
             
 
             
-                <a class="index_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com&title=FFY&#39;s Blog" target="_blank">
+                <a class="index_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://ffdy.github.io&title=FFY&#39;s Blog" target="_blank">
                     <li class="mdl-menu__item mdl-js-ripple-effect">
                         分享到 LinkedIn
                     </li>
@@ -448,7 +448,7 @@
             
 
             
-                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=FFY&#39;s Blog&title=FFY&#39;s Blog&summary=&pics=http://yoursite.com/img/F.png&url=http://yoursite.com" target="_blank">
+                <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=FFY&#39;s Blog&title=FFY&#39;s Blog&summary=&pics=http://ffdy.github.io/img/F.png&url=http://ffdy.github.io" target="_blank">
                     <li class="mdl-menu__item">
                         分享到 QQ
                     </li>
@@ -456,7 +456,7 @@
             
 
             
-                <a class="post_share-link" href="https://telegram.me/share/url?url=http://yoursite.com&text=FFY&#39;s Blog" target="_blank">
+                <a class="post_share-link" href="https://telegram.me/share/url?url=http://ffdy.github.io&text=FFY&#39;s Blog" target="_blank">
                     <li class="mdl-menu__item">
                         分享到 Telegram
                     </li>
@@ -1099,10 +1099,10 @@
 
     var locatePost = $('.locate-thumbnail-symbol').next();
     for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 30 + 1);
+        randomNum = Math.floor(Math.random() * 15 + 1);
 
         locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.jpg');
+        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material (' + randomNum + ').jpg');
     $('.post_thumbnail-random').addClass('lazy');
 
         locatePost = locatePost.next();
@@ -1121,7 +1121,7 @@
 <aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
     <div id="sidebar-main">
         <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/);">
+        <div class="sidebar-header header-cover" style="background-image: url(/img/head.jpg);">
     <!-- Top bar -->
     <div class="top-bar"></div>
 
