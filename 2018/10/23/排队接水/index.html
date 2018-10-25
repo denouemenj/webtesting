@@ -512,7 +512,46 @@
 <li>然后没了</li>
 <li>类似<code>国王游戏</code></li>
 </ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">2e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,t;</span><br><span class="line">ll ans,s;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fy</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> t,v;<span class="keyword">double</span> s;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">w</span><span class="params">()</span></span>&#123;<span class="keyword">this</span>-&gt;s=(<span class="keyword">double</span>)<span class="keyword">this</span>-&gt;t/(<span class="keyword">double</span>)<span class="keyword">this</span>-&gt;v;&#125;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> fy&amp;a)</span><br><span class="line">	<span class="keyword">const</span>&#123;<span class="keyword">return</span> s&lt;a.s;&#125;</span><br><span class="line">&#125;q[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> k=<span class="number">0</span>,f=<span class="number">0</span>;<span class="keyword">char</span> c=getchar();<span class="keyword">for</span>(;c&lt;<span class="string">'0'</span>||c&gt;<span class="string">'9'</span>;c=getchar())<span class="keyword">if</span>(c==<span class="string">'-'</span>)f=<span class="number">1</span>;</span><br><span class="line"> 	<span class="keyword">for</span>(;c&lt;=<span class="string">'9'</span>&amp;&amp;c&gt;=<span class="string">'0'</span>;c=getchar())k=(k&lt;&lt;<span class="number">3</span>)+(k&lt;&lt;<span class="number">1</span>)+c-<span class="string">'0'</span>;<span class="keyword">return</span>  f?-k:k;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"> 	freopen(<span class="string">"water.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line"> 	freopen(<span class="string">"water.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line"> 	t=read();</span><br><span class="line"> 	<span class="keyword">while</span>(t--)</span><br><span class="line"> 	&#123;</span><br><span class="line"> 		n=read();ans=<span class="number">0</span>;s=<span class="number">0</span>;</span><br><span class="line"> 		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		 &#123;q[i].t=read();q[i].v=read();q[i].w();&#125;</span><br><span class="line"> 		sort(q+<span class="number">1</span>,q+<span class="number">1</span>+n);</span><br><span class="line"> 		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"> 		&#123;</span><br><span class="line"> 			s+=q[i].t;</span><br><span class="line"> 			ans+=(ll)s*(ll)q[i].v;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line"> 	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+#define ll long long
+using namespace std;
+const int maxn=2e5+10;
+int n,t;
+ll ans,s;
+struct fy
+{
+    int t,v;double s;
+    void w(){this-&gt;s=(double)this-&gt;t/(double)this-&gt;v;}
+    bool operator&lt;(const fy&amp;a)
+    const{return s&lt;a.s;}
+}q[maxn];
+int read()
+{
+     int k=0,f=0;char c=getchar();for(;c&lt;&#39;0&#39;||c&gt;&#39;9&#39;;c=getchar())if(c==&#39;-&#39;)f=1;
+     for(;c&lt;=&#39;9&#39;&amp;&amp;c&gt;=&#39;0&#39;;c=getchar())k=(k&lt;&lt;3)+(k&lt;&lt;1)+c-&#39;0&#39;;return  f?-k:k;
+}
+int main(){
+     freopen(&quot;water.in&quot;,&quot;r&quot;,stdin);
+     freopen(&quot;water.out&quot;,&quot;w&quot;,stdout);
+     t=read();
+     while(t--)
+     {
+         n=read();ans=0;s=0;
+         for(int i=1;i&lt;=n;i++)
+         {q[i].t=read();q[i].v=read();q[i].w();}
+         sort(q+1,q+1+n);
+         for(int i=1;i&lt;=n;i++)
+         {
+             s+=q[i].t;
+             ans+=(ll)s*(ll)q[i].v;
+        }
+        printf(&quot;%lld\n&quot;,ans);
+    }
+     return 0;
+}
+</code></pre>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTU3NjI5NTQ0Nl19
 -->
@@ -928,6 +967,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -938,6 +981,10 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
     
 </script>
 

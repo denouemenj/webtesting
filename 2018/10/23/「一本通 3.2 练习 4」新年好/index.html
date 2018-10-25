@@ -497,12 +497,61 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <ul>
-<li>6遍spfa+暴力dfs<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">5e4</span>+<span class="number">10</span>,maxm=<span class="number">1e5</span>+<span class="number">10</span>,inf=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,head[maxn],num,ans=inf,dis[<span class="number">6</span>][maxn],s[<span class="number">6</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fy</span>&#123;</span><span class="keyword">int</span> to,d,next;&#125;q[maxm&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="keyword">bool</span> use[maxn],ex[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;q[++num]=(fy)&#123;b,c,head[a]&#125;;head[a]=num;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sp</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;qq;qq.push(s[a]);use[s[a]]=<span class="literal">true</span>;</span><br><span class="line">	<span class="built_in">memset</span>(dis[a],<span class="number">0x3f</span>,<span class="keyword">sizeof</span> dis[a]);dis[a][s[a]]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(!qq.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> b=qq.front();qq.pop();use[b]=<span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=head[b];i;i=q[i].next)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> c=q[i].to;</span><br><span class="line">			<span class="keyword">if</span>(dis[a][c]&gt;dis[a][b]+q[i].d)</span><br><span class="line">			&#123;</span><br><span class="line">				dis[a][c]=dis[a][b]+q[i].d;</span><br><span class="line">				<span class="keyword">if</span>(!use[c])&#123;use[c]=<span class="literal">true</span>;qq.push(c);&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> can=<span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)<span class="keyword">if</span>(!ex[i])</span><br><span class="line">	&#123;</span><br><span class="line">		can=<span class="literal">true</span>;</span><br><span class="line">		ex[i]=<span class="literal">true</span>;dfs(i,v+dis[a][s[i]]);</span><br><span class="line">		ex[i]=<span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(!can)ans=min(ans,v);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);<span class="keyword">int</span> a,b,c;s[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;s[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);add(a,b,c);add(b,a,c);&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">5</span>;i++)sp(i);</span><br><span class="line">	use[<span class="number">0</span>]=<span class="literal">true</span>;dfs(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li>6遍spfa+暴力dfs<pre><code class="lang-cpp">#include&lt;queue&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int maxn=5e4+10,maxm=1e5+10,inf=1e9+7;
+int n,m,head[maxn],num,ans=inf,dis[6][maxn],s[6];
+struct fy{int to,d,next;}q[maxm&lt;&lt;1];
+bool use[maxn],ex[10];
+void add(int a,int b,int c){q[++num]=(fy){b,c,head[a]};head[a]=num;}
+void sp(int a)
+{
+  queue&lt;int&gt;qq;qq.push(s[a]);use[s[a]]=true;
+  memset(dis[a],0x3f,sizeof dis[a]);dis[a][s[a]]=0;
+  while(!qq.empty())
+  {
+      int b=qq.front();qq.pop();use[b]=false;
+      for(int i=head[b];i;i=q[i].next)
+      {
+          int c=q[i].to;
+          if(dis[a][c]&gt;dis[a][b]+q[i].d)
+          {
+              dis[a][c]=dis[a][b]+q[i].d;
+              if(!use[c]){use[c]=true;qq.push(c);}
+          }
+      }
+  }
+}
+void dfs(int a,int v)
+{
+  bool can=false;
+  for(int i=1;i&lt;=5;i++)if(!ex[i])
+  {
+      can=true;
+      ex[i]=true;dfs(i,v+dis[a][s[i]]);
+      ex[i]=false;
+  }
+  if(!can)ans=min(ans,v);
+}
+int main()
+{
+  scanf(&quot;%d%d&quot;,&amp;n,&amp;m);int a,b,c;s[0]=1;
+  for(int i=1;i&lt;=5;i++)scanf(&quot;%d&quot;,&amp;s[i]);
+  for(int i=1;i&lt;=m;i++){scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);add(a,b,c);add(b,a,c);}
+  for(int i=0;i&lt;=5;i++)sp(i);
+  use[0]=true;dfs(0,0);
+  printf(&quot;%d\n&quot;,ans);
+  return 0;
+}
+</code></pre>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTc1MzMzNzA4OF19
--->
+--></li>
+</ul>
+
         
     
 
@@ -915,6 +964,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -925,6 +978,10 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
     
 </script>
 

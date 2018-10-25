@@ -513,8 +513,107 @@
 </li>
 <li>tarjan</li>
 </ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//割边 &amp;&amp; 没有重边</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">5e3</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,head[maxn],num;</span><br><span class="line"><span class="keyword">int</span> dfn[maxn],low[maxn],input;</span><br><span class="line"><span class="keyword">bool</span> use[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fy</span>&#123;</span><span class="keyword">int</span> to,next;&#125;q[maxn&lt;&lt;<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;q[++num]=(fy)&#123;b,head[a]&#125;;head[a]=num;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tar</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dfn[a]=low[a]=++input;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=head[a];i;i=q[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> b=q[i].to;</span><br><span class="line">		<span class="keyword">if</span>(!dfn[b])</span><br><span class="line">		&#123;</span><br><span class="line">			tar(b,a);low[a]=min(low[a],low[b]);</span><br><span class="line">			<span class="keyword">if</span>(dfn[a]&lt;low[b])use[i]=<span class="literal">true</span>;<span class="comment">//感觉这个地方这辈子都不会懂了,太迷幻</span></span><br><span class="line">			<span class="comment">//当然可以和割点一起求</span></span><br><span class="line">			<span class="comment">/*if((child&gt;1&amp;&amp;root==a)||(root!=a&amp;&amp;dfn[a]&lt;=low[b])cutd[i]=true;*/</span></span><br><span class="line">			<span class="comment">//root为根节点</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b!=fa)low[a]=min(low[a],dfn[b]);</span><br><span class="line">		<span class="comment">//为什么是b!=fa呢,不懂</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">		add(a,b);add(b,a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">if</span>(!dfn[i])tar(i,<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=num;i++)<span class="keyword">if</span>(use[i])<span class="built_in">printf</span>(<span class="string">"%d "</span>,i);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当有重边时记录父亲<strong>边</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//割边&amp;&amp;边双缩点&amp;&amp;有重边&amp;&amp;非边双转边双</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">5e3</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,head[maxn],num,bi,cnt,ans,fa[maxn],in[maxn];</span><br><span class="line"><span class="keyword">bool</span> use[maxn&lt;&lt;<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> dfn[maxn],low[maxn],input,xx[maxn],w,pa[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fy</span>&#123;</span><span class="keyword">int</span> from,to,next,h;&#125;q[maxn&lt;&lt;<span class="number">2</span>];</span><br><span class="line"><span class="comment">//h用来装边</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	q[++num]=(fy)&#123;a,b,head[a],++bi&#125;;head[a]=num;</span><br><span class="line">	q[++num]=(fy)&#123;b,a,head[b],bi&#125;;head[b]=num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tar</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dfn[a]=low[a]=++input;xx[++w]=a;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=head[a];i;i=q[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> b=q[i].to;</span><br><span class="line">		<span class="keyword">if</span>(q[i].h==pa[a])<span class="keyword">continue</span>;<span class="comment">//如果该边走过了就不能再走</span></span><br><span class="line">		<span class="keyword">if</span>(!dfn[b])</span><br><span class="line">		&#123;</span><br><span class="line">			pa[b]=q[i].h;<span class="comment">//记录父亲边</span></span><br><span class="line">			tar(b);low[a]=min(low[a],low[b]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> low[a]=min(low[a],dfn[b]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dfn[a]==low[a])<span class="comment">//同时边双缩点</span></span><br><span class="line">	&#123;</span><br><span class="line">		cnt++;</span><br><span class="line">		<span class="keyword">while</span>(xx[w+<span class="number">1</span>]!=a)</span><br><span class="line">		&#123;fa[xx[w]]=cnt;w--;&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">		add(a,b);</span><br><span class="line">	&#125;</span><br><span class="line">	tar(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=num;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a=fa[q[i].from];</span><br><span class="line">		b=fa[q[i].to];</span><br><span class="line">		<span class="keyword">if</span>(a!=b)in[b]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=cnt;i++)<span class="keyword">if</span>(in[i]==<span class="number">1</span>)ans++;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,(ans+<span class="number">1</span>)/<span class="number">2</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code class="lang-cpp">//割边 &amp;&amp; 没有重边
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int maxn=5e3+10;
+int n,m,head[maxn],num;
+int dfn[maxn],low[maxn],input;
+bool use[maxn];
+struct fy{int to,next;}q[maxn&lt;&lt;2];
+void add(int a,int b){q[++num]=(fy){b,head[a]};head[a]=num;}
+void tar(int a,int fa)
+{
+    dfn[a]=low[a]=++input;
+    for(int i=head[a];i;i=q[i].next)
+    {
+        int b=q[i].to;
+        if(!dfn[b])
+        {
+            tar(b,a);low[a]=min(low[a],low[b]);
+            if(dfn[a]&lt;low[b])use[i]=true;//感觉这个地方这辈子都不会懂了,太迷幻
+            //当然可以和割点一起求
+            /*if((child&gt;1&amp;&amp;root==a)||(root!=a&amp;&amp;dfn[a]&lt;=low[b])cutd[i]=true;*/
+            //root为根节点
+        }
+        else if(b!=fa)low[a]=min(low[a],dfn[b]);
+        //为什么是b!=fa呢,不懂
+    }
+}
+int main()
+{
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);int a,b;
+    for(int i=1;i&lt;=m;i++)
+    {
+        scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+        add(a,b);add(b,a);
+    }
+    for(int i=1;i&lt;=n;i++)if(!dfn[i])tar(i,0);
+    for(int i=1;i&lt;=num;i++)if(use[i])printf(&quot;%d &quot;,i);
+    return 0;
+}
+</code></pre>
+<p>当有重边时记录父亲<strong>边</strong></p>
+<pre><code class="lang-cpp">//割边&amp;&amp;边双缩点&amp;&amp;有重边&amp;&amp;非边双转边双
+#include&lt;cstdio&gt;
+#include&lt;stack&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int maxn=5e3+10;
+int n,m,head[maxn],num,bi,cnt,ans,fa[maxn],in[maxn];
+bool use[maxn&lt;&lt;2];
+int dfn[maxn],low[maxn],input,xx[maxn],w,pa[maxn];
+struct fy{int from,to,next,h;}q[maxn&lt;&lt;2];
+//h用来装边
+void add(int a,int b)
+{
+    q[++num]=(fy){a,b,head[a],++bi};head[a]=num;
+    q[++num]=(fy){b,a,head[b],bi};head[b]=num;
+}
+void tar(int a)
+{
+    dfn[a]=low[a]=++input;xx[++w]=a;
+    for(int i=head[a];i;i=q[i].next)
+    {
+        int b=q[i].to;
+        if(q[i].h==pa[a])continue;//如果该边走过了就不能再走
+        if(!dfn[b])
+        {
+            pa[b]=q[i].h;//记录父亲边
+            tar(b);low[a]=min(low[a],low[b]);
+        }
+        else low[a]=min(low[a],dfn[b]);
+    }
+    if(dfn[a]==low[a])//同时边双缩点
+    {
+        cnt++;
+        while(xx[w+1]!=a)
+        {fa[xx[w]]=cnt;w--;}
+    }
+}
+int main()
+{
+    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);int a,b;
+    for(int i=1;i&lt;=m;i++)
+    {
+        scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+        add(a,b);
+    }
+    tar(1);
+    for(int i=1;i&lt;=num;i++)
+    {
+        a=fa[q[i].from];
+        b=fa[q[i].to];
+        if(a!=b)in[b]++;
+    }
+    for(int i=1;i&lt;=cnt;i++)if(in[i]==1)ans++;
+    printf(&quot;%d\n&quot;,(ans+1)/2);
+    return 0;
+}
+</code></pre>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTExMjM0NDMxMTFdfQ==
 -->
@@ -930,6 +1029,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -940,6 +1043,10 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
     
 </script>
 

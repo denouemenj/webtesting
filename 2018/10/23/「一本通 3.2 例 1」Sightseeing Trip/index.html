@@ -497,12 +497,70 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <ul>
-<li>spfa求最小环<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">210</span>,inf=<span class="number">6e8</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,xx[maxn],w,fa[maxn][maxn];</span><br><span class="line">ll <span class="built_in">map</span>[maxn][maxn],dis[maxn][maxn],ans=inf;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">floyd</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll he;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=n;k++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;k;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;k;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			he=dis[i][j]+<span class="built_in">map</span>[j][k]+<span class="built_in">map</span>[k][i];</span><br><span class="line">			<span class="keyword">if</span>(he&lt;ans)</span><br><span class="line">			&#123;</span><br><span class="line">				ans=he;w=<span class="number">0</span>;<span class="keyword">int</span> a=j;</span><br><span class="line">				<span class="keyword">while</span>(a!=i)&#123;xx[++w]=a;a=fa[i][a];&#125;</span><br><span class="line">				xx[++w]=i;xx[++w]=k;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			he=dis[i][k]+dis[k][j];</span><br><span class="line">			<span class="keyword">if</span>(he&lt;dis[i][j])</span><br><span class="line">			&#123;</span><br><span class="line">				dis[i][j]=he;</span><br><span class="line">				fa[i][j]=fa[k][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//	freopen("trip7.in","r",stdin);</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);<span class="keyword">int</span> a,b;ll c;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">map</span>[i][j]=dis[i][j]=inf;</span><br><span class="line">		fa[i][j]=i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%lld"</span>,&amp;a,&amp;b,&amp;c);c=min(c,dis[a][b]);</span><br><span class="line">		dis[a][b]=dis[b][a]=c;</span><br><span class="line">		<span class="built_in">map</span>[a][b]=<span class="built_in">map</span>[b][a]=dis[a][b];</span><br><span class="line">	&#125;</span><br><span class="line">	floyd();</span><br><span class="line">	<span class="keyword">if</span>(ans==inf)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"No solution.\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=w;i++)<span class="built_in">printf</span>(<span class="string">"%d "</span>,xx[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li>spfa求最小环<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+#define ll long long
+using namespace std;
+const int maxn=210,inf=6e8+7;
+int n,m,xx[maxn],w,fa[maxn][maxn];
+ll map[maxn][maxn],dis[maxn][maxn],ans=inf;
+void floyd()
+{
+  ll he;
+  for(int k=1;k&lt;=n;k++)
+  {
+      for(int i=1;i&lt;k;i++)for(int j=i+1;j&lt;k;j++)
+      {
+          he=dis[i][j]+map[j][k]+map[k][i];
+          if(he&lt;ans)
+          {
+              ans=he;w=0;int a=j;
+              while(a!=i){xx[++w]=a;a=fa[i][a];}
+              xx[++w]=i;xx[++w]=k;
+          }
+      }
+      for(int i=1;i&lt;=n;i++)for(int j=1;j&lt;=n;j++)
+      {
+          he=dis[i][k]+dis[k][j];
+          if(he&lt;dis[i][j])
+          {
+              dis[i][j]=he;
+              fa[i][j]=fa[k][j];
+          }
+      }
+  }
+}
+int main()
+{
+//    freopen(&quot;trip7.in&quot;,&quot;r&quot;,stdin);
+  scanf(&quot;%d%d&quot;,&amp;n,&amp;m);int a,b;ll c;
+  for(int i=1;i&lt;=n;i++)for(int j=1;j&lt;=n;j++)
+  {
+      map[i][j]=dis[i][j]=inf;
+      fa[i][j]=i;
+  }
+  for(int i=1;i&lt;=m;i++)
+  {
+      scanf(&quot;%d%d%lld&quot;,&amp;a,&amp;b,&amp;c);c=min(c,dis[a][b]);
+      dis[a][b]=dis[b][a]=c;
+      map[a][b]=map[b][a]=dis[a][b];
+  }
+  floyd();
+  if(ans==inf)
+  {
+      printf(&quot;No solution.\n&quot;);
+      return 0;
+  }
+  for(int i=1;i&lt;=w;i++)printf(&quot;%d &quot;,xx[i]);
+  return 0;
+}
+</code></pre>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMzI0MDMzOTkzXX0=
--->
+--></li>
+</ul>
+
         
     
 
@@ -915,6 +973,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -925,6 +987,10 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
     
 </script>
 

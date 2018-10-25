@@ -496,7 +496,67 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>方法同二维,但状态由二维变成三维<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e4</span>+<span class="number">10</span>,maxm=<span class="number">243</span>,inf=<span class="number">1e6</span>;</span><br><span class="line"><span class="keyword">int</span> mod[<span class="number">6</span>]=&#123;<span class="number">0</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">27</span>,<span class="number">81</span>,<span class="number">243</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n,m,p,f[maxn][maxm],s[maxn];</span><br><span class="line"><span class="keyword">bool</span> use[maxm];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ok</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> b=a%<span class="number">3</span>;a/=<span class="number">3</span>;<span class="keyword">int</span> c=a%<span class="number">3</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b==c)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		b=c;a/=<span class="number">3</span>;c=a%<span class="number">3</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">can</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> x=a%<span class="number">3</span>,y=b%<span class="number">3</span>;</span><br><span class="line">		<span class="keyword">if</span>(x==y)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		a/=<span class="number">3</span>;b/=<span class="number">3</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;p);<span class="keyword">int</span> a;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);s[p]*=<span class="number">3</span>;s[p]+=a<span class="number">-1</span>;&#125;</span><br><span class="line">	<span class="keyword">if</span>(!ok(s[p]))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"0\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;mod[m];i++)<span class="keyword">if</span>(ok(i))use[i]=<span class="literal">true</span>;;</span><br><span class="line">	<span class="keyword">if</span>(p==<span class="number">1</span>) f[<span class="number">1</span>][s[p]]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;mod[m];i++)<span class="keyword">if</span>(use[i])f[<span class="number">1</span>][i]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i==p)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;mod[m];j++)<span class="keyword">if</span>(use[j]&amp;&amp;can(s[p],j))</span><br><span class="line">			&#123;f[i][s[p]]+=f[i<span class="number">-1</span>][j];f[i][s[p]]%=inf;&#125;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;mod[m];j++)<span class="keyword">if</span>(use[j])</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;mod[m];k++)<span class="keyword">if</span>(use[k]&amp;&amp;can(j,k))</span><br><span class="line">		&#123;</span><br><span class="line">			f[i][j]+=f[i<span class="number">-1</span>][k];</span><br><span class="line">			f[i][j]%=inf;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;mod[m];i++)<span class="keyword">if</span>(use[i])&#123;ans+=f[n][i];ans%=inf;&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>方法同二维,但状态由二维变成三维</p>
+<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cstring&gt;
+using namespace std;
+const int maxn=1e4+10,maxm=243,inf=1e6;
+int mod[6]={0,3,9,27,81,243};
+int n,m,p,f[maxn][maxm],s[maxn];
+bool use[maxm];
+bool ok(int a)
+{
+    int b=a%3;a/=3;int c=a%3;
+    for(int i=2;i&lt;=m;i++)
+    {
+        if(b==c)return false;
+        b=c;a/=3;c=a%3;
+    }
+    return true;
+}
+bool can(int a,int b)
+{
+    for(int i=1;i&lt;=m;i++)
+    {
+        int x=a%3,y=b%3;
+        if(x==y)return false;
+        a/=3;b/=3;
+    }
+    return true;
+}
+int main()
+{
+    scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;p);int a;
+    for(int i=1;i&lt;=m;i++){scanf(&quot;%d&quot;,&amp;a);s[p]*=3;s[p]+=a-1;}
+    if(!ok(s[p]))
+    {
+        printf(&quot;0\n&quot;);
+        return 0;
+    }
+    for(int i=0;i&lt;mod[m];i++)if(ok(i))use[i]=true;;
+    if(p==1) f[1][s[p]]=1;
+    else for(int i=0;i&lt;mod[m];i++)if(use[i])f[1][i]=1;
+    for(int i=2;i&lt;=n;i++)
+    {
+        if(i==p)
+        {
+            for(int j=0;j&lt;mod[m];j++)if(use[j]&amp;&amp;can(s[p],j))
+            {f[i][s[p]]+=f[i-1][j];f[i][s[p]]%=inf;}
+            continue;
+        }
+        for(int j=0;j&lt;mod[m];j++)if(use[j])
+        for(int k=0;k&lt;mod[m];k++)if(use[k]&amp;&amp;can(j,k))
+        {
+            f[i][j]+=f[i-1][k];
+            f[i][j]%=inf;
+        }
+    }
+    int ans=0;for(int i=0;i&lt;mod[m];i++)if(use[i]){ans+=f[n][i];ans%=inf;}
+    printf(&quot;%d\n&quot;,ans);
+    return 0;
+}
+</code></pre>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTczNzU4OTI4M119
 -->
@@ -912,6 +972,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -922,6 +986,10 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
     
 </script>
 

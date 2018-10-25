@@ -500,7 +500,60 @@
 <li>求割点</li>
 <li>没了</li>
 </ul>
-<p>非常裸的一道割点<br>读入有点恶心<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">200</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,head[maxn],num,root,ans;</span><br><span class="line"><span class="keyword">char</span> str[maxn&lt;&lt;<span class="number">2</span>];</span><br><span class="line"><span class="keyword">bool</span> use[maxn];</span><br><span class="line"><span class="keyword">int</span> dfn[maxn],low[maxn],input;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fy</span>&#123;</span><span class="keyword">int</span> to,next;&#125;q[maxn*maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;q[++num]=(fy)&#123;b,head[a]&#125;;head[a]=num;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">tar</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dfn[a]=low[a]=++input;<span class="keyword">int</span> ch=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=head[a];i;i=q[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> b=q[i].to;</span><br><span class="line">		<span class="keyword">if</span>(!dfn[b])</span><br><span class="line">		&#123;</span><br><span class="line">			ch++;</span><br><span class="line">			tar(b,a);low[a]=min(low[a],low[b]);</span><br><span class="line">			<span class="keyword">if</span>((root==a&amp;&amp;ch&gt;<span class="number">1</span>)||(root!=a&amp;&amp;dfn[a]&lt;=low[b]))</span><br><span class="line">			<span class="keyword">if</span>(!use[a])use[a]=<span class="literal">true</span>,ans++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b!=fa) low[a]=min(low[a],dfn[b]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)==<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">0</span>)<span class="keyword">break</span>;<span class="keyword">int</span> a,b;</span><br><span class="line">		<span class="built_in">memset</span>(head,<span class="number">0</span>,<span class="keyword">sizeof</span> head);num=<span class="number">0</span>;ans=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">memset</span>(dfn,<span class="number">0</span>,<span class="keyword">sizeof</span> dfn);<span class="built_in">memset</span>(low,<span class="number">0</span>,<span class="keyword">sizeof</span> low);input=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">memset</span>(use,<span class="literal">false</span>,<span class="keyword">sizeof</span> use);</span><br><span class="line">		<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a)&amp;&amp;a)</span><br><span class="line">		&#123;</span><br><span class="line">			gets(str);<span class="keyword">int</span> l=<span class="built_in">strlen</span>(str);<span class="keyword">int</span> x=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">while</span>(x&lt;l)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">while</span>(str[x]&lt;<span class="string">'0'</span>||str[x]&gt;<span class="string">'9'</span>)x++;</span><br><span class="line">				<span class="keyword">int</span> b=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">while</span>(str[x]&gt;=<span class="string">'0'</span>&amp;&amp;str[x]&lt;=<span class="string">'9'</span>)</span><br><span class="line">				&#123;b*=<span class="number">10</span>;b+=str[x]-<span class="string">'0'</span>;x++;&#125;</span><br><span class="line">				add(a,b);add(b,a);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">if</span>(!dfn[i])&#123;root=i;tar(i,<span class="number">0</span>);&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>非常裸的一道割点<br>读入有点恶心</p>
+<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+const int maxn=200;
+int n,m,head[maxn],num,root,ans;
+char str[maxn&lt;&lt;2];
+bool use[maxn];
+int dfn[maxn],low[maxn],input;
+struct fy{int to,next;}q[maxn*maxn];
+void add(int a,int b){q[++num]=(fy){b,head[a]};head[a]=num;}
+void tar(int a,int fa)
+{
+    dfn[a]=low[a]=++input;int ch=0;
+    for(int i=head[a];i;i=q[i].next)
+    {
+        int b=q[i].to;
+        if(!dfn[b])
+        {
+            ch++;
+            tar(b,a);low[a]=min(low[a],low[b]);
+            if((root==a&amp;&amp;ch&gt;1)||(root!=a&amp;&amp;dfn[a]&lt;=low[b]))
+            if(!use[a])use[a]=true,ans++;
+        }
+        else if(b!=fa) low[a]=min(low[a],dfn[b]);
+    }
+}
+int main()
+{
+    while(scanf(&quot;%d&quot;,&amp;n)==1)
+    {
+        if(n==0)break;int a,b;
+        memset(head,0,sizeof head);num=0;ans=0;
+        memset(dfn,0,sizeof dfn);memset(low,0,sizeof low);input=0;
+        memset(use,false,sizeof use);
+        while(scanf(&quot;%d&quot;,&amp;a)&amp;&amp;a)
+        {
+            gets(str);int l=strlen(str);int x=0;
+            while(x&lt;l)
+            {
+                while(str[x]&lt;&#39;0&#39;||str[x]&gt;&#39;9&#39;)x++;
+                int b=0;
+                while(str[x]&gt;=&#39;0&#39;&amp;&amp;str[x]&lt;=&#39;9&#39;)
+                {b*=10;b+=str[x]-&#39;0&#39;;x++;}
+                add(a,b);add(b,a);
+            }
+        }
+        for(int i=1;i&lt;=n;i++)if(!dfn[i]){root=i;tar(i,0);}
+        printf(&quot;%d\n&quot;,ans);
+    }
+    return 0;
+}
+</code></pre>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTgzMjk1MjM5Ml19
 -->
@@ -916,6 +969,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -926,6 +983,10 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
     
 </script>
 
