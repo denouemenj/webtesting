@@ -511,31 +511,7 @@
 <blockquote>
 <p><strong>我们设人与灯低的距离为$x$,墙上的部分长$y$,用$x$表示出$L$和$y$,通过均值不等式求解最大值</strong></p>
 </blockquote>
-<pre><code class="lang-cpp">#include&lt;cmath&gt;
-#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-int t;
-double H,h,D;
-double cal()
-{
-    double x=sqrt((H-h)*D);//均值不等式成立条件
-    x=min(x,D);//x右边界
-    x=max(x,(D*H-D*h)/H);//x左边界
-    return D+H-x-(H-h)*D/x;
-}
-int main()
-{
-    scanf(&quot;%d&quot;,&amp;t);
-    while(t--)
-    {
-        scanf(&quot;%lf%lf%lf&quot;,&amp;H,&amp;h,&amp;D);
-        printf(&quot;%.3lf\n&quot;,cal());
-    }
-    return 0;
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t;</span><br><span class="line"><span class="keyword">double</span> H,h,D;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> x=<span class="built_in">sqrt</span>((H-h)*D);<span class="comment">//均值不等式成立条件</span></span><br><span class="line">	x=min(x,D);<span class="comment">//x右边界</span></span><br><span class="line">	x=max(x,(D*H-D*h)/H);<span class="comment">//x左边界</span></span><br><span class="line">	<span class="keyword">return</span> D+H-x-(H-h)*D/x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lf%lf%lf"</span>,&amp;H,&amp;h,&amp;D);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%.3lf\n"</span>,cal());</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTE5MTM4MzgyMThdfQ==
 -->

@@ -496,36 +496,7 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>同骑士</p>
-<pre><code class="lang-cpp">#include&lt;cstdio&gt;
-#include&lt;algorithm&gt;
-#include&lt;cstring&gt;
-using namespace std;
-int n,m,map[14][14],inf=1e8,f[14][1&lt;&lt;12][14*14],num[1&lt;&lt;12],s[14];
-bool use[1&lt;&lt;12];
-int main()
-{
-    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);int a;
-    for(int i=1;i&lt;=n;i++)
-    {
-        for(int j=1;j&lt;=m;j++){scanf(&quot;%d&quot;,&amp;a);s[i]&lt;&lt;=1;s[i]|=(!a);}
-    }
-    for(int i=0;i&lt;(1&lt;&lt;m);i++)if(!(i&amp;(i&lt;&lt;1)))
-    {
-        use[i]=true;int t=i;
-        while(t){if(t&amp;1)num[i]++;t&gt;&gt;=1;}
-        if(!(i&amp;s[1]))f[1][i][num[i]]=1;
-    }
-    for(int i=2;i&lt;=n;i++)
-    for(int j=0;j&lt;(1&lt;&lt;m);j++)if(use[j]&amp;&amp;!(j&amp;s[i]))
-    for(int k=0;k&lt;(1&lt;&lt;m);k++)if(use[k]&amp;&amp;!(k&amp;s[i-1])&amp;&amp;!(j&amp;k))
-    for(int l=0;l&lt;=n*m;l++)f[i][j][num[j]+l]+=f[i-1][k][l];
-    int ans=0;
-    for(int i=0;i&lt;(1&lt;&lt;m);i++)for(int j=0;j&lt;=n*m;j++)ans+=f[n][i][j];
-    printf(&quot;%d\n&quot;,ans%inf);
-    return 0;
-}
-</code></pre>
+        <p>同骑士<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,<span class="built_in">map</span>[<span class="number">14</span>][<span class="number">14</span>],inf=<span class="number">1e8</span>,f[<span class="number">14</span>][<span class="number">1</span>&lt;&lt;<span class="number">12</span>][<span class="number">14</span>*<span class="number">14</span>],num[<span class="number">1</span>&lt;&lt;<span class="number">12</span>],s[<span class="number">14</span>];</span><br><span class="line"><span class="keyword">bool</span> use[<span class="number">1</span>&lt;&lt;<span class="number">12</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);<span class="keyword">int</span> a;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)&#123;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);s[i]&lt;&lt;=<span class="number">1</span>;s[i]|=(!a);&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;m);i++)<span class="keyword">if</span>(!(i&amp;(i&lt;&lt;<span class="number">1</span>)))</span><br><span class="line">	&#123;</span><br><span class="line">		use[i]=<span class="literal">true</span>;<span class="keyword">int</span> t=i;</span><br><span class="line">		<span class="keyword">while</span>(t)&#123;<span class="keyword">if</span>(t&amp;<span class="number">1</span>)num[i]++;t&gt;&gt;=<span class="number">1</span>;&#125;</span><br><span class="line">		<span class="keyword">if</span>(!(i&amp;s[<span class="number">1</span>]))f[<span class="number">1</span>][i][num[i]]=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;(<span class="number">1</span>&lt;&lt;m);j++)<span class="keyword">if</span>(use[j]&amp;&amp;!(j&amp;s[i]))</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;(<span class="number">1</span>&lt;&lt;m);k++)<span class="keyword">if</span>(use[k]&amp;&amp;!(k&amp;s[i<span class="number">-1</span>])&amp;&amp;!(j&amp;k))</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">0</span>;l&lt;=n*m;l++)f[i][j][num[j]+l]+=f[i<span class="number">-1</span>][k][l];</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;m);i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n*m;j++)ans+=f[n][i][j];</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans%inf);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbODgxODcxMTA0XX0=
 -->

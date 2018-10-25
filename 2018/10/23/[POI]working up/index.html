@@ -511,46 +511,14 @@
 <p><strong>读完题,你是否有想到<code>方格取数</code><br>做法非常简单也非常暴力,开四个二维数组分别记录从四个角出发的最优解,然后$n^2$枚举合法的点,更新$ans$<br>因为只相遇一次,所以两人相遇时只有两种直线走法,不会转弯</strong></p>
 <ul>
 <li>注意下标,容易迷糊</li>
-<li>记得开<code>long long</code><h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding:"></a>Coding:</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-#define ll long long
-using namespace std;
-const int maxn=1010;
-ll mp[maxn][maxn],f1[maxn][maxn];
-ll f2[maxn][maxn],f3[maxn][maxn];
-ll f4[maxn][maxn];
-int n,m;
-int main()
-{
-  scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
-  for(int i=1;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)scanf(&quot;%lld&quot;,&amp;mp[i][j]);
-  for(int i=1;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)
-  f1[i][j]=max(f1[i-1][j],f1[i][j-1])+mp[i][j];
-  for(int i=n;i;i--)for(int j=m;j;j--)
-  f2[i][j]=max(f2[i+1][j],f2[i][j+1])+mp[i][j];
-  for(int i=1;i&lt;=n;i++)for(int j=m;j;j--)
-  f3[i][j]=max(f3[i-1][j],f3[i][j+1])+mp[i][j];
-  for(int i=n;i;i--)for(int j=1;j&lt;=m;j++)
-  f4[i][j]=max(f4[i+1][j],f4[i][j-1])+mp[i][j];
-  //暴力美学
-  ll ans=0;
-  for(int i=2;i&lt;n;i++)for(int j=2;j&lt;m;j++)
-  {
-      ans=max(ans,f1[i][j-1]+f2[i][j+1]+f3[i-1][j]+f4[i+1][j]);
-      ans=max(ans,f1[i-1][j]+f2[i+1][j]+f3[i][j+1]+f4[i][j-1]);
-  }
-  printf(&quot;%lld\n&quot;,ans);
-  return 0;
-}
-</code></pre>
+<li>记得开<code>long long</code><h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding:"></a>Coding:</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1010</span>;</span><br><span class="line">ll mp[maxn][maxn],f1[maxn][maxn];</span><br><span class="line">ll f2[maxn][maxn],f3[maxn][maxn];</span><br><span class="line">ll f4[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;mp[i][j]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">	f1[i][j]=max(f1[i<span class="number">-1</span>][j],f1[i][j<span class="number">-1</span>])+mp[i][j];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n;i;i--)<span class="keyword">for</span>(<span class="keyword">int</span> j=m;j;j--)</span><br><span class="line">	f2[i][j]=max(f2[i+<span class="number">1</span>][j],f2[i][j+<span class="number">1</span>])+mp[i][j];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=m;j;j--)</span><br><span class="line">	f3[i][j]=max(f3[i<span class="number">-1</span>][j],f3[i][j+<span class="number">1</span>])+mp[i][j];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n;i;i--)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">	f4[i][j]=max(f4[i+<span class="number">1</span>][j],f4[i][j<span class="number">-1</span>])+mp[i][j];</span><br><span class="line">	<span class="comment">//暴力美学</span></span><br><span class="line">	ll ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;n;i++)<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;m;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		ans=max(ans,f1[i][j<span class="number">-1</span>]+f2[i][j+<span class="number">1</span>]+f3[i<span class="number">-1</span>][j]+f4[i+<span class="number">1</span>][j]);</span><br><span class="line">		ans=max(ans,f1[i<span class="number">-1</span>][j]+f2[i+<span class="number">1</span>][j]+f3[i][j+<span class="number">1</span>]+f4[i][j<span class="number">-1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMjAxNTEzOTAxMiwtMjExMjg0OTMyMCw4Mz
 ExMjc2MzhdfQ==
---></li>
-</ul>
-</blockquote>
-
+-->
         
     
 

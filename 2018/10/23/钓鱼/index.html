@@ -513,46 +513,7 @@
 <ul>
 <li>注意时间的转化</li>
 </ul>
-<pre><code class="lang-cpp">#include&lt;cstdio&gt;
-#include&lt;queue&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-const int maxn=110;
-int n,h,dis[maxn],ans,bns;
-int s[maxn],ss[maxn];
-struct ffy
-{
-    int x,y;
-    bool operator&lt;(const ffy&amp;a)
-    const{return x&lt;a.x;};
-};
-priority_queue&lt;ffy&gt;qq;
-int main()
-{
-    scanf(&quot;%d%d&quot;,&amp;n,&amp;h);h*=12;
-    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;s[i]);
-    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;ss[i]);
-    for(int i=2;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;dis[i]);
-    for(int i=1;i&lt;=n;i++)
-    {
-        h-=dis[i];int time=0;bns=0;
-        for(int j=1;j&lt;=i;j++)qq.push((ffy){s[j],j});
-        while(++time&lt;=h&amp;&amp;!qq.empty())
-        {
-            int a=qq.top().x;
-            int b=qq.top().y;
-            if(a&lt;=0)break;
-            bns+=a;
-            qq.pop();
-            qq.push((ffy){a-ss[b],b});
-        }
-        ans=max(ans,bns);
-    }
-    printf(&quot;%d\n&quot;,ans);
-    return 0;
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">110</span>;</span><br><span class="line"><span class="keyword">int</span> n,h,dis[maxn],ans,bns;</span><br><span class="line"><span class="keyword">int</span> s[maxn],ss[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">ffy</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> ffy&amp;a)</span><br><span class="line">	<span class="keyword">const</span>&#123;<span class="keyword">return</span> x&lt;a.x;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line">priority_queue&lt;ffy&gt;qq;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;h);h*=<span class="number">12</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;s[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;ss[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;dis[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		h-=dis[i];<span class="keyword">int</span> time=<span class="number">0</span>;bns=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)qq.push((ffy)&#123;s[j],j&#125;);</span><br><span class="line">		<span class="keyword">while</span>(++time&lt;=h&amp;&amp;!qq.empty())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> a=qq.top().x;</span><br><span class="line">			<span class="keyword">int</span> b=qq.top().y;</span><br><span class="line">			<span class="keyword">if</span>(a&lt;=<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">			bns+=a;</span><br><span class="line">			qq.pop();</span><br><span class="line">			qq.push((ffy)&#123;a-ss[b],b&#125;);</span><br><span class="line">		&#125;</span><br><span class="line">		ans=max(ans,bns);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMzYyNzgzMzY1XX0=
 -->

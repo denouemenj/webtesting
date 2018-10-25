@@ -514,33 +514,7 @@
 </li>
 </ul>
 </blockquote>
-<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding:"></a>Coding:</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-const int maxn=1010;
-int n;
-struct fy{int x,y,w;}q[maxn];
-int main()
-{
-    scanf(&quot;%d&quot;,&amp;n);
-    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;q[i].x);
-    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;q[i].y);
-    for(int i=1;i&lt;=n;i++)q[i].w=i;
-    for(int i=1;i&lt;n;++i)for(int j=i+1;j&lt;=n;++j)
-    if(min(q[i].x,q[j].y)&gt;min(q[i].y,q[j].x)) swap(q[i],q[j]);
-    int ans=0,bns=0;
-    for(int i=1;i&lt;=n;i++)
-    {
-        ans+=q[i].x;
-        bns=max(bns,ans);
-        bns+=q[i].y;
-    }
-    printf(&quot;%d\n&quot;,bns);
-    for(int i=1;i&lt;=n;i++)printf(&quot;%d &quot;,q[i].w);
-    return 0;
-}
-</code></pre>
+<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding:"></a>Coding:</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">fy</span>&#123;</span><span class="keyword">int</span> x,y,w;&#125;q[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;q[i].x);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;q[i].y);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)q[i].w=i;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;++i)<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;=n;++j)</span><br><span class="line">	<span class="keyword">if</span>(min(q[i].x,q[j].y)&gt;min(q[i].y,q[j].x)) swap(q[i],q[j]);</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>,bns=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ans+=q[i].x;</span><br><span class="line">		bns=max(bns,ans);</span><br><span class="line">		bns+=q[i].y;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,bns);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">printf</span>(<span class="string">"%d "</span>,q[i].w);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTE1NzQ2OTcwNTJdfQ==
 -->

@@ -514,24 +514,7 @@
 <li>$f[0][0]=1$</li>
 <li>$j&gt;=k$</li>
 </ul>
-<pre><code class="lang-cpp">#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-const int maxn=110,mod=1e6+7;
-int n,m,f[maxn][maxn],a[maxn];
-int main()
-{
-    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);f[0][0]=1;
-    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;a[i]);
-    for(int i=1;i&lt;=n;i++)
-    for(int j=0;j&lt;=m;j++)
-    for(int k=0;k&lt;=a[i];k++)if(j&gt;=k)
-    f[i][j]=(f[i][j]+f[i-1][j-k])%mod;
-    printf(&quot;%d\n&quot;,f[n][m]);
-    return 0;
-}
-</code></pre>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">110</span>,mod=<span class="number">1e6</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,f[maxn][maxn],a[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);f[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=m;j++)</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;=a[i];k++)<span class="keyword">if</span>(j&gt;=k)</span><br><span class="line">	f[i][j]=(f[i][j]+f[i<span class="number">-1</span>][j-k])%mod;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,f[n][m]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTI1NjgwMDk5OF19
 -->
