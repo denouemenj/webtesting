@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>Material主题</title>
+      <link href="/2018/10/28/Hexo%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/"/>
+      <url>/2018/10/28/Hexo%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Material主题"><a href="#Material主题" class="headerlink" title="Material主题"></a>Material主题</h1><p><a href="https://github.com/EasyHexo/Easy-Hexo" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Maintained--by-EasyHexo-42B983.svg?longCache=true&amp;style=flat-square" alt=""></a><br><a href="https://github.com/ffdy" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Author-ffy-800080.svg?longCache=true&amp;style=flat-square" alt=""></a></p><p>:::tip<br>注意，这里介绍的Material主题是1.5.2的版本，新手不建议使用最新的版本，因为好像有很多Bug（作者最近失联了）<br>:::</p><p><a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="noopener">Material主题地址</a></p><h2 id="Material主题演示"><a href="#Material主题演示" class="headerlink" title="Material主题演示"></a>Material主题演示</h2><p><img src="https://camo.githubusercontent.com/1e9260f301fe915fb3e4826831fde943229523cb/68747470733a2f2f692e6c6f6c692e6e65742f323031372f30392f30372f353962313336376637366664622e706e67" alt="演示"></p><h2 id="下载Material主题"><a href="#下载Material主题" class="headerlink" title="下载Material主题"></a>下载Material主题</h2><ol><li><p>进入 Github，下载 <a href="https://github.com/viosey/hexo-theme-material/releases" target="_blank" rel="noopener">Material</a> 主题 1.5.2 的版本。</p></li><li><p>将下载下来的主题解压，将解压的文件夹重命名为 <code>Material</code>。</p></li><li><p>将这个文件夹放到你的博客根目录下的 themes 文件夹下。</p></li></ol><p><img src="https://s1.ax1x.com/2018/10/27/i6XOpT.png" alt="i6XOpT.png"></p><h2 id="启用Material主题"><a href="#启用Material主题" class="headerlink" title="启用Material主题"></a>启用Material主题</h2><p>:::tip<br>这里有两个 <code>_config.yml</code> 文件，一个位于博客根目录,另一个位于主题文件夹下，下面分别叫他们<code>根 _config.yml</code>文件和<code>主题 _config.yml</code>文件。<br>:::</p><p>进入Material文件夹,将<code>_config.template.yml</code> 重命名为 <code>_config.yml</code><br>（这个 <code>_config.yml</code> 文件是 <code>主题_config.yml</code> 文件）</p><p>:::tip<br>建议你将 <code>_config.template.yml</code> 文件备份，防止一些不可描述的的问题。<br>:::</p><p><img src="https://s1.ax1x.com/2018/10/27/i6x8mQ.png" alt="i6x8mQ.png"></p><p>回到主题根目录，打开<code>根 _config.yml</code>文件，找到 <code>theme</code> 属性</p><p><img src="https://s1.ax1x.com/2018/10/27/i6zA3V.png" alt="i6zA3V.png"><br><img src="https://s1.ax1x.com/2018/10/27/i6Lih8.md.png" alt="i6Lih8.md.png"></p><p>将后面的字段改为你刚刚改的主题文件夹的名字，比如我的<code>Material</code>。<br>:::tip</p><p>在 yml 中，冒号后面必须加一个空格，否则会报错。</p><p>:::</p><p>OK，Material 主题就正式启用了下面，就是见证奇迹的时候了，有没有一点小激动呢?</p><p>回到博客根目录，打开终端，输入:</p><pre><code class="lang-brash">$ hexo clean</code></pre><p>回车</p><p><img src="https://s1.ax1x.com/2018/10/27/icPF6P.png" alt="icPF6P.png"></p><p>完美！！！:tada:</p><p>好，再输入:</p><pre><code class="lang-brash">$ hexo g</code></pre><p>回车</p><p><img src="https://s1.ax1x.com/2018/10/27/icPQlq.png" alt="icPQlq.png"></p><p>完全OK！！！:tada:</p><p>输入:</p><pre><code class="lang-brash">$ hexo s</code></pre><p>回车</p><p><img src="https://s1.ax1x.com/2018/10/27/icPqhj.png" alt="icPqhj.png"></p><p>打开浏览器输入<code>http://localhost:4000</code>，即可看见你博客的样子。</p><p><img src="https://s1.ax1x.com/2018/10/27/icPW9A.png" alt="icPW9A.png"><br><img src="https://s1.ax1x.com/2018/10/27/icP2hd.png" alt="icP2hd.png"></p><p>点片文章试试，如果没问题，那么恭喜你！<br>:tada: :tada: :tada: :tada:</p><p>如果你想让你的Blog马力全开,那么请继续往下看</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>本站公告</title>
       <link href="/2018/10/26/%E6%9C%AC%E7%AB%99%E5%85%AC%E5%91%8A/"/>
       <url>/2018/10/26/%E6%9C%AC%E7%AB%99%E5%85%AC%E5%91%8A/</url>
@@ -817,11 +828,11 @@
     </entry>
     
     <entry>
-      <title>Picnic Planning</title>
-      <link href="/2018/10/23/Picnic%20Planning/"/>
-      <url>/2018/10/23/Picnic%20Planning/</url>
+      <title>HDU warm up</title>
+      <link href="/2018/10/23/HDU%20warm%20up/"/>
+      <url>/2018/10/23/HDU%20warm%20up/</url>
       
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>矮人虽小却喜欢乘坐巨大的轿车，车大到能够装下不管多少矮人。某天，N(N≤20)个矮人打算到野外聚餐。为了集中到聚餐地点，矮人A 要么开车到矮人B 家中，留下自己的轿车在矮人B 家，然后乘坐B 的轿车同行；要么直接开车到聚餐地点，并将车停放在聚餐地。尽管矮人的家非常大，能够停放无数量轿车，可是聚餐地点却最多仅仅能停放K 辆轿车。给你一张加权无向图，描写叙述了N 个矮人的家和聚餐地点，求出全部矮人开车最短总路程</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>题本身是一道$k$限制生成树裸题,但那东西太迷幻,不会.因为数据规模比较小,暴力能过,所以也没学.这里用的是状压$+Prim$.</strong><br><strong>因为根节点只能连不大于$k$条边,所以我们暴力枚举根节点能连的边的状态,再将剩下的点跑最小生成树,更新最小代价.</strong></p></blockquote><ul><li>用$map$映射每个人的名字</li><li>可能有重边,需要更新两点之间的最短距离</li><li>这里我们用邻接矩阵存边,用$Prim$跑最小生成树,不然时间复杂度过不去</li><li>每次生成树必须加够$N-1$条边后才能更新$ans$</li><li>输出应遵循题目规则</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;map&gt;#include&lt;cstring&gt;#include&lt;string&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=430;int n,k,num,cnt;int fa[22],ans,bns;map&lt; string , int &gt;mm;int ss[22][22];struct fy{    int from,to,d;    bool operator&lt;(const fy&amp;a)const{return d&lt;a.d;};}q[maxn];char str[30],str1[30];void add(int a,int b,int c){q[++num]=(fy){a,b,c};}int can(int a){    bns=0;    int he=0,w=1;    while(a)    {        ++w;        if(a&amp;1)        {            he++;fa[w]=1;            if(ss[1][w]==ss[0][0])return 0;            bns+=ss[1][w];        }        a&gt;&gt;=1;    }    if(he&lt;=k)return he;    return 0;}int find(int a){    while(a!=fa[a])a=fa[a]=fa[fa[a]];    return a;}void ku(int x)//披着羊皮的狼(滑稽){    if(!x)return;    for(int i=1;i&lt;=num;i++)    {        if(q[i].from==1||q[i].to==1)continue;        int a=find(q[i].from);        int b=find(q[i].to);        if(a!=b)        {            if(x==(cnt-1))break;            fa[a]=b;            x++;            bns+=q[i].d;            if(bns&gt;ans)return;        }    }    if(x==(cnt-1))ans=min(ans,bns);}int main(){    int t;    scanf(&quot;%d&quot;,&amp;t);    while(t--)    {        mm.clear();cnt=0;num=0;        scanf(&quot;%d&quot;,&amp;n);memset(ss,0x3f,sizeof ss);        mm[&quot;Park&quot;]=++cnt;ans=ss[0][0];        for(int i=1;i&lt;=n;i++)        {            int a,b,c;            scanf(&quot;%s%s%d&quot;,str,str1,&amp;c);            if(!mm[str])mm[str]=++cnt;            if(!mm[str1])mm[str1]=++cnt;            a=mm[str];b=mm[str1];            ss[a][b]=min(ss[a][b],c);            ss[b][a]=ss[a][b];        }        scanf(&quot;%d&quot;,&amp;k);        for(int i=1;i&lt;=cnt;i++)for(int j=i+1;j&lt;=cnt;j++)        if(ss[i][j]&amp;&amp;(ss[i][j]!=ss[0][0]))add(i,j,ss[i][j]);        sort(q+1,q+1+num);        for(int s=0;s&lt;(1&lt;&lt;(cnt-1));s++)//枚举根节点的状态        {            for(int i=1;i&lt;=cnt;i++)fa[i]=i;            ku(can(s));        }        printf(&quot;Total miles driven: %d\n&quot;,ans);//输出    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTIwNTg2NDcyMTddfQ==-->]]></content>
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有一张联通的无向图,再加一条无向边后最少的桥的数量</p></blockquote><ul><li>求桥时将边双缩点,记录桥数 <strong>ans</strong></li><li>建树,求最长路长度 <strong>bns</strong></li><li>答案为 <strong>ans-bns</strong> </li><li>多组数据,注意初始化</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=2e5+10,maxm=1e6+10;int n,m,head[maxn],num,cnt,bi,ans;int dfn[maxn],low[maxn],input,fa[maxn],pa[maxn];int xx[maxn],w,headd[maxn],numm,mdep,ww;struct fy{int from,to,next,h;}q[maxm&lt;&lt;1];struct ffy{int to,next;}qq[maxm&lt;&lt;1];void add(int a,int b){    q[++num]=(fy){a,b,head[a],++bi};head[a]=num;    q[++num]=(fy){b,a,head[b],bi};head[b]=num;}void addd(int a,int b){qq[++numm]=(ffy){b,headd[a]};headd[a]=numm;}void tar(int a){    dfn[a]=low[a]=++input;xx[++w]=a;    for(int i=head[a];i;i=q[i].next)    {        int b=q[i].to;if(q[i].h==pa[a])continue;        if(!dfn[b])        {            pa[b]=q[i].h;tar(b);            low[a]=min(low[a],low[b]);            if(dfn[a]&lt;low[b])ans++;        }        else low[a]=min(low[a],dfn[b]);    }    if(low[a]==dfn[a])    {        ++cnt;        while(xx[w+1]!=a)        {            fa[xx[w]]=cnt;            w--;        }    }}void dfs(int a,int fat,int dep){    if(dep&gt;mdep)    {        mdep=dep;        ww=a;    }    for(int i=headd[a];i;i=qq[i].next)    {        int b=qq[i].to;if(b==fat)continue;        dfs(b,a,dep+1);    }}int main(){    int a,b;    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)    {        if(n==0&amp;&amp;m==0)break;        memset(head,0,sizeof head);memset(dfn,0,sizeof dfn);        memset(low,0,sizeof low);memset(pa,0,sizeof pa);        memset(headd,0,sizeof headd);        num=0;cnt=0;bi=0;w=0;input=0;numm=0;ans=0;ww=0;        for(int i=1;i&lt;=m;i++)        {scanf(&quot;%d%d&quot;,&amp;a,&amp;b);add(a,b);}        tar(1);        for(int i=1;i&lt;=num;i++)        {            a=fa[q[i].from];b=fa[q[i].to];            if(a!=b)addd(a,b);        }        mdep=0;dfs(1,0,0);        mdep=0;dfs(ww,0,0);        printf(&quot;%d\n&quot;,ans-mdep);    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTE1OTc1ODc0MDddfQ==-->]]></content>
       
       
       <categories>
@@ -835,11 +846,11 @@
       
         <tags>
             
-            <tag> 生成树 </tag>
+            <tag> 桥 </tag>
             
-            <tag> 状压 </tag>
+            <tag> 边双联通分量 </tag>
             
-            <tag> K限制生成树 </tag>
+            <tag> 树的直径 </tag>
             
         </tags>
       
@@ -1424,11 +1435,11 @@
     </entry>
     
     <entry>
-      <title>HDU warm up</title>
-      <link href="/2018/10/23/HDU%20warm%20up/"/>
-      <url>/2018/10/23/HDU%20warm%20up/</url>
+      <title>Picnic Planning</title>
+      <link href="/2018/10/23/Picnic%20Planning/"/>
+      <url>/2018/10/23/Picnic%20Planning/</url>
       
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有一张联通的无向图,再加一条无向边后最少的桥的数量</p></blockquote><ul><li>求桥时将边双缩点,记录桥数 <strong>ans</strong></li><li>建树,求最长路长度 <strong>bns</strong></li><li>答案为 <strong>ans-bns</strong> </li><li>多组数据,注意初始化</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=2e5+10,maxm=1e6+10;int n,m,head[maxn],num,cnt,bi,ans;int dfn[maxn],low[maxn],input,fa[maxn],pa[maxn];int xx[maxn],w,headd[maxn],numm,mdep,ww;struct fy{int from,to,next,h;}q[maxm&lt;&lt;1];struct ffy{int to,next;}qq[maxm&lt;&lt;1];void add(int a,int b){    q[++num]=(fy){a,b,head[a],++bi};head[a]=num;    q[++num]=(fy){b,a,head[b],bi};head[b]=num;}void addd(int a,int b){qq[++numm]=(ffy){b,headd[a]};headd[a]=numm;}void tar(int a){    dfn[a]=low[a]=++input;xx[++w]=a;    for(int i=head[a];i;i=q[i].next)    {        int b=q[i].to;if(q[i].h==pa[a])continue;        if(!dfn[b])        {            pa[b]=q[i].h;tar(b);            low[a]=min(low[a],low[b]);            if(dfn[a]&lt;low[b])ans++;        }        else low[a]=min(low[a],dfn[b]);    }    if(low[a]==dfn[a])    {        ++cnt;        while(xx[w+1]!=a)        {            fa[xx[w]]=cnt;            w--;        }    }}void dfs(int a,int fat,int dep){    if(dep&gt;mdep)    {        mdep=dep;        ww=a;    }    for(int i=headd[a];i;i=qq[i].next)    {        int b=qq[i].to;if(b==fat)continue;        dfs(b,a,dep+1);    }}int main(){    int a,b;    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)    {        if(n==0&amp;&amp;m==0)break;        memset(head,0,sizeof head);memset(dfn,0,sizeof dfn);        memset(low,0,sizeof low);memset(pa,0,sizeof pa);        memset(headd,0,sizeof headd);        num=0;cnt=0;bi=0;w=0;input=0;numm=0;ans=0;ww=0;        for(int i=1;i&lt;=m;i++)        {scanf(&quot;%d%d&quot;,&amp;a,&amp;b);add(a,b);}        tar(1);        for(int i=1;i&lt;=num;i++)        {            a=fa[q[i].from];b=fa[q[i].to];            if(a!=b)addd(a,b);        }        mdep=0;dfs(1,0,0);        mdep=0;dfs(ww,0,0);        printf(&quot;%d\n&quot;,ans-mdep);    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTE1OTc1ODc0MDddfQ==-->]]></content>
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>矮人虽小却喜欢乘坐巨大的轿车，车大到能够装下不管多少矮人。某天，N(N≤20)个矮人打算到野外聚餐。为了集中到聚餐地点，矮人A 要么开车到矮人B 家中，留下自己的轿车在矮人B 家，然后乘坐B 的轿车同行；要么直接开车到聚餐地点，并将车停放在聚餐地。尽管矮人的家非常大，能够停放无数量轿车，可是聚餐地点却最多仅仅能停放K 辆轿车。给你一张加权无向图，描写叙述了N 个矮人的家和聚餐地点，求出全部矮人开车最短总路程</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>题本身是一道$k$限制生成树裸题,但那东西太迷幻,不会.因为数据规模比较小,暴力能过,所以也没学.这里用的是状压$+Prim$.</strong><br><strong>因为根节点只能连不大于$k$条边,所以我们暴力枚举根节点能连的边的状态,再将剩下的点跑最小生成树,更新最小代价.</strong></p></blockquote><ul><li>用$map$映射每个人的名字</li><li>可能有重边,需要更新两点之间的最短距离</li><li>这里我们用邻接矩阵存边,用$Prim$跑最小生成树,不然时间复杂度过不去</li><li>每次生成树必须加够$N-1$条边后才能更新$ans$</li><li>输出应遵循题目规则</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;map&gt;#include&lt;cstring&gt;#include&lt;string&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=430;int n,k,num,cnt;int fa[22],ans,bns;map&lt; string , int &gt;mm;int ss[22][22];struct fy{    int from,to,d;    bool operator&lt;(const fy&amp;a)const{return d&lt;a.d;};}q[maxn];char str[30],str1[30];void add(int a,int b,int c){q[++num]=(fy){a,b,c};}int can(int a){    bns=0;    int he=0,w=1;    while(a)    {        ++w;        if(a&amp;1)        {            he++;fa[w]=1;            if(ss[1][w]==ss[0][0])return 0;            bns+=ss[1][w];        }        a&gt;&gt;=1;    }    if(he&lt;=k)return he;    return 0;}int find(int a){    while(a!=fa[a])a=fa[a]=fa[fa[a]];    return a;}void ku(int x)//披着羊皮的狼(滑稽){    if(!x)return;    for(int i=1;i&lt;=num;i++)    {        if(q[i].from==1||q[i].to==1)continue;        int a=find(q[i].from);        int b=find(q[i].to);        if(a!=b)        {            if(x==(cnt-1))break;            fa[a]=b;            x++;            bns+=q[i].d;            if(bns&gt;ans)return;        }    }    if(x==(cnt-1))ans=min(ans,bns);}int main(){    int t;    scanf(&quot;%d&quot;,&amp;t);    while(t--)    {        mm.clear();cnt=0;num=0;        scanf(&quot;%d&quot;,&amp;n);memset(ss,0x3f,sizeof ss);        mm[&quot;Park&quot;]=++cnt;ans=ss[0][0];        for(int i=1;i&lt;=n;i++)        {            int a,b,c;            scanf(&quot;%s%s%d&quot;,str,str1,&amp;c);            if(!mm[str])mm[str]=++cnt;            if(!mm[str1])mm[str1]=++cnt;            a=mm[str];b=mm[str1];            ss[a][b]=min(ss[a][b],c);            ss[b][a]=ss[a][b];        }        scanf(&quot;%d&quot;,&amp;k);        for(int i=1;i&lt;=cnt;i++)for(int j=i+1;j&lt;=cnt;j++)        if(ss[i][j]&amp;&amp;(ss[i][j]!=ss[0][0]))add(i,j,ss[i][j]);        sort(q+1,q+1+num);        for(int s=0;s&lt;(1&lt;&lt;(cnt-1));s++)//枚举根节点的状态        {            for(int i=1;i&lt;=cnt;i++)fa[i]=i;            ku(can(s));        }        printf(&quot;Total miles driven: %d\n&quot;,ans);//输出    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTIwNTg2NDcyMTddfQ==-->]]></content>
       
       
       <categories>
@@ -1442,11 +1453,11 @@
       
         <tags>
             
-            <tag> 桥 </tag>
+            <tag> 生成树 </tag>
             
-            <tag> 边双联通分量 </tag>
+            <tag> 状压 </tag>
             
-            <tag> 树的直径 </tag>
+            <tag> K限制生成树 </tag>
             
         </tags>
       
