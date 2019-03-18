@@ -3,9 +3,34 @@
   
     
     <entry>
+      <title>北邮网安杯线下决赛 Writeup</title>
+      <link href="/2019/03/18/buptwriteup/"/>
+      <url>/2019/03/18/buptwriteup/</url>
+      
+        <content type="html"><![CDATA[<h1 id="北邮网安杯-Writeup"><a href="#北邮网安杯-Writeup" class="headerlink" title="北邮网安杯 Writeup"></a>北邮网安杯 Writeup</h1><p>有幸参加了北京邮电大学的北邮网安杯线下决赛<br>虽然自己很菜，得分很低，但是这次比赛让我学到了很多，也对网络空间安全和 CTF 有了更加深入的了解<br>最重要的是在这个过程中我认识到了一些兴趣、爱好相同很有趣的人，原来即使是同龄人中，还是有这么多的高手，自己需要学习的东西还很多</p><hr><p>因为知识浅薄，CTF 我只完成了最简单的一道，下面是我对这道题不成熟的解法<br>如果有什么错误之处，欢迎下方留言</p><h2 id="RE1"><a href="#RE1" class="headerlink" title="RE1"></a>RE1</h2><p>下载之后发现不是 .exe 文件<br>用 Winhex 打开,发现是 ELF 文件<br><img src="https://s2.ax1x.com/2019/03/17/AeheFH.png" alt="AeheFH.png"><br>用 IDA 载入,提示为 64 位文件<br><img src="https://s2.ax1x.com/2019/03/17/Aehapn.png" alt="Aehapn.png"><br>换成 IDA64 载入,找到主函数 main, 进入查看<br>发现奇怪的相关字符串<br><img src="https://s2.ax1x.com/2019/03/17/AehXct.png" alt="AehXct.png"><br>继续查看,发现输入正确的输出字符串<br><img src="https://s2.ax1x.com/2019/03/17/Ae4SHS.png" alt="Ae4SHS.png"><br>F5 反编译,将变量转化为字符<br>得到源码</p><pre><code class="lang-cpp">int __cdecl main(int argc, const char **argv, const char **envp){  int v3; // eax  int v4; // eax  int v6; // [rsp+4h] [rbp-10Ch]  int i; // [rsp+8h] [rbp-108h]  signed int j; // [rsp+Ch] [rbp-104h]  signed int k; // [rsp+10h] [rbp-100h]  int l; // [rsp+14h] [rbp-FCh]  char v11; // [rsp+20h] [rbp-F0h]  char v12; // [rsp+21h] [rbp-EFh]  char v13; // [rsp+22h] [rbp-EEh]  char v14; // [rsp+23h] [rbp-EDh]  char v15; // [rsp+24h] [rbp-ECh]  char v16; // [rsp+25h] [rbp-EBh]  char v17; // [rsp+26h] [rbp-EAh]  char v18; // [rsp+27h] [rbp-E9h]  char v19; // [rsp+28h] [rbp-E8h]  char v20; // [rsp+29h] [rbp-E7h]  char v21; // [rsp+2Ah] [rbp-E6h]  __int64 v22; // [rsp+30h] [rbp-E0h]  __int64 v23; // [rsp+38h] [rbp-D8h]  __int64 v24; // [rsp+40h] [rbp-D0h]  __int16 v25; // [rsp+48h] [rbp-C8h]  char v26; // [rsp+4Ah] [rbp-C6h]  char v27[48]; // [rsp+50h] [rbp-C0h]  __int16 v28; // [rsp+80h] [rbp-90h]  char s1[48]; // [rsp+90h] [rbp-80h]  __int16 v30; // [rsp+C0h] [rbp-50h]  _BYTE v31[6]; // [rsp+C2h] [rbp-4Eh]  char v32[48]; // [rsp+D0h] [rbp-40h]  int v33; // [rsp+100h] [rbp-10h]  char v34; // [rsp+104h] [rbp-Ch]  unsigned __int64 v35; // [rsp+108h] [rbp-8h]  v35 = __readfsqword(0x28u);  memset(v32, 0, sizeof(v32));  v33 = 0;  v34 = 0;  v26 = 0;  v22 = &#39;HGFEDCBA&#39;;  v23 = &#39;PONMLKJI&#39;;  v24 = &#39;XWVUTSRQ&#39;;  v25 = &#39;ZY&#39;;  v11 = &#39;B&#39;;  v12 = &#39;U&#39;;  v13 = &#39;P&#39;;  v14 = &#39;T&#39;;  v15 = &#39;I&#39;;  v16 = &#39;S&#39;;  v17 = &#39;H&#39;;  v18 = &#39;E&#39;;  v19 = &#39;K&#39;;  v20 = &#39;Y&#39;;  v21 = 0;  memset(v27, 0, sizeof(v27));  v28 = 0;  memset(s1, 0, sizeof(s1));  v30 = 0;  v6 = 0;  __isoc99_scanf(&quot;%50s&quot;, v27, v31);  for ( i = 0; *(&amp;v11 + i); ++i )  {    for ( j = 0; j &lt;= 25; ++j )    {      if ( *((_BYTE *)&amp;v22 + j) == *(&amp;v11 + i) )      {        *((_BYTE *)&amp;v22 + j) = 0;        v3 = v6++;        v32[v3] = *(&amp;v11 + i);      }    }  }  for ( k = 0; k &lt;= 25; ++k )  {    if ( *((_BYTE *)&amp;v22 + k) )    {      v4 = v6++;      v32[v4] = *((_BYTE *)&amp;v22 + k);    }  }  for ( l = 0; v27[l]; ++l )  {    if ( v27[l] == 123 )    {      s1[l] = 42;    }    else if ( v27[l] == 125 )    {      s1[l] = 35;    }    else    {      s1[l] = v32[v27[l] - 65];    }  }  if ( !strcmp(s1, &quot;UQJO*PEIPAKFRIMXNKDJCINGIBNXPBFFGOUINKDJCIM#&quot;) )    puts(&quot;Check in Successfully!&quot;);  return 0;}</code></pre><h3 id="分析代码"><a href="#分析代码" class="headerlink" title="分析代码"></a>分析代码</h3><h4 id="第一个部分"><a href="#第一个部分" class="headerlink" title="第一个部分"></a>第一个部分</h4><pre><code class="lang-cpp">for ( i = 0; *(&amp;v11 + i); ++i )  {    for ( j = 0; j &lt;= 25; ++j )    {      if ( *((_BYTE *)&amp;v22 + j) == *(&amp;v11 + i) )      {        *((_BYTE *)&amp;v22 + j) = 0;        v3 = v6++;        v32[v3] = *(&amp;v11 + i);      }    }  }</code></pre><p>在 <em>(v22+0) 到 </em>(v22+25) 之间查找将 <em>(v11+i) ,如果能找到,把它加在 v32 的后面,并把当前的 </em>(v22+j) 标记为 0 ,</p><h4 id="第二个部分"><a href="#第二个部分" class="headerlink" title="第二个部分"></a>第二个部分</h4><pre><code class="lang-cpp">for ( k = 0; k &lt;= 25; ++k )  {    if ( *((_BYTE *)&amp;v22 + k) )    {      v4 = v6++;      v32[v4] = *((_BYTE *)&amp;v22 + k);    }  }</code></pre><p>将第一部分没有标记的字符依次加在 v32 的后面<br>得到 v32 :<code>BUPTISHEKYACDFGJLMNOQRVWXZ</code></p><h4 id="第三个部分"><a href="#第三个部分" class="headerlink" title="第三个部分"></a>第三个部分</h4><pre><code class="lang-cpp">for ( l = 0; v27[l]; ++l )  {    if ( v27[l] == 123 )//123=&#39;{&#39;    {      s1[l] = 42;//42=&#39;*&#39;    }    else if ( v27[l] == 125 )//125=&#39;}&#39;    {      s1[l] = 35;//35=&#39;#&#39;    }    else    {      s1[l] = v32[v27[l] - 65];    }  }  if ( !strcmp(s1, &quot;UQJO*PEIPAKFRIMXNKDJCINGIBNXPBFFGOUINKDJCIM#&quot;) )    puts(&quot;Check in Successfully!&quot;);</code></pre><p>最后的 if 语句判断当 s1 与 <code>UQJO*PEIPAKFRIMXNKDJCINGIBNXPBFFGOUINKDJCIM#</code> 相等时才输出正确</p><p>向上看 s1 的形成,涉及到 v27,v32 两个字符串<br>v27 为输入的字符串,也就是我们要提交的 flag<br>v32 为前两部分形成的字符串</p><p>当 v27==’{‘ 时 s1[l]=’*’ 对应 s1[4]<br>当 v32==’}’ 时 s1[l]=’#’ 对应 s1[43]<br>其余情况 s1=v32[v27[l]-‘A’]<br>直至 v27[l] 为空,s1 形成</p><p>分析到这里,就可以了写脚本反解密了</p><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;using namespace std;int ww[1000];int main(){    char s321[]=&quot;BUPTISHEKYGFDCAONMLJXWVRQZ&quot;;//这个是错误的顺序    char s322[]=&quot;BUPTISHEKYACDFGJLMNOQRVWXZ&quot;;    for(int i=0;i&lt;strlen(s322);i++){        if(!ww[s322[i]])ww[s322[i]]=i;    }    char s1[]=&quot;UQJO*PEIPAKFRIMXNKDJCINGIBNXPBFFGOUINKDJCIM#&quot;;    for(int i=0;i&lt;strlen(s1);i++){        printf(&quot;%c&quot;,ww[s1[i]]+&#39;A&#39;);    }    return 0;}</code></pre><p>建立映射关系,由于一,二部分将 v32 中重复部分去除了,所以映射关系是一对一的,不存在冲突</p><p>一开始弄反了 v22 的顺序,因该是由 ‘A’-‘Z’ 的顺序<br><img src="https://s2.ax1x.com/2019/03/17/AeoAgA.png" alt="AeoAgA.png"></p><p>运行脚本得到 :<code>BUPTACHECKINVERYSIMPLESOEASYCANNOTBESIMPLERA</code><br><img src="https://s2.ax1x.com/2019/03/17/AeoEjI.png" alt="AeoEjI.png"><br>将位置 4 和最后一位换成相应的 {}<br>得到 flag:<code>BUPT{CHECKINVERYSIMPLESOEASYCANNOTBESIMPLER}</code></p><p>在 Kali 下测试,成功!<br><img src="https://s2.ax1x.com/2019/03/17/AeTRLq.png" alt="AeTRLq.png"></p><p>提交，一百分到手。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CTF </category>
+          
+          <category> BUPT </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> RE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Material主题</title>
-      <link href="/2018/11/09/Hexo%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/"/>
-      <url>/2018/11/09/Hexo%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/</url>
+      <link href="/2019/03/02/Hexo%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/"/>
+      <url>/2019/03/02/Hexo%E5%85%A5%E5%9D%91%E6%95%99%E7%A8%8B/</url>
       
         <content type="html"><![CDATA[<h1 id="Material主题"><a href="#Material主题" class="headerlink" title="Material主题"></a>Material主题</h1><p><a href="https://github.com/EasyHexo/Easy-Hexo" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Maintained--by-EasyHexo-42B983.svg?longCache=true&amp;style=flat-square" alt=""></a><br><a href="https://github.com/ffdy" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/Author-ffy-800080.svg?longCache=true&amp;style=flat-square" alt=""></a></p><p>:::tip<br>注意，这里介绍的Material主题是1.5.2的版本，新手不建议使用最新的版本，因为好像有很多Bug（作者最近失联了）<br>:::</p><p><a href="https://github.com/viosey/hexo-theme-material" target="_blank" rel="noopener">Material主题地址</a></p><h2 id="Material主题演示"><a href="#Material主题演示" class="headerlink" title="Material主题演示"></a>Material主题演示</h2><p><img src="https://camo.githubusercontent.com/1e9260f301fe915fb3e4826831fde943229523cb/68747470733a2f2f692e6c6f6c692e6e65742f323031372f30392f30372f353962313336376637366664622e706e67" alt="演示"></p><h2 id="下载Material主题"><a href="#下载Material主题" class="headerlink" title="下载Material主题"></a>下载Material主题</h2><ol><li><p>进入 Github，下载 <a href="https://github.com/viosey/hexo-theme-material/releases" target="_blank" rel="noopener">Material</a> 主题 1.5.2 的版本。</p></li><li><p>将下载下来的主题解压，将解压的文件夹重命名为 <code>Material</code>。</p></li><li><p>将这个文件夹放到你的博客根目录下的 themes 文件夹下。</p></li></ol><p><img src="https://s1.ax1x.com/2018/10/27/i6XOpT.png" alt="i6XOpT.png"></p><h2 id="启用Material主题"><a href="#启用Material主题" class="headerlink" title="启用Material主题"></a>启用Material主题</h2><p>:::tip<br>这里有两个 <code>_config.yml</code> 文件，一个位于博客根目录,另一个位于主题文件夹下，下面分别叫他们<code>根 _config.yml</code>文件和<code>主题 _config.yml</code>文件。<br>:::</p><p>进入Material文件夹,将<code>_config.template.yml</code> 重命名为 <code>_config.yml</code><br>（这个 <code>_config.yml</code> 文件是 <code>主题_config.yml</code> 文件）</p><p>:::tip<br>建议你将 <code>_config.template.yml</code> 文件备份，防止一些不可描述的的问题。<br>:::</p><p><img src="https://s1.ax1x.com/2018/10/27/i6x8mQ.png" alt="i6x8mQ.png"></p><p>回到主题根目录，打开<code>根 _config.yml</code>文件，找到 <code>theme</code> 属性</p><p><img src="https://s1.ax1x.com/2018/10/27/i6zA3V.png" alt="i6zA3V.png"><br><img src="https://s1.ax1x.com/2018/10/27/i6Lih8.md.png" alt="i6Lih8.md.png"></p><p>将后面的字段改为你刚刚改的主题文件夹的名字，比如我的<code>Material</code>。<br>:::tip</p><p>在 yml 中，冒号后面必须加一个空格，否则会报错。</p><p>:::</p><p>OK，Material 主题就正式启用了下面，就是见证奇迹的时候了，有没有一点小激动呢?</p><p>回到博客根目录，打开终端，输入:</p><pre><code class="lang-brash">$ hexo clean</code></pre><p>回车</p><p><img src="https://s1.ax1x.com/2018/10/27/icPF6P.png" alt="icPF6P.png"></p><p>完美！！！:tada:</p><p>好，再输入:</p><pre><code class="lang-brash">$ hexo g</code></pre><p>回车</p><p><img src="https://s1.ax1x.com/2018/10/27/icPQlq.png" alt="icPQlq.png"></p><p>完全OK！！！:tada:</p><p>输入:</p><pre><code class="lang-brash">$ hexo s</code></pre><p>回车</p><p><img src="https://s1.ax1x.com/2018/10/27/icPqhj.png" alt="icPqhj.png"></p><p>打开浏览器输入<code>http://localhost:4000</code>，即可看见你博客的样子。</p><p><img src="https://s1.ax1x.com/2018/10/27/icPW9A.png" alt="icPW9A.png"><br><img src="https://s1.ax1x.com/2018/10/27/icP2hd.png" alt="icP2hd.png"></p><p>点片文章试试，如果没问题，那么恭喜你！<br>:tada: :tada: :tada: :tada:</p><p>如果你想让你的Blog马力全开,那么请继续往下看</p>]]></content>
       
@@ -25,25 +50,27 @@
     </entry>
     
     <entry>
-      <title>摆花</title>
-      <link href="/2018/10/23/%E6%91%86%E8%8A%B1/"/>
-      <url>/2018/10/23/%E6%91%86%E8%8A%B1/</url>
+      <title>「一本通 1.1 例 5」智力大冲浪</title>
+      <link href="/2018/10/23/%E6%99%BA%E5%8A%9B%E6%8C%91%E6%88%98/"/>
+      <url>/2018/10/23/%E6%99%BA%E5%8A%9B%E6%8C%91%E6%88%98/</url>
       
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有$n$种花,每种有$a_i$盆,要摆$m$盆,每种花连续并且编号大的在后.求有多少种摆法</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>一道简单的计数DP.<br>我们定义$f[i][j]$表示放第$i$种花时一共放了$j$盆时的方案数,那么状态转移方程:</strong><script type="math/tex">f[i][j]=\sum_{k=0}^{a[i]} f[i-1][j-k]</script></p></blockquote><ul><li>$f[0][0]=1$</li><li>$j&gt;=k$</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=110,mod=1e6+7;int n,m,f[maxn][maxn],a[maxn];int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);f[0][0]=1;    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;a[i]);    for(int i=1;i&lt;=n;i++)    for(int j=0;j&lt;=m;j++)    for(int k=0;k&lt;=a[i];k++)if(j&gt;=k)    f[i][j]=(f[i][j]+f[i-1][j-k])%mod;    printf(&quot;%d\n&quot;,f[n][m]);    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTI1NjgwMDk5OF19-->]]></content>
+        <content type="html"><![CDATA[<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><ul><li>带限期和罚款的单位时间任务调度<ul><li>按期限排序<ul><li>用优先队列维护</li><li>若当前时间完成的任务数少于该时间能完成的任务数,直接将权值入队</li><li>若已经相等,取出队列中最小的元素与当前权值比较,将较大的入队</li><li>最后累加队列中的元素权值,$v$减去这个和即为答案</li></ul></li></ul></li></ul></blockquote><h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding:"></a>Coding:</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;queue&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=1e3+10;int n,l,v,ans;struct fy{    int x,y;    bool operator&lt;(const fy&amp;a)    const{return x&lt;a.x;};}q[maxn];struct ffy{    int x;    bool operator&lt;(const ffy&amp;a)    const{return x&gt;a.x;}};priority_queue&lt;ffy&gt;qq;int main(){    scanf(&quot;%d%d&quot;,&amp;v,&amp;n);    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;q[i].x);    for(int i=1;i&lt;=n;i++)    {        scanf(&quot;%d&quot;,&amp;q[i].y);        ans+=q[i].y;    }    sort(q+1,q+1+n);    for(int i=1;i&lt;=n;i++)    {        int a=q[i].x;        int b=q[i].y;        if(l&lt;a)        {            qq.push((ffy){b});            l++;        }        else         {            int c=qq.top().x;            if(b&gt;c)            {                qq.pop();                qq.push((ffy){b});            }        }    }    while(!qq.empty())    {        ans-=qq.top().x;        qq.pop();    }    printf(&quot;%d\n&quot;,v-ans);    return 0;}</code></pre>]]></content>
       
       
       <categories>
           
           <category> C++ </category>
           
-          <category> 算法学习 </category>
+          <category> 一本通 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 计数DP </tag>
+            <tag> 贪心 </tag>
+            
+            <tag> 优先队列 </tag>
             
         </tags>
       
@@ -77,11 +104,11 @@
     </entry>
     
     <entry>
-      <title>POI working up</title>
-      <link href="/2018/10/23/%5BPOI%5Dworking%20up/"/>
-      <url>/2018/10/23/%5BPOI%5Dworking%20up/</url>
+      <title>军训队列</title>
+      <link href="/2018/10/23/%E5%86%9B%E8%AE%AD%E9%98%9F%E5%88%97/"/>
+      <url>/2018/10/23/%E5%86%9B%E8%AE%AD%E9%98%9F%E5%88%97/</url>
       
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有两个人和一个$n \times m$的矩阵,一个从左上角出发,只能向右,向下走,去右下角;另一个从右上角出发只能向左,向下走,去左下角.矩阵的每一格有一个权值,走过会得到这个权值.很显然,两个人肯定会相遇,他们相遇的那一格的权值不取,求两人只相遇一次权值和的最大值</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>读完题,你是否有想到<code>方格取数</code><br>做法非常简单也非常暴力,开四个二维数组分别记录从四个角出发的最优解,然后$n^2$枚举合法的点,更新$ans$<br>因为只相遇一次,所以两人相遇时只有两种直线走法,不会转弯</strong></p><ul><li>注意下标,容易迷糊</li><li>记得开<code>long long</code><h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding:"></a>Coding:</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=1010;ll mp[maxn][maxn],f1[maxn][maxn];ll f2[maxn][maxn],f3[maxn][maxn];ll f4[maxn][maxn];int n,m;int main(){  scanf(&quot;%d%d&quot;,&amp;n,&amp;m);  for(int i=1;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)scanf(&quot;%lld&quot;,&amp;mp[i][j]);  for(int i=1;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)  f1[i][j]=max(f1[i-1][j],f1[i][j-1])+mp[i][j];  for(int i=n;i;i--)for(int j=m;j;j--)  f2[i][j]=max(f2[i+1][j],f2[i][j+1])+mp[i][j];  for(int i=1;i&lt;=n;i++)for(int j=m;j;j--)  f3[i][j]=max(f3[i-1][j],f3[i][j+1])+mp[i][j];  for(int i=n;i;i--)for(int j=1;j&lt;=m;j++)  f4[i][j]=max(f4[i+1][j],f4[i][j-1])+mp[i][j];  //暴力美学  ll ans=0;  for(int i=2;i&lt;n;i++)for(int j=2;j&lt;m;j++)  {      ans=max(ans,f1[i][j-1]+f2[i][j+1]+f3[i-1][j]+f4[i+1][j]);      ans=max(ans,f1[i-1][j]+f2[i+1][j]+f3[i][j+1]+f4[i][j-1]);  }  printf(&quot;%lld\n&quot;,ans);  return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMjAxNTEzOTAxMiwtMjExMjg0OTMyMCw4MzExMjc2MzhdfQ==--></li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><h2 id="gt-有-n-名学生参加军训，军训的一大重要内容就是走队列，而一个队列的不整齐程度是该队中最高的学生的身高与最矮的学生的身高差值的平方-现在要将-n-名参加军训的学生分成-k-个队列，每个队列的人数可以是任意非负整数。在安排队列时希望所有队列的不整齐度之和尽量小，请问不整齐度之和最小可以是多少？"><a href="#gt-有-n-名学生参加军训，军训的一大重要内容就是走队列，而一个队列的不整齐程度是该队中最高的学生的身高与最矮的学生的身高差值的平方-现在要将-n-名参加军训的学生分成-k-个队列，每个队列的人数可以是任意非负整数。在安排队列时希望所有队列的不整齐度之和尽量小，请问不整齐度之和最小可以是多少？" class="headerlink" title="&gt;有 n 名学生参加军训，军训的一大重要内容就是走队列，而一个队列的不整齐程度是该队中最高的学生的身高与最矮的学生的身高差值的平方.现在要将 n 名参加军训的学生分成 k 个队列，每个队列的人数可以是任意非负整数。在安排队列时希望所有队列的不整齐度之和尽量小，请问不整齐度之和最小可以是多少？"></a>&gt;有 n 名学生参加军训，军训的一大重要内容就是走队列，而一个队列的不整齐程度是该队中最高的学生的身高与最矮的学生的身高差值的平方.现在要将 n 名参加军训的学生分成 k 个队列，每个队列的人数可以是任意非负整数。在安排队列时希望所有队列的不整齐度之和尽量小，请问不整齐度之和最小可以是多少？</h2><ul><li>排序</li><li>DP</li></ul><blockquote><p><strong>先将身高排序,问题就转换成将一个区间切成$k$段,求$k$个区间的极值差平方和的最小值<br>对于每一个人,他的决策无非两种,加到上一个区间,或者自立门户,状态转移方程:</strong></p><ol><li><strong>加入上一个区间:</strong> &nbsp;&nbsp;$f[i][j][k]=min(f[i-1][j][k]-v[j][i-1]+v[j][i])$</li><li><strong>自立门户:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$f[i][i][k]=min(f[i-1][j][k-1])$</li></ol><p><strong>我们可以$n^2$预处理出v数组,时间复杂度为$(o)n^3$<br>但问题又来了,空间复杂度是$n^3+n^2$,可能开不下<br>我们观察到$i$维每次有用的状态只有两位,我们可以用一个滚动数组优化空间,空间复杂度变为$3\times n^2$</strong></p></blockquote><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=510;int n,m,h[maxn],cnt;int f[2][maxn][maxn];int v[maxn][maxn];int main(){    freopen(&quot;queue.in&quot;,&quot;r&quot;,stdin);    freopen(&quot;queue.out&quot;,&quot;w&quot;,stdout);    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;h[i]);    if(n==m)    {        printf(&quot;0\n&quot;);        return 0;    }    sort(h+1,h+1+n);memset(f,0x3f,sizeof f);    for(int i=1;i&lt;=n;i++)for(int j=i;j&lt;=n;j++)    v[i][j]=(h[j]-h[i])*(h[j]-h[i]);    f[0][0][0]=0;    for(int i=1;i&lt;=n;i++)    {        cnt^=1;memset(f[cnt],0x3f,sizeof f[cnt]);        for(int j=0;j&lt;i;j++)        {            for(int k=1;k&lt;=m;k++)            {                f[cnt][i][k]=min(f[cnt][i][k],f[cnt^1][j][k-1]);                f[cnt][j][k]=min(f[cnt][j][k],f[cnt^1][j][k]-v[j][i-1]+v[j][i]);            }        }    }    int ans=1e9+7;    for(int i=1;i&lt;=n;i++)    ans=min(ans,f[cnt][i][m]);    printf(&quot;%d\n&quot;,ans);    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTU3MjAzNjcwMV19-->]]></content>
       
       
       <categories>
@@ -95,7 +122,36 @@
       
         <tags>
             
-            <tag> DP </tag>
+            <tag> 线性DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>HDU warm up</title>
+      <link href="/2018/10/23/HDU%20warm%20up/"/>
+      <url>/2018/10/23/HDU%20warm%20up/</url>
+      
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有一张联通的无向图,再加一条无向边后最少的桥的数量</p></blockquote><ul><li>求桥时将边双缩点,记录桥数 <strong>ans</strong></li><li>建树,求最长路长度 <strong>bns</strong></li><li>答案为 <strong>ans-bns</strong> </li><li>多组数据,注意初始化</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=2e5+10,maxm=1e6+10;int n,m,head[maxn],num,cnt,bi,ans;int dfn[maxn],low[maxn],input,fa[maxn],pa[maxn];int xx[maxn],w,headd[maxn],numm,mdep,ww;struct fy{int from,to,next,h;}q[maxm&lt;&lt;1];struct ffy{int to,next;}qq[maxm&lt;&lt;1];void add(int a,int b){    q[++num]=(fy){a,b,head[a],++bi};head[a]=num;    q[++num]=(fy){b,a,head[b],bi};head[b]=num;}void addd(int a,int b){qq[++numm]=(ffy){b,headd[a]};headd[a]=numm;}void tar(int a){    dfn[a]=low[a]=++input;xx[++w]=a;    for(int i=head[a];i;i=q[i].next)    {        int b=q[i].to;if(q[i].h==pa[a])continue;        if(!dfn[b])        {            pa[b]=q[i].h;tar(b);            low[a]=min(low[a],low[b]);            if(dfn[a]&lt;low[b])ans++;        }        else low[a]=min(low[a],dfn[b]);    }    if(low[a]==dfn[a])    {        ++cnt;        while(xx[w+1]!=a)        {            fa[xx[w]]=cnt;            w--;        }    }}void dfs(int a,int fat,int dep){    if(dep&gt;mdep)    {        mdep=dep;        ww=a;    }    for(int i=headd[a];i;i=qq[i].next)    {        int b=qq[i].to;if(b==fat)continue;        dfs(b,a,dep+1);    }}int main(){    int a,b;    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)    {        if(n==0&amp;&amp;m==0)break;        memset(head,0,sizeof head);memset(dfn,0,sizeof dfn);        memset(low,0,sizeof low);memset(pa,0,sizeof pa);        memset(headd,0,sizeof headd);        num=0;cnt=0;bi=0;w=0;input=0;numm=0;ans=0;ww=0;        for(int i=1;i&lt;=m;i++)        {scanf(&quot;%d%d&quot;,&amp;a,&amp;b);add(a,b);}        tar(1);        for(int i=1;i&lt;=num;i++)        {            a=fa[q[i].from];b=fa[q[i].to];            if(a!=b)addd(a,b);        }        mdep=0;dfs(1,0,0);        mdep=0;dfs(ww,0,0);        printf(&quot;%d\n&quot;,ans-mdep);    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTE1OTc1ODc0MDddfQ==-->]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+          <category> 算法学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 桥 </tag>
+            
+            <tag> 边双联通分量 </tag>
+            
+            <tag> 树的直径 </tag>
             
         </tags>
       
@@ -127,36 +183,11 @@
     </entry>
     
     <entry>
-      <title>军训队列</title>
-      <link href="/2018/10/23/%E5%86%9B%E8%AE%AD%E9%98%9F%E5%88%97/"/>
-      <url>/2018/10/23/%E5%86%9B%E8%AE%AD%E9%98%9F%E5%88%97/</url>
+      <title>刷油漆</title>
+      <link href="/2018/10/23/%E5%88%B7%E6%B2%B9%E6%BC%86/"/>
+      <url>/2018/10/23/%E5%88%B7%E6%B2%B9%E6%BC%86/</url>
       
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><h2 id="gt-有-n-名学生参加军训，军训的一大重要内容就是走队列，而一个队列的不整齐程度是该队中最高的学生的身高与最矮的学生的身高差值的平方-现在要将-n-名参加军训的学生分成-k-个队列，每个队列的人数可以是任意非负整数。在安排队列时希望所有队列的不整齐度之和尽量小，请问不整齐度之和最小可以是多少？"><a href="#gt-有-n-名学生参加军训，军训的一大重要内容就是走队列，而一个队列的不整齐程度是该队中最高的学生的身高与最矮的学生的身高差值的平方-现在要将-n-名参加军训的学生分成-k-个队列，每个队列的人数可以是任意非负整数。在安排队列时希望所有队列的不整齐度之和尽量小，请问不整齐度之和最小可以是多少？" class="headerlink" title="&gt;有 n 名学生参加军训，军训的一大重要内容就是走队列，而一个队列的不整齐程度是该队中最高的学生的身高与最矮的学生的身高差值的平方.现在要将 n 名参加军训的学生分成 k 个队列，每个队列的人数可以是任意非负整数。在安排队列时希望所有队列的不整齐度之和尽量小，请问不整齐度之和最小可以是多少？"></a>&gt;有 n 名学生参加军训，军训的一大重要内容就是走队列，而一个队列的不整齐程度是该队中最高的学生的身高与最矮的学生的身高差值的平方.现在要将 n 名参加军训的学生分成 k 个队列，每个队列的人数可以是任意非负整数。在安排队列时希望所有队列的不整齐度之和尽量小，请问不整齐度之和最小可以是多少？</h2><ul><li>排序</li><li>DP</li></ul><blockquote><p><strong>先将身高排序,问题就转换成将一个区间切成$k$段,求$k$个区间的极值差平方和的最小值<br>对于每一个人,他的决策无非两种,加到上一个区间,或者自立门户,状态转移方程:</strong></p><ol><li><strong>加入上一个区间:</strong> &nbsp;&nbsp;$f[i][j][k]=min(f[i-1][j][k]-v[j][i-1]+v[j][i])$</li><li><strong>自立门户:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$f[i][i][k]=min(f[i-1][j][k-1])$</li></ol><p><strong>我们可以$n^2$预处理出v数组,时间复杂度为$(o)n^3$<br>但问题又来了,空间复杂度是$n^3+n^2$,可能开不下<br>我们观察到$i$维每次有用的状态只有两位,我们可以用一个滚动数组优化空间,空间复杂度变为$3\times n^2$</strong></p></blockquote><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=510;int n,m,h[maxn],cnt;int f[2][maxn][maxn];int v[maxn][maxn];int main(){    freopen(&quot;queue.in&quot;,&quot;r&quot;,stdin);    freopen(&quot;queue.out&quot;,&quot;w&quot;,stdout);    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;h[i]);    if(n==m)    {        printf(&quot;0\n&quot;);        return 0;    }    sort(h+1,h+1+n);memset(f,0x3f,sizeof f);    for(int i=1;i&lt;=n;i++)for(int j=i;j&lt;=n;j++)    v[i][j]=(h[j]-h[i])*(h[j]-h[i]);    f[0][0][0]=0;    for(int i=1;i&lt;=n;i++)    {        cnt^=1;memset(f[cnt],0x3f,sizeof f[cnt]);        for(int j=0;j&lt;i;j++)        {            for(int k=1;k&lt;=m;k++)            {                f[cnt][i][k]=min(f[cnt][i][k],f[cnt^1][j][k-1]);                f[cnt][j][k]=min(f[cnt][j][k],f[cnt^1][j][k]-v[j][i-1]+v[j][i]);            }        }    }    int ans=1e9+7;    for(int i=1;i&lt;=n;i++)    ans=min(ans,f[cnt][i][m]);    printf(&quot;%d\n&quot;,ans);    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTU3MjAzNjcwMV19-->]]></content>
-      
-      
-      <categories>
-          
-          <category> C++ </category>
-          
-          <category> 算法学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 线性DP </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>字符串的最小表示</title>
-      <link href="/2018/10/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA/"/>
-      <url>/2018/10/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA/</url>
-      
-        <content type="html"><![CDATA[<blockquote><p><strong>开两个指针,依次对比;<br>当第二个指针比第一个更优时,更新第一个指针为第二个指针,第二个指针+1</strong></p></blockquote><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;using namespace std;const int maxn=3e5+10;int n;char str[maxn];int l,w;int main(){    scanf(&quot;%d&quot;,&amp;n);    while(n--)    {        scanf(&quot;%d%s&quot;,&amp;l,str);        for(int i=0;i&lt;l;i++)        str[i+l]=str[i];        int ll=0,rr=1;        while(ll&lt;l&amp;&amp;rr&lt;l)        {            int i=0;            while(str[ll+i]==str[rr+i]) i++;            if(i&gt;=l) break;            if(str[ll+i]&gt;str[rr+i])             {                if(ll+i+1&gt;rr) ll=ll+i+1;                else ll=rr+1;            }            else if(rr+1+i&gt;ll) rr=rr+i+1;            else rr=ll+1;        }        printf(&quot;%d\n&quot;,min(ll,rr));    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTc0ODczOTE1MF19-->]]></content>
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>cxm 需要给一块长木板刷上油漆。他一次可以将一段的木板刷上同一种颜色，刷过的木板可以再刷成其他颜色。现在木板被分成了若干块，每块需要涂成一个确定的颜色。 cxm 希望你告诉他最少需要涂几次就可以将每块都涂成需要的颜色。</p></blockquote><ul><li>区间DP</li><li>$turn$函数比较迷</li><li>有十分有毒~(学长有毒)~</li></ul><p>还是比较简单的区间DP,就是在区间DP基础上加了一个$turn$<br>虽然我没搞懂$turn$<del>(但我拿了90,滑稽)</del></p><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=2010;int n,t,s[maxn];int f[maxn][maxn];int turn(int a,int b,int c){    if(s[a]==s[b]||s[a]==s[c+1]||s[c]==s[b]||s[c]==s[c+1])return -1;    return 0;}int main(){    freopen(&quot;paint.in&quot;,&quot;r&quot;,stdin);    freopen(&quot;paint.out&quot;,&quot;w&quot;,stdout);    scanf(&quot;%d&quot;,&amp;t);    while(t--)    {        memset(f,0x3f,sizeof f);        scanf(&quot;%d&quot;,&amp;n);        for(int i=1;i&lt;=n;i++)        {             scanf(&quot;%d&quot;,&amp;s[i]);             f[i][i]=1;        }        for(int l=1;l&lt;=n;l++)for(int i=1;i+l&lt;=n;i++)        {             int j=i+l;for(int k=i;k&lt;j;k++)             f[i][j]=min(f[i][j],f[i][k]+f[k+1][j]+turn(i,j,k));        }        printf(&quot;%d\n&quot;,f[1][n]);    }}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbODkxMjY4MjZdfQ==-->]]></content>
       
       
       <categories>
@@ -170,9 +201,7 @@
       
         <tags>
             
-            <tag> 字符串 </tag>
-            
-            <tag> 最小表示法 </tag>
+            <tag> 区间DP </tag>
             
         </tags>
       
@@ -208,11 +237,11 @@
     </entry>
     
     <entry>
-      <title>分块</title>
-      <link href="/2018/10/23/%E5%88%86%E5%9D%97/"/>
-      <url>/2018/10/23/%E5%88%86%E5%9D%97/</url>
+      <title>排队接水</title>
+      <link href="/2018/10/23/%E6%8E%92%E9%98%9F%E6%8E%A5%E6%B0%B4/"/>
+      <url>/2018/10/23/%E6%8E%92%E9%98%9F%E6%8E%A5%E6%B0%B4/</url>
       
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>$n$个格子，现在要把它分成若干段相邻的块，要求每块不超过$m$个格子。块数不限。求分法总数对$Q$取模的结果。</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>首先想到$n^2$ 的做法,我们定义$f[i]$表示划分到$i$时的合法方案的数量,不难想到转移方程:<script type="math/tex">f[i]= \sum_{j=max(0,i-m)}^{i-1}f[j]</script><br>复杂度是$(0)n^2$<br>然而数据范围是$10^6$,我们需要继续优化;<br>观察转移方程我们发现$f[i]$实际上等于一段连续区间的和,我们可以用前缀和来优化DP,这样时间复杂度就降到了$(o)n$,这道题就解决了</strong></p></blockquote><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=1e6+10;int t,n,m,mod;ll f[maxn],s[maxn];int main(){    scanf(&quot;%d&quot;,&amp;t);    while(t--)    {        scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;mod);        memset(f,0,sizeof f);        f[0]=1;s[0]=1;        for(int i=1;i&lt;=n;i++)        {            if(!(i-m))f[i]=s[i-1];            else f[i]=(s[i-1]-s[i-m-1])%mod;//记得取模            s[i]=(s[i-1]+f[i]);//            for(int j=max(0,i-m);j&lt;i;j++)//            f[i]+=f[j];        }        printf(&quot;%lld\n&quot;,f[n]);    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTM0ODY2MjYwNV19-->]]></content>
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>   现在一个水龙头前面有 n 个人需要接水，他们的编号为 1 到 n 的整数。他们每个人有各自接水需要花费的时间，其中编号为 i 的人花费的时间为 Ti。另外每个人有各自的紧急程度，编号为 i 的人紧急程度为 Ei。现在我们需要给所有人排出一个序，使得总不和谐程度最低。我们定义一个人的等待时间为排在他前面的人和这个人花费的时间之和，一个人的不和谐程度为这个人的等待时间乘以这个人的紧急程度，总不和谐程度为所有人的<br>不和谐程度的和。<br>即我们需要求出一个 1 到 n 的排列 faig ，使得 $\sum_{i=1}^n( \sum^n _{j=1} T_{a_j} )$ 最小。</p></blockquote><ul><li>贪心 </li><li>然后没了</li><li>类似<code>国王游戏</code></li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=2e5+10;int n,t;ll ans,s;struct fy{    int t,v;double s;    void w(){this-&gt;s=(double)this-&gt;t/(double)this-&gt;v;}    bool operator&lt;(const fy&amp;a)    const{return s&lt;a.s;}}q[maxn];int read(){     int k=0,f=0;char c=getchar();for(;c&lt;&#39;0&#39;||c&gt;&#39;9&#39;;c=getchar())if(c==&#39;-&#39;)f=1;     for(;c&lt;=&#39;9&#39;&amp;&amp;c&gt;=&#39;0&#39;;c=getchar())k=(k&lt;&lt;3)+(k&lt;&lt;1)+c-&#39;0&#39;;return  f?-k:k;}int main(){     freopen(&quot;water.in&quot;,&quot;r&quot;,stdin);     freopen(&quot;water.out&quot;,&quot;w&quot;,stdout);     t=read();     while(t--)     {         n=read();ans=0;s=0;         for(int i=1;i&lt;=n;i++)         {q[i].t=read();q[i].v=read();q[i].w();}         sort(q+1,q+1+n);         for(int i=1;i&lt;=n;i++)         {             s+=q[i].t;             ans+=(ll)s*(ll)q[i].v;        }        printf(&quot;%lld\n&quot;,ans);    }     return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTU3NjI5NTQ0Nl19-->]]></content>
       
       
       <categories>
@@ -226,9 +255,7 @@
       
         <tags>
             
-            <tag> 线性DP </tag>
-            
-            <tag> 计数 </tag>
+            <tag> 贪心 </tag>
             
         </tags>
       
@@ -260,11 +287,11 @@
     </entry>
     
     <entry>
-      <title>刷油漆</title>
-      <link href="/2018/10/23/%E5%88%B7%E6%B2%B9%E6%BC%86/"/>
-      <url>/2018/10/23/%E5%88%B7%E6%B2%B9%E6%BC%86/</url>
+      <title>摆花</title>
+      <link href="/2018/10/23/%E6%91%86%E8%8A%B1/"/>
+      <url>/2018/10/23/%E6%91%86%E8%8A%B1/</url>
       
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>cxm 需要给一块长木板刷上油漆。他一次可以将一段的木板刷上同一种颜色，刷过的木板可以再刷成其他颜色。现在木板被分成了若干块，每块需要涂成一个确定的颜色。 cxm 希望你告诉他最少需要涂几次就可以将每块都涂成需要的颜色。</p></blockquote><ul><li>区间DP</li><li>$turn$函数比较迷</li><li>有十分有毒~(学长有毒)~</li></ul><p>还是比较简单的区间DP,就是在区间DP基础上加了一个$turn$<br>虽然我没搞懂$turn$<del>(但我拿了90,滑稽)</del></p><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=2010;int n,t,s[maxn];int f[maxn][maxn];int turn(int a,int b,int c){    if(s[a]==s[b]||s[a]==s[c+1]||s[c]==s[b]||s[c]==s[c+1])return -1;    return 0;}int main(){    freopen(&quot;paint.in&quot;,&quot;r&quot;,stdin);    freopen(&quot;paint.out&quot;,&quot;w&quot;,stdout);    scanf(&quot;%d&quot;,&amp;t);    while(t--)    {        memset(f,0x3f,sizeof f);        scanf(&quot;%d&quot;,&amp;n);        for(int i=1;i&lt;=n;i++)        {             scanf(&quot;%d&quot;,&amp;s[i]);             f[i][i]=1;        }        for(int l=1;l&lt;=n;l++)for(int i=1;i+l&lt;=n;i++)        {             int j=i+l;for(int k=i;k&lt;j;k++)             f[i][j]=min(f[i][j],f[i][k]+f[k+1][j]+turn(i,j,k));        }        printf(&quot;%d\n&quot;,f[1][n]);    }}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbODkxMjY4MjZdfQ==-->]]></content>
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有$n$种花,每种有$a_i$盆,要摆$m$盆,每种花连续并且编号大的在后.求有多少种摆法</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>一道简单的计数DP.<br>我们定义$f[i][j]$表示放第$i$种花时一共放了$j$盆时的方案数,那么状态转移方程:</strong><script type="math/tex">f[i][j]=\sum_{k=0}^{a[i]} f[i-1][j-k]</script></p></blockquote><ul><li>$f[0][0]=1$</li><li>$j&gt;=k$</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=110,mod=1e6+7;int n,m,f[maxn][maxn],a[maxn];int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);f[0][0]=1;    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;a[i]);    for(int i=1;i&lt;=n;i++)    for(int j=0;j&lt;=m;j++)    for(int k=0;k&lt;=a[i];k++)if(j&gt;=k)    f[i][j]=(f[i][j]+f[i-1][j-k])%mod;    printf(&quot;%d\n&quot;,f[n][m]);    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTI1NjgwMDk5OF19-->]]></content>
       
       
       <categories>
@@ -278,7 +305,7 @@
       
         <tags>
             
-            <tag> 区间DP </tag>
+            <tag> 计数DP </tag>
             
         </tags>
       
@@ -314,38 +341,11 @@
     </entry>
     
     <entry>
-      <title>「一本通 1.1 例 5」智力大冲浪</title>
-      <link href="/2018/10/23/%E6%99%BA%E5%8A%9B%E6%8C%91%E6%88%98/"/>
-      <url>/2018/10/23/%E6%99%BA%E5%8A%9B%E6%8C%91%E6%88%98/</url>
+      <title>POI working up</title>
+      <link href="/2018/10/23/%5BPOI%5Dworking%20up/"/>
+      <url>/2018/10/23/%5BPOI%5Dworking%20up/</url>
       
-        <content type="html"><![CDATA[<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><ul><li>带限期和罚款的单位时间任务调度<ul><li>按期限排序<ul><li>用优先队列维护</li><li>若当前时间完成的任务数少于该时间能完成的任务数,直接将权值入队</li><li>若已经相等,取出队列中最小的元素与当前权值比较,将较大的入队</li><li>最后累加队列中的元素权值,$v$减去这个和即为答案</li></ul></li></ul></li></ul></blockquote><h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding:"></a>Coding:</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;queue&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=1e3+10;int n,l,v,ans;struct fy{    int x,y;    bool operator&lt;(const fy&amp;a)    const{return x&lt;a.x;};}q[maxn];struct ffy{    int x;    bool operator&lt;(const ffy&amp;a)    const{return x&gt;a.x;}};priority_queue&lt;ffy&gt;qq;int main(){    scanf(&quot;%d%d&quot;,&amp;v,&amp;n);    for(int i=1;i&lt;=n;i++)scanf(&quot;%d&quot;,&amp;q[i].x);    for(int i=1;i&lt;=n;i++)    {        scanf(&quot;%d&quot;,&amp;q[i].y);        ans+=q[i].y;    }    sort(q+1,q+1+n);    for(int i=1;i&lt;=n;i++)    {        int a=q[i].x;        int b=q[i].y;        if(l&lt;a)        {            qq.push((ffy){b});            l++;        }        else         {            int c=qq.top().x;            if(b&gt;c)            {                qq.pop();                qq.push((ffy){b});            }        }    }    while(!qq.empty())    {        ans-=qq.top().x;        qq.pop();    }    printf(&quot;%d\n&quot;,v-ans);    return 0;}</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> C++ </category>
-          
-          <category> 一本通 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 贪心 </tag>
-            
-            <tag> 优先队列 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>排队接水</title>
-      <link href="/2018/10/23/%E6%8E%92%E9%98%9F%E6%8E%A5%E6%B0%B4/"/>
-      <url>/2018/10/23/%E6%8E%92%E9%98%9F%E6%8E%A5%E6%B0%B4/</url>
-      
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>   现在一个水龙头前面有 n 个人需要接水，他们的编号为 1 到 n 的整数。他们每个人有各自接水需要花费的时间，其中编号为 i 的人花费的时间为 Ti。另外每个人有各自的紧急程度，编号为 i 的人紧急程度为 Ei。现在我们需要给所有人排出一个序，使得总不和谐程度最低。我们定义一个人的等待时间为排在他前面的人和这个人花费的时间之和，一个人的不和谐程度为这个人的等待时间乘以这个人的紧急程度，总不和谐程度为所有人的<br>不和谐程度的和。<br>即我们需要求出一个 1 到 n 的排列 faig ，使得 $\sum_{i=1}^n( \sum^n _{j=1} T_{a_j} )$ 最小。</p></blockquote><ul><li>贪心 </li><li>然后没了</li><li>类似<code>国王游戏</code></li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=2e5+10;int n,t;ll ans,s;struct fy{    int t,v;double s;    void w(){this-&gt;s=(double)this-&gt;t/(double)this-&gt;v;}    bool operator&lt;(const fy&amp;a)    const{return s&lt;a.s;}}q[maxn];int read(){     int k=0,f=0;char c=getchar();for(;c&lt;&#39;0&#39;||c&gt;&#39;9&#39;;c=getchar())if(c==&#39;-&#39;)f=1;     for(;c&lt;=&#39;9&#39;&amp;&amp;c&gt;=&#39;0&#39;;c=getchar())k=(k&lt;&lt;3)+(k&lt;&lt;1)+c-&#39;0&#39;;return  f?-k:k;}int main(){     freopen(&quot;water.in&quot;,&quot;r&quot;,stdin);     freopen(&quot;water.out&quot;,&quot;w&quot;,stdout);     t=read();     while(t--)     {         n=read();ans=0;s=0;         for(int i=1;i&lt;=n;i++)         {q[i].t=read();q[i].v=read();q[i].w();}         sort(q+1,q+1+n);         for(int i=1;i&lt;=n;i++)         {             s+=q[i].t;             ans+=(ll)s*(ll)q[i].v;        }        printf(&quot;%lld\n&quot;,ans);    }     return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTU3NjI5NTQ0Nl19-->]]></content>
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有两个人和一个$n \times m$的矩阵,一个从左上角出发,只能向右,向下走,去右下角;另一个从右上角出发只能向左,向下走,去左下角.矩阵的每一格有一个权值,走过会得到这个权值.很显然,两个人肯定会相遇,他们相遇的那一格的权值不取,求两人只相遇一次权值和的最大值</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>读完题,你是否有想到<code>方格取数</code><br>做法非常简单也非常暴力,开四个二维数组分别记录从四个角出发的最优解,然后$n^2$枚举合法的点,更新$ans$<br>因为只相遇一次,所以两人相遇时只有两种直线走法,不会转弯</strong></p><ul><li>注意下标,容易迷糊</li><li>记得开<code>long long</code><h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding:"></a>Coding:</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=1010;ll mp[maxn][maxn],f1[maxn][maxn];ll f2[maxn][maxn],f3[maxn][maxn];ll f4[maxn][maxn];int n,m;int main(){  scanf(&quot;%d%d&quot;,&amp;n,&amp;m);  for(int i=1;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)scanf(&quot;%lld&quot;,&amp;mp[i][j]);  for(int i=1;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)  f1[i][j]=max(f1[i-1][j],f1[i][j-1])+mp[i][j];  for(int i=n;i;i--)for(int j=m;j;j--)  f2[i][j]=max(f2[i+1][j],f2[i][j+1])+mp[i][j];  for(int i=1;i&lt;=n;i++)for(int j=m;j;j--)  f3[i][j]=max(f3[i-1][j],f3[i][j+1])+mp[i][j];  for(int i=n;i;i--)for(int j=1;j&lt;=m;j++)  f4[i][j]=max(f4[i+1][j],f4[i][j-1])+mp[i][j];  //暴力美学  ll ans=0;  for(int i=2;i&lt;n;i++)for(int j=2;j&lt;m;j++)  {      ans=max(ans,f1[i][j-1]+f2[i][j+1]+f3[i-1][j]+f4[i+1][j]);      ans=max(ans,f1[i-1][j]+f2[i+1][j]+f3[i][j+1]+f4[i][j-1]);  }  printf(&quot;%lld\n&quot;,ans);  return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMjAxNTEzOTAxMiwtMjExMjg0OTMyMCw4MzExMjc2MzhdfQ==--></li></ul></blockquote>]]></content>
       
       
       <categories>
@@ -359,7 +359,7 @@
       
         <tags>
             
-            <tag> 贪心 </tag>
+            <tag> DP </tag>
             
         </tags>
       
@@ -418,40 +418,11 @@
     </entry>
     
     <entry>
-      <title>球和盒子问题</title>
-      <link href="/2018/10/23/%E7%90%83%E5%92%8C%E7%9B%92%E5%AD%90%E9%97%AE%E9%A2%98/"/>
-      <url>/2018/10/23/%E7%90%83%E5%92%8C%E7%9B%92%E5%AD%90%E9%97%AE%E9%A2%98/</url>
+      <title>分块</title>
+      <link href="/2018/10/23/%E5%88%86%E5%9D%97/"/>
+      <url>/2018/10/23/%E5%88%86%E5%9D%97/</url>
       
-        <content type="html"><![CDATA[<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><img src="https://s1.ax1x.com/2018/10/12/itXzw9.jpg" alt=""></p><ul><li>$F[i][j]=F[i-1][j-1]+j*F[i-1]<a href="F[1][1]=1">j</a>$</li><li>$G[i][j]=G[i][j-1]+G[i-j]<a href="G[0][i]=G[1][i]=G[i][1]=1">j</a>$</li><li>注意各种情况的初始化</li></ul><h3 id="1-放苹果"><a href="#1-放苹果" class="headerlink" title="1.放苹果"></a>1.放苹果</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=20;int t,n,m;int f[maxn][maxn];int main(){    scanf(&quot;%d&quot;,&amp;t);    for(int i=0;i&lt;=10;i++)f[0][i]=f[i][1]=f[1][i]=1;    for(int i=1;i&lt;=10;i++)for(int j=2;j&lt;=10;j++)    {        f[i][j]=f[i][j-1];        if(i&gt;=j)f[i][j]+=f[i-j][j];    }    while(t--)    {        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);        printf(&quot;%d\n&quot;,f[n][m]);    }    return 0;}</code></pre><h3 id="2-数的划分"><a href="#2-数的划分" class="headerlink" title="2.数的划分"></a>2.数的划分</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=210;int n,m;ll f[maxn][maxn];int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);    for(int i=0;i&lt;=n;i++)f[0][i]=f[1][i]=f[i][1]=1;    for(int i=2;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)    {        f[i][j]=f[i][j-1];        if(i&gt;=j)f[i][j]+=f[i-j][j];    }    printf(&quot;%lld\n&quot;,f[n-m][m]);    return 0;}</code></pre><h3 id="6-小朋友的球"><a href="#6-小朋友的球" class="headerlink" title="6.小朋友的球"></a>6.小朋友的球</h3><pre><code class="lang-cpp">//这题要高精#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=110;int n,m;ll f[maxn][maxn];int main(){    f[1][1]=1;    for(int i=2;i&lt;=100;i++)for(int j=1;j&lt;=100;j++)    f[i][j]=f[i-1][j-1]+f[i-1][j]*j;    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)    {        printf(&quot;%lld\n&quot;,f[n][m]);    }    return 0;}</code></pre><h3 id="8-盒子和小球"><a href="#8-盒子和小球" class="headerlink" title="8.盒子和小球"></a>8.盒子和小球</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=20;int n,m,f[maxn][maxn];int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);f[1][1]=m;    for(int i=2;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)    f[i][j]=f[i-1][j-1]*(m-j+1)+f[i-1][j]*j;    printf(&quot;%d\n&quot;,f[n][m]);    return 0;}</code></pre><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=20;int n,m,f[maxn][maxn];int work(int a){    int ans=1;    for(int i=2;i&lt;=a;i++)    ans*=i;    return ans;}int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);f[1][1]=1;    for(int i=2;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)    f[i][j]=f[i-1][j-1]+f[i-1][j]*j;    printf(&quot;%d\n&quot;,f[n][m]*work(m));    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTA3ODk0NTYwNCwxNjc5NzYzNDE0XX0=-->]]></content>
-      
-      
-      <categories>
-          
-          <category> C++ </category>
-          
-          <category> 算法学习 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 计数DP </tag>
-            
-            <tag> 组合数学 </tag>
-            
-            <tag> 递推 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>HDU warm up</title>
-      <link href="/2018/10/23/HDU%20warm%20up/"/>
-      <url>/2018/10/23/HDU%20warm%20up/</url>
-      
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>有一张联通的无向图,再加一条无向边后最少的桥的数量</p></blockquote><ul><li>求桥时将边双缩点,记录桥数 <strong>ans</strong></li><li>建树,求最长路长度 <strong>bns</strong></li><li>答案为 <strong>ans-bns</strong> </li><li>多组数据,注意初始化</li></ul><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=2e5+10,maxm=1e6+10;int n,m,head[maxn],num,cnt,bi,ans;int dfn[maxn],low[maxn],input,fa[maxn],pa[maxn];int xx[maxn],w,headd[maxn],numm,mdep,ww;struct fy{int from,to,next,h;}q[maxm&lt;&lt;1];struct ffy{int to,next;}qq[maxm&lt;&lt;1];void add(int a,int b){    q[++num]=(fy){a,b,head[a],++bi};head[a]=num;    q[++num]=(fy){b,a,head[b],bi};head[b]=num;}void addd(int a,int b){qq[++numm]=(ffy){b,headd[a]};headd[a]=numm;}void tar(int a){    dfn[a]=low[a]=++input;xx[++w]=a;    for(int i=head[a];i;i=q[i].next)    {        int b=q[i].to;if(q[i].h==pa[a])continue;        if(!dfn[b])        {            pa[b]=q[i].h;tar(b);            low[a]=min(low[a],low[b]);            if(dfn[a]&lt;low[b])ans++;        }        else low[a]=min(low[a],dfn[b]);    }    if(low[a]==dfn[a])    {        ++cnt;        while(xx[w+1]!=a)        {            fa[xx[w]]=cnt;            w--;        }    }}void dfs(int a,int fat,int dep){    if(dep&gt;mdep)    {        mdep=dep;        ww=a;    }    for(int i=headd[a];i;i=qq[i].next)    {        int b=qq[i].to;if(b==fat)continue;        dfs(b,a,dep+1);    }}int main(){    int a,b;    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)    {        if(n==0&amp;&amp;m==0)break;        memset(head,0,sizeof head);memset(dfn,0,sizeof dfn);        memset(low,0,sizeof low);memset(pa,0,sizeof pa);        memset(headd,0,sizeof headd);        num=0;cnt=0;bi=0;w=0;input=0;numm=0;ans=0;ww=0;        for(int i=1;i&lt;=m;i++)        {scanf(&quot;%d%d&quot;,&amp;a,&amp;b);add(a,b);}        tar(1);        for(int i=1;i&lt;=num;i++)        {            a=fa[q[i].from];b=fa[q[i].to];            if(a!=b)addd(a,b);        }        mdep=0;dfs(1,0,0);        mdep=0;dfs(ww,0,0);        printf(&quot;%d\n&quot;,ans-mdep);    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbLTE1OTc1ODc0MDddfQ==-->]]></content>
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>$n$个格子，现在要把它分成若干段相邻的块，要求每块不超过$m$个格子。块数不限。求分法总数对$Q$取模的结果。</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>首先想到$n^2$ 的做法,我们定义$f[i]$表示划分到$i$时的合法方案的数量,不难想到转移方程:<script type="math/tex">f[i]= \sum_{j=max(0,i-m)}^{i-1}f[j]</script><br>复杂度是$(0)n^2$<br>然而数据范围是$10^6$,我们需要继续优化;<br>观察转移方程我们发现$f[i]$实际上等于一段连续区间的和,我们可以用前缀和来优化DP,这样时间复杂度就降到了$(o)n$,这道题就解决了</strong></p></blockquote><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=1e6+10;int t,n,m,mod;ll f[maxn],s[maxn];int main(){    scanf(&quot;%d&quot;,&amp;t);    while(t--)    {        scanf(&quot;%d%d%d&quot;,&amp;n,&amp;m,&amp;mod);        memset(f,0,sizeof f);        f[0]=1;s[0]=1;        for(int i=1;i&lt;=n;i++)        {            if(!(i-m))f[i]=s[i-1];            else f[i]=(s[i-1]-s[i-m-1])%mod;//记得取模            s[i]=(s[i-1]+f[i]);//            for(int j=max(0,i-m);j&lt;i;j++)//            f[i]+=f[j];        }        printf(&quot;%lld\n&quot;,f[n]);    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTM0ODY2MjYwNV19-->]]></content>
       
       
       <categories>
@@ -465,11 +436,9 @@
       
         <tags>
             
-            <tag> 桥 </tag>
+            <tag> 线性DP </tag>
             
-            <tag> 边双联通分量 </tag>
-            
-            <tag> 树的直径 </tag>
+            <tag> 计数 </tag>
             
         </tags>
       
@@ -526,11 +495,11 @@
     </entry>
     
     <entry>
-      <title>逐个击破</title>
-      <link href="/2018/10/23/%E9%80%90%E4%B8%AA%E5%87%BB%E7%A0%B4/"/>
-      <url>/2018/10/23/%E9%80%90%E4%B8%AA%E5%87%BB%E7%A0%B4/</url>
+      <title>球和盒子问题</title>
+      <link href="/2018/10/23/%E7%90%83%E5%92%8C%E7%9B%92%E5%AD%90%E9%97%AE%E9%A2%98/"/>
+      <url>/2018/10/23/%E7%90%83%E5%92%8C%E7%9B%92%E5%AD%90%E9%97%AE%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>现在有N个城市，其中K个被敌方军团占领了，N个城市间有N-1条公路相连，破坏其中某条公路的代价是已知的，现在，告诉你K个敌方军团所在的城市，以及所有公路破坏的代价，请你算出花费最少的代价将这K个地方军团互相隔离开，以便第二步逐个击破敌人。</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>我们加一个辅助数组记录每个城市是否被占领,然后跑最大生成树.当且仅当两个城市所在的连通块都被占领时,我们不取这条边,其余时候将当前两个城市的占领属性合并,最后 $ans$=用总代价-最大生成树权值和</strong></p></blockquote><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=1e5+10;int n,k,fa[maxn];ll ans;bool ee[maxn];struct fy{    int from,to,d;    bool operator&lt;(const fy&amp;a)    const{return d&gt;a.d;};}q[maxn];int find(int a){    while(a!=fa[a])a=fa[a]=fa[fa[a]];    return a;}int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;k);    for(int i=1;i&lt;=k;i++)    {        int a;        scanf(&quot;%d&quot;,&amp;a);        ee[a]=true;    }    for(int i=1;i&lt;=n;i++)fa[i]=i;    for(int i=1;i&lt;n;i++)    {        scanf(&quot;%d%d%d&quot;,&amp;q[i].from,&amp;q[i].to,&amp;q[i].d);        ans+=q[i].d;    }    sort(q+1,q+n);    for(int i=1;i&lt;n;i++)    {        int a=find(q[i].from);        int b=find(q[i].to);        if(ee[a]&amp;&amp;ee[b])continue;        fa[a]=b;        ee[a]|=ee[b];ee[b]|=ee[a];//合并属性        ans-=q[i].d;    }     printf(&quot;%lld\n&quot;,ans);    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbNjQ2MDkzNzk2XX0=-->]]></content>
+        <content type="html"><![CDATA[<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><img src="https://s1.ax1x.com/2018/10/12/itXzw9.jpg" alt=""></p><ul><li>$F[i][j]=F[i-1][j-1]+j*F[i-1]<a href="F[1][1]=1">j</a>$</li><li>$G[i][j]=G[i][j-1]+G[i-j]<a href="G[0][i]=G[1][i]=G[i][1]=1">j</a>$</li><li>注意各种情况的初始化</li></ul><h3 id="1-放苹果"><a href="#1-放苹果" class="headerlink" title="1.放苹果"></a>1.放苹果</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=20;int t,n,m;int f[maxn][maxn];int main(){    scanf(&quot;%d&quot;,&amp;t);    for(int i=0;i&lt;=10;i++)f[0][i]=f[i][1]=f[1][i]=1;    for(int i=1;i&lt;=10;i++)for(int j=2;j&lt;=10;j++)    {        f[i][j]=f[i][j-1];        if(i&gt;=j)f[i][j]+=f[i-j][j];    }    while(t--)    {        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);        printf(&quot;%d\n&quot;,f[n][m]);    }    return 0;}</code></pre><h3 id="2-数的划分"><a href="#2-数的划分" class="headerlink" title="2.数的划分"></a>2.数的划分</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=210;int n,m;ll f[maxn][maxn];int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);    for(int i=0;i&lt;=n;i++)f[0][i]=f[1][i]=f[i][1]=1;    for(int i=2;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)    {        f[i][j]=f[i][j-1];        if(i&gt;=j)f[i][j]+=f[i-j][j];    }    printf(&quot;%lld\n&quot;,f[n-m][m]);    return 0;}</code></pre><h3 id="6-小朋友的球"><a href="#6-小朋友的球" class="headerlink" title="6.小朋友的球"></a>6.小朋友的球</h3><pre><code class="lang-cpp">//这题要高精#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=110;int n,m;ll f[maxn][maxn];int main(){    f[1][1]=1;    for(int i=2;i&lt;=100;i++)for(int j=1;j&lt;=100;j++)    f[i][j]=f[i-1][j-1]+f[i-1][j]*j;    while(scanf(&quot;%d%d&quot;,&amp;n,&amp;m)==2)    {        printf(&quot;%lld\n&quot;,f[n][m]);    }    return 0;}</code></pre><h3 id="8-盒子和小球"><a href="#8-盒子和小球" class="headerlink" title="8.盒子和小球"></a>8.盒子和小球</h3><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=20;int n,m,f[maxn][maxn];int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);f[1][1]=m;    for(int i=2;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)    f[i][j]=f[i-1][j-1]*(m-j+1)+f[i-1][j]*j;    printf(&quot;%d\n&quot;,f[n][m]);    return 0;}</code></pre><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;using namespace std;const int maxn=20;int n,m,f[maxn][maxn];int work(int a){    int ans=1;    for(int i=2;i&lt;=a;i++)    ans*=i;    return ans;}int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;m);f[1][1]=1;    for(int i=2;i&lt;=n;i++)for(int j=1;j&lt;=m;j++)    f[i][j]=f[i-1][j-1]+f[i-1][j]*j;    printf(&quot;%d\n&quot;,f[n][m]*work(m));    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTA3ODk0NTYwNCwxNjc5NzYzNDE0XX0=-->]]></content>
       
       
       <categories>
@@ -544,9 +513,38 @@
       
         <tags>
             
-            <tag> 生成树 </tag>
+            <tag> 计数DP </tag>
             
-            <tag> 并查集 </tag>
+            <tag> 组合数学 </tag>
+            
+            <tag> 递推 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>字符串的最小表示</title>
+      <link href="/2018/10/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA/"/>
+      <url>/2018/10/23/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><strong>开两个指针,依次对比;<br>当第二个指针比第一个更优时,更新第一个指针为第二个指针,第二个指针+1</strong></p></blockquote><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;algorithm&gt;#include&lt;cstring&gt;using namespace std;const int maxn=3e5+10;int n;char str[maxn];int l,w;int main(){    scanf(&quot;%d&quot;,&amp;n);    while(n--)    {        scanf(&quot;%d%s&quot;,&amp;l,str);        for(int i=0;i&lt;l;i++)        str[i+l]=str[i];        int ll=0,rr=1;        while(ll&lt;l&amp;&amp;rr&lt;l)        {            int i=0;            while(str[ll+i]==str[rr+i]) i++;            if(i&gt;=l) break;            if(str[ll+i]&gt;str[rr+i])             {                if(ll+i+1&gt;rr) ll=ll+i+1;                else ll=rr+1;            }            else if(rr+1+i&gt;ll) rr=rr+i+1;            else rr=ll+1;        }        printf(&quot;%d\n&quot;,min(ll,rr));    }    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbMTc0ODczOTE1MF19-->]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+          <category> 算法学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+            <tag> 最小表示法 </tag>
             
         </tags>
       
@@ -631,8 +629,44 @@
       
     </entry>
     
+    <entry>
+      <title>逐个击破</title>
+      <link href="/2018/10/23/%E9%80%90%E4%B8%AA%E5%87%BB%E7%A0%B4/"/>
+      <url>/2018/10/23/%E9%80%90%E4%B8%AA%E5%87%BB%E7%A0%B4/</url>
+      
+        <content type="html"><![CDATA[<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote><p>现在有N个城市，其中K个被敌方军团占领了，N个城市间有N-1条公路相连，破坏其中某条公路的代价是已知的，现在，告诉你K个敌方军团所在的城市，以及所有公路破坏的代价，请你算出花费最少的代价将这K个地方军团互相隔离开，以便第二步逐个击破敌人。</p></blockquote><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><blockquote><p><strong>我们加一个辅助数组记录每个城市是否被占领,然后跑最大生成树.当且仅当两个城市所在的连通块都被占领时,我们不取这条边,其余时候将当前两个城市的占领属性合并,最后 $ans$=用总代价-最大生成树权值和</strong></p></blockquote><pre><code class="lang-cpp">#include&lt;cstdio&gt;#include&lt;cstring&gt;#include&lt;algorithm&gt;#define ll long longusing namespace std;const int maxn=1e5+10;int n,k,fa[maxn];ll ans;bool ee[maxn];struct fy{    int from,to,d;    bool operator&lt;(const fy&amp;a)    const{return d&gt;a.d;};}q[maxn];int find(int a){    while(a!=fa[a])a=fa[a]=fa[fa[a]];    return a;}int main(){    scanf(&quot;%d%d&quot;,&amp;n,&amp;k);    for(int i=1;i&lt;=k;i++)    {        int a;        scanf(&quot;%d&quot;,&amp;a);        ee[a]=true;    }    for(int i=1;i&lt;=n;i++)fa[i]=i;    for(int i=1;i&lt;n;i++)    {        scanf(&quot;%d%d%d&quot;,&amp;q[i].from,&amp;q[i].to,&amp;q[i].d);        ans+=q[i].d;    }    sort(q+1,q+n);    for(int i=1;i&lt;n;i++)    {        int a=find(q[i].from);        int b=find(q[i].to);        if(ee[a]&amp;&amp;ee[b])continue;        fa[a]=b;        ee[a]|=ee[b];ee[b]|=ee[a];//合并属性        ans-=q[i].d;    }     printf(&quot;%lld\n&quot;,ans);    return 0;}</code></pre><!--stackedit_data:eyJoaXN0b3J5IjpbNjQ2MDkzNzk2XX0=-->]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+          <category> 算法学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生成树 </tag>
+            
+            <tag> 并查集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
   
   
+    
+    <entry>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="居然有人点开了这个页面-ΩДΩ"><a href="#居然有人点开了这个页面-ΩДΩ" class="headerlink" title="居然有人点开了这个页面 (ΩДΩ)"></a>居然有人点开了这个页面 (ΩДΩ)</h1><p>可能是你点错了,毕竟我这么菜,<br>谁会来看我呢<del>(滑稽)</del></p><p><img src="https://s1.ax1x.com/2018/10/24/ir5US0.png" alt=""></p><p>本人一名<strong>小蒟蒻</strong>,在各位大佬间苦苦挣扎,苟且偷生<del>(宝宝心里苦,难受,香菇)</del></p><p>不喜欢打游戏(偶尔玩玩),喜欢搞一些计算机上奇奇怪怪的东西(对,就是老师和爸妈口中的”不务正业”,”没名堂的东西”,”浪费时间”)</p><p>喜欢二次元,喜欢宅在家里的穷学生</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5ITH.gif" alt="ir5ITH.gif"></p><p>学过一点点C++和Java,算法也有一点涉猎(请记住,是一点点,就像你对于地球那样的一点点),当然没有办法和各位大佬比</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5Dw4.gif" alt="ir5Dw4.gif"></p><p>还是一位OIer,虽然马上退役了,好吧,像我这种弱鸡,根本不能说退役,是根本没入役</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5yk9.jpg" alt="ir5yk9.jpg"></p><p>好吧,了解了我的菜之深后,你肯定也不想继续看下去了,但我还是厚颜无耻的写下我的联系方式</p><p>QQ: </p><blockquote><p>1836017424</p></blockquote><p>Email: </p><blockquote><p>1836017424@qq.com </p><p>scaryffy@gmail.com</p></blockquote><p>你如果有问题,可以通过上面的方式联系我(可能这辈子都不会有了)</p><p>在下学生,不能保证及时回复,但我看到了一定会回复</p><p><img src="https://s1.ax1x.com/2018/10/24/ir550e.jpg" alt="ir550e.jpg"></p><h3 id="愿幸运与你同在"><a href="#愿幸运与你同在" class="headerlink" title="愿幸运与你同在"></a>愿幸运与你同在</h3><p>但如果你有上条当麻的右手,我还真没办法</p><p>至此</p>]]></content>
+      
+    </entry>
     
     <entry>
       <title>links</title>
@@ -649,15 +683,6 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="居然有人点开了这个页面-ΩДΩ"><a href="#居然有人点开了这个页面-ΩДΩ" class="headerlink" title="居然有人点开了这个页面 (ΩДΩ)"></a>居然有人点开了这个页面 (ΩДΩ)</h1><p>可能是你点错了,毕竟我这么菜,<br>谁会来看我呢<del>(滑稽)</del></p><p><img src="https://s1.ax1x.com/2018/10/24/ir5US0.png" alt=""></p><p>本人一名<strong>小蒟蒻</strong>,在各位大佬间苦苦挣扎,苟且偷生<del>(宝宝心里苦,难受,香菇)</del></p><p>不喜欢打游戏(偶尔玩玩),喜欢搞一些计算机上奇奇怪怪的东西(对,就是老师和爸妈口中的”不务正业”,”没名堂的东西”,”浪费时间”)</p><p>喜欢二次元,喜欢宅在家里的穷学生</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5ITH.gif" alt="ir5ITH.gif"></p><p>学过一点点C++和Java,算法也有一点涉猎(请记住,是一点点,就像你对于地球那样的一点点),当然没有办法和各位大佬比</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5Dw4.gif" alt="ir5Dw4.gif"></p><p>还是一位OIer,虽然马上退役了,好吧,像我这种弱鸡,根本不能说退役,是根本没入役</p><p><img src="https://s1.ax1x.com/2018/10/24/ir5yk9.jpg" alt="ir5yk9.jpg"></p><p>好吧,了解了我的菜之深后,你肯定也不想继续看下去了,但我还是厚颜无耻的写下我的联系方式</p><p>QQ: </p><blockquote><p>1836017424</p></blockquote><p>Email: </p><blockquote><p>1836017424@qq.com </p><p>scaryffy@gmail.com</p></blockquote><p>你如果有问题,可以通过上面的方式联系我(可能这辈子都不会有了)</p><p>在下学生,不能保证及时回复,但我看到了一定会回复</p><p><img src="https://s1.ax1x.com/2018/10/24/ir550e.jpg" alt="ir550e.jpg"></p><h3 id="愿幸运与你同在"><a href="#愿幸运与你同在" class="headerlink" title="愿幸运与你同在"></a>愿幸运与你同在</h3><p>但如果你有上条当麻的右手,我还真没办法</p><p>至此</p>]]></content>
       
     </entry>
     

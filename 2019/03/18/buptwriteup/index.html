@@ -47,7 +47,7 @@
     
     <title>
         
-            归档: 2018/11 | 
+            北邮网安杯线下决赛 Writeup | 
         
         FFY&#39;s Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",RE">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -214,7 +214,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="FFY&#39;s Blog">
-    <meta name="msapplication-starturl" content="http://ffdy.github.io/archives/2018/11/">
+    <meta name="msapplication-starturl" content="http://ffdy.github.io/2019/03/18/buptwriteup/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="FFY&#39;s Blog">
@@ -229,13 +229,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://ffdy.github.io/archives/2018/11/">
+    <meta property="og:url" content="http://ffdy.github.io/2019/03/18/buptwriteup/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/11 | FFY&#39;s Blog">
+    <meta property="og:title" content="北邮网安杯线下决赛 Writeup | FFY&#39;s Blog">
     <meta property="og:image" content="/img/F.png">
     <meta property="og:description" content="">
-    
+    <meta property="og:article:tag" content="RE"> 
 
+    
+        <meta property="article:published_time" content="Mon Mar 18 2019 18:51:18 GMT+0800">
+        <meta property="article:modified_time" content="Mon Mar 18 2019 18:54:55 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -243,13 +246,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://ffdy.github.io/archives/2018/11/index.html">
+        <link rel="canonical" href="http://ffdy.github.io/2019/03/18/buptwriteup/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://ffdy.github.io/2019/03/18/buptwriteup/index.html",
+    "headline": "北邮网安杯线下决赛 Writeup",
+    "datePublished": "Mon Mar 18 2019 18:51:18 GMT+0800",
+    "dateModified": "Mon Mar 18 2019 18:54:55 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "FFY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Love life,love coding!,你喜欢大海,我喜欢浪."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "FFY&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/F.png"
+        }
+    },
+    "keywords": ",RE",
+    "description": "",
+}
+</script>
 
 
     
@@ -283,151 +316,443 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
-        
-            
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#北邮网安杯-Writeup"><span class="post-toc-number">1.</span> <span class="post-toc-text">北邮网安杯 Writeup</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RE1"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">RE1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分析代码"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">分析代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第一个部分"><span class="post-toc-number">1.1.1.1.</span> <span class="post-toc-text">第一个部分</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第二个部分"><span class="post-toc-number">1.1.1.2.</span> <span class="post-toc-text">第二个部分</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#第三个部分"><span class="post-toc-number">1.1.1.3.</span> <span class="post-toc-text">第三个部分</span></a></li></ol></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
                 
-                    <!-- Paradox Thumbnail -->
-                    <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 192 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/10/26/本站公告/"><span>[Top]</span>本站公告</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/10/26/本站公告/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="FFY's avatar">
-            </div>
-            <div>
-                <strong>FFY</strong>
-                <span>10月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-                
-                
-            
-        
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/11/09/Hexo入坑教程/">Material主题</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/11/09/Hexo入坑教程/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.jpg" width="44px" height="44px" alt="FFY's avatar">
-            </div>
-            <div>
-                <strong>FFY</strong>
-                <span>11月 09, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 192 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material (' + randomNum + ').jpg');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material (' + randomNum + ').jpg');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                北邮网安杯线下决赛 Writeup
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>FFY</strong>
+        <span>3月 18, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/RE/">RE</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=北邮网安杯线下决赛 Writeup&url=http://ffdy.github.io/2019/03/18/buptwriteup/index.html&pic=http://ffdy.github.io/img/F.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=北邮网安杯线下决赛 Writeup&url=http://ffdy.github.io/2019/03/18/buptwriteup/index.html&via=FFY" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://ffdy.github.io/2019/03/18/buptwriteup/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://ffdy.github.io/2019/03/18/buptwriteup/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://ffdy.github.io/2019/03/18/buptwriteup/index.html&title=北邮网安杯线下决赛 Writeup" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=FFY&#39;s Blog&title=北邮网安杯线下决赛 Writeup&summary=&pics=http://ffdy.github.io/img/F.png&url=http://ffdy.github.io/2019/03/18/buptwriteup/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://ffdy.github.io/2019/03/18/buptwriteup/index.html&text=北邮网安杯线下决赛 Writeup" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="北邮网安杯-Writeup"><a href="#北邮网安杯-Writeup" class="headerlink" title="北邮网安杯 Writeup"></a>北邮网安杯 Writeup</h1><p>有幸参加了北京邮电大学的北邮网安杯线下决赛<br>虽然自己很菜，得分很低，但是这次比赛让我学到了很多，也对网络空间安全和 CTF 有了更加深入的了解<br>最重要的是在这个过程中我认识到了一些兴趣、爱好相同很有趣的人，原来即使是同龄人中，还是有这么多的高手，自己需要学习的东西还很多</p>
+<hr>
+<p>因为知识浅薄，CTF 我只完成了最简单的一道，下面是我对这道题不成熟的解法<br>如果有什么错误之处，欢迎下方留言</p>
+<h2 id="RE1"><a href="#RE1" class="headerlink" title="RE1"></a>RE1</h2><p>下载之后发现不是 .exe 文件<br>用 Winhex 打开,发现是 ELF 文件<br><img src="https://s2.ax1x.com/2019/03/17/AeheFH.png" alt="AeheFH.png"><br>用 IDA 载入,提示为 64 位文件<br><img src="https://s2.ax1x.com/2019/03/17/Aehapn.png" alt="Aehapn.png"><br>换成 IDA64 载入,找到主函数 main, 进入查看<br>发现奇怪的相关字符串<br><img src="https://s2.ax1x.com/2019/03/17/AehXct.png" alt="AehXct.png"><br>继续查看,发现输入正确的输出字符串<br><img src="https://s2.ax1x.com/2019/03/17/Ae4SHS.png" alt="Ae4SHS.png"><br>F5 反编译,将变量转化为字符<br>得到源码</p>
+<pre><code class="lang-cpp">int __cdecl main(int argc, const char **argv, const char **envp)
+{
+  int v3; // eax
+  int v4; // eax
+  int v6; // [rsp+4h] [rbp-10Ch]
+  int i; // [rsp+8h] [rbp-108h]
+  signed int j; // [rsp+Ch] [rbp-104h]
+  signed int k; // [rsp+10h] [rbp-100h]
+  int l; // [rsp+14h] [rbp-FCh]
+  char v11; // [rsp+20h] [rbp-F0h]
+  char v12; // [rsp+21h] [rbp-EFh]
+  char v13; // [rsp+22h] [rbp-EEh]
+  char v14; // [rsp+23h] [rbp-EDh]
+  char v15; // [rsp+24h] [rbp-ECh]
+  char v16; // [rsp+25h] [rbp-EBh]
+  char v17; // [rsp+26h] [rbp-EAh]
+  char v18; // [rsp+27h] [rbp-E9h]
+  char v19; // [rsp+28h] [rbp-E8h]
+  char v20; // [rsp+29h] [rbp-E7h]
+  char v21; // [rsp+2Ah] [rbp-E6h]
+  __int64 v22; // [rsp+30h] [rbp-E0h]
+  __int64 v23; // [rsp+38h] [rbp-D8h]
+  __int64 v24; // [rsp+40h] [rbp-D0h]
+  __int16 v25; // [rsp+48h] [rbp-C8h]
+  char v26; // [rsp+4Ah] [rbp-C6h]
+  char v27[48]; // [rsp+50h] [rbp-C0h]
+  __int16 v28; // [rsp+80h] [rbp-90h]
+  char s1[48]; // [rsp+90h] [rbp-80h]
+  __int16 v30; // [rsp+C0h] [rbp-50h]
+  _BYTE v31[6]; // [rsp+C2h] [rbp-4Eh]
+  char v32[48]; // [rsp+D0h] [rbp-40h]
+  int v33; // [rsp+100h] [rbp-10h]
+  char v34; // [rsp+104h] [rbp-Ch]
+  unsigned __int64 v35; // [rsp+108h] [rbp-8h]
+
+  v35 = __readfsqword(0x28u);
+  memset(v32, 0, sizeof(v32));
+  v33 = 0;
+  v34 = 0;
+  v26 = 0;
+  v22 = &#39;HGFEDCBA&#39;;
+  v23 = &#39;PONMLKJI&#39;;
+  v24 = &#39;XWVUTSRQ&#39;;
+  v25 = &#39;ZY&#39;;
+  v11 = &#39;B&#39;;
+  v12 = &#39;U&#39;;
+  v13 = &#39;P&#39;;
+  v14 = &#39;T&#39;;
+  v15 = &#39;I&#39;;
+  v16 = &#39;S&#39;;
+  v17 = &#39;H&#39;;
+  v18 = &#39;E&#39;;
+  v19 = &#39;K&#39;;
+  v20 = &#39;Y&#39;;
+  v21 = 0;
+  memset(v27, 0, sizeof(v27));
+  v28 = 0;
+  memset(s1, 0, sizeof(s1));
+  v30 = 0;
+  v6 = 0;
+  __isoc99_scanf(&quot;%50s&quot;, v27, v31);
+  for ( i = 0; *(&amp;v11 + i); ++i )
+  {
+    for ( j = 0; j &lt;= 25; ++j )
+    {
+      if ( *((_BYTE *)&amp;v22 + j) == *(&amp;v11 + i) )
+      {
+        *((_BYTE *)&amp;v22 + j) = 0;
+        v3 = v6++;
+        v32[v3] = *(&amp;v11 + i);
+      }
+    }
+  }
+  for ( k = 0; k &lt;= 25; ++k )
+  {
+    if ( *((_BYTE *)&amp;v22 + k) )
+    {
+      v4 = v6++;
+      v32[v4] = *((_BYTE *)&amp;v22 + k);
+    }
+  }
+  for ( l = 0; v27[l]; ++l )
+  {
+    if ( v27[l] == 123 )
+    {
+      s1[l] = 42;
+    }
+    else if ( v27[l] == 125 )
+    {
+      s1[l] = 35;
+    }
+    else
+    {
+      s1[l] = v32[v27[l] - 65];
+    }
+  }
+  if ( !strcmp(s1, &quot;UQJO*PEIPAKFRIMXNKDJCINGIBNXPBFFGOUINKDJCIM#&quot;) )
+    puts(&quot;Check in Successfully!&quot;);
+  return 0;
+}
+</code></pre>
+<h3 id="分析代码"><a href="#分析代码" class="headerlink" title="分析代码"></a>分析代码</h3><h4 id="第一个部分"><a href="#第一个部分" class="headerlink" title="第一个部分"></a>第一个部分</h4><pre><code class="lang-cpp">for ( i = 0; *(&amp;v11 + i); ++i )
+  {
+    for ( j = 0; j &lt;= 25; ++j )
+    {
+      if ( *((_BYTE *)&amp;v22 + j) == *(&amp;v11 + i) )
+      {
+        *((_BYTE *)&amp;v22 + j) = 0;
+        v3 = v6++;
+        v32[v3] = *(&amp;v11 + i);
+      }
+    }
+  }
+</code></pre>
+<p>在 <em>(v22+0) 到 </em>(v22+25) 之间查找将 <em>(v11+i) ,如果能找到,把它加在 v32 的后面,并把当前的 </em>(v22+j) 标记为 0 ,</p>
+<h4 id="第二个部分"><a href="#第二个部分" class="headerlink" title="第二个部分"></a>第二个部分</h4><pre><code class="lang-cpp">for ( k = 0; k &lt;= 25; ++k )
+  {
+    if ( *((_BYTE *)&amp;v22 + k) )
+    {
+      v4 = v6++;
+      v32[v4] = *((_BYTE *)&amp;v22 + k);
+    }
+  }
+</code></pre>
+<p>将第一部分没有标记的字符依次加在 v32 的后面<br>得到 v32 :<code>BUPTISHEKYACDFGJLMNOQRVWXZ</code></p>
+<h4 id="第三个部分"><a href="#第三个部分" class="headerlink" title="第三个部分"></a>第三个部分</h4><pre><code class="lang-cpp">for ( l = 0; v27[l]; ++l )
+  {
+    if ( v27[l] == 123 )//123=&#39;{&#39;
+    {
+      s1[l] = 42;//42=&#39;*&#39;
+    }
+    else if ( v27[l] == 125 )//125=&#39;}&#39;
+    {
+      s1[l] = 35;//35=&#39;#&#39;
+    }
+    else
+    {
+      s1[l] = v32[v27[l] - 65];
+    }
+  }
+  if ( !strcmp(s1, &quot;UQJO*PEIPAKFRIMXNKDJCINGIBNXPBFFGOUINKDJCIM#&quot;) )
+    puts(&quot;Check in Successfully!&quot;);
+</code></pre>
+<p>最后的 if 语句判断当 s1 与 <code>UQJO*PEIPAKFRIMXNKDJCINGIBNXPBFFGOUINKDJCIM#</code> 相等时才输出正确</p>
+<p>向上看 s1 的形成,涉及到 v27,v32 两个字符串<br>v27 为输入的字符串,也就是我们要提交的 flag<br>v32 为前两部分形成的字符串</p>
+<p>当 v27==’{‘ 时 s1[l]=’*’ 对应 s1[4]<br>当 v32==’}’ 时 s1[l]=’#’ 对应 s1[43]<br>其余情况 s1=v32[v27[l]-‘A’]<br>直至 v27[l] 为空,s1 形成</p>
+<p>分析到这里,就可以了写脚本反解密了</p>
+<pre><code class="lang-cpp">#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int ww[1000];
+int main(){
+    char s321[]=&quot;BUPTISHEKYGFDCAONMLJXWVRQZ&quot;;//这个是错误的顺序
+    char s322[]=&quot;BUPTISHEKYACDFGJLMNOQRVWXZ&quot;;
+    for(int i=0;i&lt;strlen(s322);i++){
+        if(!ww[s322[i]])ww[s322[i]]=i;
+    }
+    char s1[]=&quot;UQJO*PEIPAKFRIMXNKDJCINGIBNXPBFFGOUINKDJCIM#&quot;;
+    for(int i=0;i&lt;strlen(s1);i++){
+        printf(&quot;%c&quot;,ww[s1[i]]+&#39;A&#39;);
+    }
+    return 0;
+}
+</code></pre>
+<p>建立映射关系,由于一,二部分将 v32 中重复部分去除了,所以映射关系是一对一的,不存在冲突</p>
+<p>一开始弄反了 v22 的顺序,因该是由 ‘A’-‘Z’ 的顺序<br><img src="https://s2.ax1x.com/2019/03/17/AeoAgA.png" alt="AeoAgA.png"></p>
+<p>运行脚本得到 :<code>BUPTACHECKINVERYSIMPLESOEASYCANNOTBESIMPLERA</code><br><img src="https://s2.ax1x.com/2019/03/17/AeoEjI.png" alt="AeoEjI.png"><br>将位置 4 和最后一位换成相应的 {}<br>得到 flag:<code>BUPT{CHECKINVERYSIMPLESOEASYCANNOTBESIMPLER}</code></p>
+<p>在 Kali 下测试,成功!<br><img src="https://s2.ax1x.com/2019/03/17/AeTRLq.png" alt="AeTRLq.png"></p>
+<p>提交，一百分到手。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'true' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "JeUMqk7xExPauc7exoq8bze1-gzGzoHsz",
+        appKey: "QNNm00LOvhxol7SfAChAR9s5",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        pageSize:'10',
+        avatar:'monsterid',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/03/02/Hexo入坑教程/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -507,7 +832,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">24</span></a>
+                <a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">24</span></a>
             </li></ul>
         </li>
         
@@ -525,7 +850,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/一本通/">一本通<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/算法学习/">算法学习<span class="sidebar_archives-count">22</span></a>
+                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/一本通/">一本通<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/算法学习/">算法学习<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/">CTF<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/BUPT/">BUPT<span class="sidebar_archives-count">1</span></a>
             </li></ul>
         </li>
         
