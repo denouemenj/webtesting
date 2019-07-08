@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+    <link rel="dns-prefetch" href="https://cdn1.lncld.net">
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info">
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            BugKu-Misc | 
+        
+        FFY&#39;s Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/F.png">
+    <link rel="icon" href="/img/F.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content=",Misc">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg1.jpg);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="FFY&#39;s Blog">
+    <meta name="msapplication-starturl" content="http://ffdy.github.io/2019/07/08/BugKu-Misc/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="FFY&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/F.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://ffdy.github.io/2019/07/08/BugKu-Misc/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="BugKu-Misc | FFY&#39;s Blog">
+    <meta property="og:image" content="/img/F.png">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="Misc"> 
+
+    
+        <meta property="article:published_time" content="Mon Jul 08 2019 14:41:12 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jul 08 2019 14:44:11 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html",
+    "headline": "BugKu-Misc",
+    "datePublished": "Mon Jul 08 2019 14:41:12 GMT+0800",
+    "dateModified": "Mon Jul 08 2019 14:44:11 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "FFY",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpg"
+        },
+        "description": "Love life,love coding!,你喜欢大海,我喜欢浪."
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "FFY&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/F.png"
+        }
+    },
+    "keywords": ",Misc",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#签到题"><span class="post-toc-number">1.</span> <span class="post-toc-text">签到题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这是一张单纯的图片"><span class="post-toc-number">2.</span> <span class="post-toc-text">这是一张单纯的图片</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#隐写"><span class="post-toc-number">3.</span> <span class="post-toc-text">隐写</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#telent"><span class="post-toc-number">4.</span> <span class="post-toc-text">telent</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#眼见非实-ISCCCTF"><span class="post-toc-number">5.</span> <span class="post-toc-text">眼见非实(ISCCCTF)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#啊哒"><span class="post-toc-number">6.</span> <span class="post-toc-text">啊哒</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#又一张图片-还单纯吗"><span class="post-toc-number">7.</span> <span class="post-toc-text">又一张图片,还单纯吗</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#猜"><span class="post-toc-number">8.</span> <span class="post-toc-text">猜</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#宽带信息泄露"><span class="post-toc-number">9.</span> <span class="post-toc-text">宽带信息泄露</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#隐写2"><span class="post-toc-number">10.</span> <span class="post-toc-text">隐写2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多种方法解决"><span class="post-toc-number">11.</span> <span class="post-toc-text">多种方法解决</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#闪的好快"><span class="post-toc-number">12.</span> <span class="post-toc-text">闪的好快</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#come-game"><span class="post-toc-number">13.</span> <span class="post-toc-text">come_game</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#白哥的鸽子"><span class="post-toc-number">14.</span> <span class="post-toc-text">白哥的鸽子</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#linux"><span class="post-toc-number">15.</span> <span class="post-toc-text">linux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#隐写3"><span class="post-toc-number">16.</span> <span class="post-toc-text">隐写3</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#做个游戏-08067CTF"><span class="post-toc-number">17.</span> <span class="post-toc-text">做个游戏(08067CTF)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#想蹭网现解开密码"><span class="post-toc-number">18.</span> <span class="post-toc-text">想蹭网现解开密码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Linux2"><span class="post-toc-number">19.</span> <span class="post-toc-text">Linux2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#账号被盗了"><span class="post-toc-number">20.</span> <span class="post-toc-text">账号被盗了</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#细心的大象"><span class="post-toc-number">21.</span> <span class="post-toc-text">细心的大象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#爆照-08067CTF"><span class="post-toc-number">22.</span> <span class="post-toc-text">爆照(08067CTF)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#猫片-安恒"><span class="post-toc-number">23.</span> <span class="post-toc-text">猫片(安恒)</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Embedded-file-name-flag-py"><span class="post-toc-number"></span> <span class="post-toc-text">Embedded file name: flag.py</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多彩"><span class="post-toc-number">1.</span> <span class="post-toc-text">多彩</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#旋转跳跃"><span class="post-toc-number">2.</span> <span class="post-toc-text">旋转跳跃</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#普通的二维码"><span class="post-toc-number">3.</span> <span class="post-toc-text">普通的二维码</span></a></li></ol>
+    </li></ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 192 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material (' + randomNum + ').jpg');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                BugKu-Misc
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpg" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>FFY</strong>
+        <span>7月 08, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Misc/">Misc</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=BugKu-Misc&url=http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html&pic=http://ffdy.github.io/img/F.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=BugKu-Misc&url=http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html&via=FFY" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html&title=BugKu-Misc" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=FFY&#39;s Blog&title=BugKu-Misc&summary=&pics=http://ffdy.github.io/img/F.png&url=http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=http://ffdy.github.io/2019/07/08/BugKu-Misc/index.html&text=BugKu-Misc" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="签到题"><a href="#签到题" class="headerlink" title="签到题"></a>签到题</h2><p>关注微信公众号：Bugku即可</p>
+<h2 id="这是一张单纯的图片"><a href="#这是一张单纯的图片" class="headerlink" title="这是一张单纯的图片"></a>这是一张单纯的图片</h2><p>用 winhex 打开，发现最后有奇怪的字符<br><code>&amp;#107;&amp;#101;&amp;#121;&amp;#123;&amp;#121;&amp;#111;&amp;#117;&amp;#32;&amp;#97;&amp;#114;&amp;#101;&amp;#32;&amp;#114;&amp;#105;&amp;#103;&amp;#104;&amp;#116;&amp;#125;</code><br>发现是一种编码<br>在 Chrome 搜索框中解码（回车）得到 flag</p>
+<h2 id="隐写"><a href="#隐写" class="headerlink" title="隐写"></a>隐写</h2><p>png 文件入门题<br>hex 修改高度(第 21 到 24 字节)得到 flag</p>
+<h2 id="telent"><a href="#telent" class="headerlink" title="telent"></a>telent</h2><p>用 wireshark 打开<br>追踪 TCP 流得到 flag</p>
+<h2 id="眼见非实-ISCCCTF"><a href="#眼见非实-ISCCCTF" class="headerlink" title="眼见非实(ISCCCTF)"></a>眼见非实(ISCCCTF)</h2><p>解压得到 Word 文档,打开发现文件损坏<br>猜测文件中加了东西<br>解压 Word 文档, 没有发现什么奇怪的文件<br>打开所有的文件查找 <code>{</code> 得到 flag</p>
+<h2 id="啊哒"><a href="#啊哒" class="headerlink" title="啊哒"></a>啊哒</h2><p>解压得到 jpg 文件<br>用 010 打开,在最后发现 flag.txt<br>用 binwalk 分析发现 flag.txt<br>foremost 还原,得到一个 zip 文件<br>解压发现需要密码<br>继续分析原图片,发现 hex 值中有一段 16 进制数 <code>73646E6973635F32303138</code> 解码得到 <code>sdnisc_2018</code><br>即为密码,解压 zip 得到 flag</p>
+<h2 id="又一张图片-还单纯吗"><a href="#又一张图片-还单纯吗" class="headerlink" title="又一张图片,还单纯吗"></a>又一张图片,还单纯吗</h2><p>010 打开,发现后面粘连了文件<br>binwalk 分析,发现确实粘连了东西<br>foremost 还原得到另一张图片<br>上面有 flag</p>
+<h2 id="猜"><a href="#猜" class="headerlink" title="猜"></a>猜</h2><p>是一张只有半边脸的人像,提示是某人的名字的全拼,直接 Google 搜图<br>这个人是刘亦菲,得到 flag</p>
+<h2 id="宽带信息泄露"><a href="#宽带信息泄露" class="headerlink" title="宽带信息泄露"></a>宽带信息泄露</h2><p>下载到一个 bin 文件,因为是宽带信息,所以用 RouterPassView 打开<br>提示中是用户名,查找 username 得到 flag </p>
+<h2 id="隐写2"><a href="#隐写2" class="headerlink" title="隐写2"></a>隐写2</h2><p>用 010 打开,发现 flag.rar 字样<br>用 binwalk 分析,发现粘连<br>foremost 还原得到加密的 flag.rar 和一个提示 jpg 文件<br>rar 解压发现不是 rar 文件,file 查看发现是 zip 文件<br>现在有三个方法打</p>
+<ol>
+<li>linux 工具暴力破解  <code>fcrackzip -b -l 3-3 -c1 -v flag.zip</code> </li>
+<li>ARCHPR 暴力破解</li>
+<li>想出提示中的密码(考验脑洞的时刻到了)<br>解出密码是 871<br>解压,又得到一张图片,还是 010 打开<br>发现最后有 flag ,base64 解密<br>要把 @ 改为 a,大概是为了防止有人直接搜索 flag 得答案吧 <del>(出题人**)</del><h2 id="多种方法解决"><a href="#多种方法解决" class="headerlink" title="多种方法解决"></a>多种方法解决</h2>下载得到一个 exe 文件<br>但是无法运行,010 打开,发现是 base64 加密的图片<br>直接复制到 Chrome 搜索框中回车<br>得到一个二维码<br>QR_Research 扫码得 flag<h2 id="闪的好快"><a href="#闪的好快" class="headerlink" title="闪的好快"></a>闪的好快</h2>得到一个二维码的 gif 文件,随便扫会得到不同的字母<br><code>convert masterGO.gif a.png</code> 将其每一帧分离<br>依次扫描得到 flag <h2 id="come-game"><a href="#come-game" class="headerlink" title="come_game"></a>come_game</h2>下载得到一个 exe 文件<br>打开是一个游戏<br>玩了一下,发现应该不可能通过<del>(you can you up)</del><br>退出发现根本没有关闭选项<br>只能强行结束进程…..<br>发现生成了三个无后缀的文件<br>经过分析<br>DeathTime 记录死亡次数<br>temp 不知道是啥,好像一直没变<br>save1 是存档一,第 3 字节存储关卡数,最后一关是 35<br>在显示 game over 之前截屏<del>(考验单身手速的时候到了)</del><br>得到 flag<h2 id="白哥的鸽子"><a href="#白哥的鸽子" class="headerlink" title="白哥的鸽子"></a>白哥的鸽子</h2>010 打开 jpg 文件在最后发现多余字符<br>分析为栅栏密码,栅栏数为 3<br>解密得 flag<h2 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h2>解压得到 flag 文件<br>用 strings 命令分离字符串发现最后有 key<br>得到 flag<h2 id="隐写3"><a href="#隐写3" class="headerlink" title="隐写3"></a>隐写3</h2>下载得到 png 文件<br>图片看起来缺了一半<br>010 打开,修改高度(第 21 到 24 字节)<br>得到 flag<h2 id="做个游戏-08067CTF"><a href="#做个游戏-08067CTF" class="headerlink" title="做个游戏(08067CTF)"></a>做个游戏(08067CTF)</h2>得到一个 jar 包,打开是一个游戏<br>你要控制一个不明物体存活 60 秒<br>这里有一个 Bug,不知道是不是故意的,你可以把不明物体移动到最右侧<br>不过必须刚好 60 秒才能得到 flag<br>用 Java Decompiler 打开,找到相关的源码,发现 flag<br>中间有一段密文,看到 = 号,推测是 base64<br>base64 解密,得到 flag<h2 id="想蹭网现解开密码"><a href="#想蹭网现解开密码" class="headerlink" title="想蹭网现解开密码"></a>想蹭网现解开密码</h2>提示很明显,并且只有 4 位需要爆破<br>直接 linux 下爆破<br>先生成字典<br><code>crunch 11 11 -t 1391040%%%% -o  pass.txt</code><br>上 aircrack-ng 爆破<br><code>aircrack-ng  -a2  wifi.cap  -w  pass.txt</code><br>得到手机号,提交 flag<h2 id="Linux2"><a href="#Linux2" class="headerlink" title="Linux2"></a>Linux2</h2>和上一道 linux 一样,strings 命令即可<br>又因为提示了 KEY<br><code>strings brave | grep -i key #-i 忽略大小写</code><br>得到 flag<h2 id="账号被盗了"><a href="#账号被盗了" class="headerlink" title="账号被盗了"></a>账号被盗了</h2>打开链接,点击 getflag 跳转到了 cookieflag.php 回显 you are no admin<br>由 cookieflag 想到 cookie<br>查看 cookie,发现 isadmin 字段为 false<br>burp 抓包,修改 isadmin 为 true,发包得到一个 123.exe 文件<br>打开是一个 CF 刷枪软件,应该没法用了<br>一开始以为是逆向,动静态分析半天,然后看了网上的 Writeup<br>发现是 Wireshark 抓包,emmmmm<br>随便填完信息,提交<br>在 Wireshark 中追踪 TCP 流,发现两个 base64 加密的密文<br>解密得到网易邮箱的账号密码<br>登陆,发现 flag 已经被之前的人改了<br>emmmmmm,我还能说啥呢<br>翻了别人的 Writeup,得到了 flag<br>顺便把邮箱里 flag 改回去了<h2 id="细心的大象"><a href="#细心的大象" class="headerlink" title="细心的大象"></a>细心的大象</h2>解压,7-zip 报告头部错误<br>查看图片属性，有奇怪的备注<br>base64 解码得到一个字符串<br>strings 分离,发现有一个疑似 flag 的字符串<br>鼓捣半天,不知道是啥<br>010 打开,发现末尾粘连有东西<br>binwalk 分析,发现粘连了一个 rar 文件<br>foremost 1.jpg 得到 rar<br>解压需要密码,猜测是刚刚的字符串,果然<br>又得到一张图片 2.png<br>打开 eog 报错,CRC 校验不通过<br>用 win7 自带图片查看器打开,发现与上面的隐写的图片一样<br>010 修改高度,得到 flag<br>上面 strings 分离得到的字符串只是个幌子,emmmm<br>7-zip 报错应该是因为图片 CRC 值有问题 <del>(我猜的)</del><h2 id="爆照-08067CTF"><a href="#爆照-08067CTF" class="headerlink" title="爆照(08067CTF)"></a>爆照(08067CTF)</h2>得到一个 8.jpg 文件<br>查看属性,没有发现<br>010 打开,后面粘连了东西<br>foremost 还原得到一个 zip 文件<br>解压得到多个图片文件,其中 88 上明显有一个 bilibili<br>又因为提示 flag 分三段<br>说明剩下的图片中还有两个字符串,继续分析<br>foremost 分离 8888 得到一个 zip 文件<br>解压得到一个二维码,扫描得 panama<br>888 查看属性,在备注上发现 base64 密文<br>解密得 silisili<br>三个按源文件名字长度排序按题目要求连起来,得到 flag<h2 id="猫片-安恒"><a href="#猫片-安恒" class="headerlink" title="猫片(安恒)"></a>猫片(安恒)</h2>下载得到 png 文件<br>因为提示 <code>hint:LSB BGR NTFS</code> 并且之前做过类似的题<br>很容易想到 LSB 隐写<br>Stegsolve 打开 analyse -&gt; data extract<br><img src="https://s2.ax1x.com/2019/03/30/AB6KPg.png" alt="AB6KPg.png"><br>发现 png 文件的文件头,Save Bin,将文件前两个字节删去<br>得到半张二维码,010 修改高度,得到完整二维码<br>扫描发现不是,还需要进行反色处理<br>win7 自带的画图板 Ctrl+Shift+i 得到正确二维码<br>扫描得到 一个百度云链接,下载到一个 flag.rar 文件<br>解压,得到 flag.txt<br>你以为这就完了,不,打开 flag.txt 上面写着 flag 不在这里<br>emmmm<br>看了大佬的 Writeup,还有提示中的 NTFS 没有用<br>必须用 WinRAR 解压,并且解压会报错<br>报错就对了,这是一个 <a href="[https://www.qingsword.com/qing/812.html](https://www.qingsword.com/qing/812.html">NTFS 隐写</a>)<br>用 NtfsStreamsEditor2 打开扫描,发现隐写了一个 pyc 文件<br>恢复,打开,一闪而过<br>在命令行中打开,啥都没有<br>uncompyle2 反编译 pyc 文件得到<br>```py<h1 id="Embedded-file-name-flag-py"><a href="#Embedded-file-name-flag-py" class="headerlink" title="Embedded file name: flag.py"></a>Embedded file name: flag.py</h1>import base64</li>
+</ol>
+<p>def encode():<br>    flag = ‘<strong><strong><strong>*</strong></strong></strong>‘<br>    ciphertext = []<br>    for i in range(len(flag)):<br>        s = chr(i ^ ord(flag[i]))<br>        if i % 2 == 0:<br>            s = ord(s) + 10<br>        else:<br>            s = ord(s) - 10<br>        ciphertext.append(str(s))</p>
+<pre><code>return ciphertext[::-1]
+</code></pre><p>ciphertext = [‘96’,<br> ‘65’,<br> ‘93’,<br> ‘123’,<br> ‘91’,<br> ‘97’,<br> ‘22’,<br> ‘93’,<br> ‘70’,<br> ‘102’,<br> ‘94’,<br> ‘132’,<br> ‘46’,<br> ‘112’,<br> ‘64’,<br> ‘97’,<br> ‘88’,<br> ‘80’,<br> ‘82’,<br> ‘137’,<br> ‘90’,<br> ‘109’,<br> ‘99’,<br> ‘112’]</p>
+<pre><code>反解 py 代码
+```py
+ciphertext = [&#39;96&#39;,
+ &#39;65&#39;,
+ &#39;93&#39;,
+ &#39;123&#39;,
+ &#39;91&#39;,
+ &#39;97&#39;,
+ &#39;22&#39;,
+ &#39;93&#39;,
+ &#39;70&#39;,
+ &#39;102&#39;,
+ &#39;94&#39;,
+ &#39;132&#39;,
+ &#39;46&#39;,
+ &#39;112&#39;,
+ &#39;64&#39;,
+ &#39;97&#39;,
+ &#39;88&#39;,
+ &#39;80&#39;,
+ &#39;82&#39;,
+ &#39;137&#39;,
+ &#39;90&#39;,
+ &#39;109&#39;,
+ &#39;99&#39;,
+ &#39;112&#39;]
+ciphertext=ciphertext[::-1]
+def de():
+    flag=&#39;&#39;
+    for i in range(len(ciphertext)):
+        if i % 2==0:
+            s=int(ciphertext[i])-10
+        else :
+            s=int(ciphertext[i])+10
+        flag+=chr(s^i)
+    return flag
+
+print(de())
+</code></pre><p>得到 flag</p>
+<h2 id="多彩"><a href="#多彩" class="headerlink" title="多彩"></a>多彩</h2><p>脑洞太大,玩不来</p>
+<h2 id="旋转跳跃"><a href="#旋转跳跃" class="headerlink" title="旋转跳跃"></a>旋转跳跃</h2><p>得到一个 MP3 文件<br>因为有提示 key<br>猜测为 MP3Stego 隐写<br><code>Decode.exe -X -P syclovergeek sycgeek-mp3.mp3</code><br>得到 flag</p>
+<h2 id="普通的二维码"><a href="#普通的二维码" class="headerlink" title="普通的二维码"></a>普通的二维码</h2><p>QR 扫描,显示 flag 就在这里<br>strings 分离得到一串数字,长度为 126,并且数字都小于 8,猜测为八进制<br>py 代码</p>
+<pre><code class="lang-py">s=&#39;146154141147173110141166145137171060125137120171137163143162151160164137117164143137124157137124145156137101163143151151041175&#39;
+flag=&#39;&#39;
+for i in range(0,len(s),3):
+    flag+=chr(int(s[i:i+3],8))
+
+print(flag)
+</code></pre>
+<p>得到 flag</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <div id="comment" style="padding:10px;" class="vcomment"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'true' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "JeUMqk7xExPauc7exoq8bze1-gzGzoHsz",
+        appKey: "QNNm00LOvhxol7SfAChAR9s5",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        pageSize:'10',
+        avatar:'monsterid',
+        lang:'zh-cn'
+    });
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/07/08/Hexo入坑教程-Material/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/head.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpg" alt="FFY's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        scaryffy@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: scaryffy@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">24</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/C/">C++<span class="sidebar_archives-count">23</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/一本通/">一本通<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/C/算法学习/">算法学习<span class="sidebar_archives-count">22</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/">CTF<span class="sidebar_archives-count">15</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/BUPT/">BUPT<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/BugKu/">BugKu<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/南京邮电/">南京邮电<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/实验吧/">实验吧<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/工具/">工具<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/CTF/知识/">知识<span class="sidebar_archives-count">4</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_circle</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="友链">
+                
+                    <i class="material-icons sidebar-material-icons">face</i>
+                
+                友链
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person_pin</i>
+                
+                About Me
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/ffdy" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+        <a href="https://space.bilibili.com/40092657/#/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-bilibili">
+                <span class="visuallyhidden">Bilibili</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>FFY's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+    
+  <script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":100,"height":200},"mobile":{"show":true},"log":false});</script></body>
+    
+</html>
+<!--崩溃欺骗-->
+<script type="text/javascript" src="/js/crash_cheat.js"></script>
+<!-- 页面点击 -->
+<script type="text/javascript" src="/js/mouse.js"></script>
